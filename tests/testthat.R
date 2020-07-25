@@ -1,4 +1,4 @@
 library(hySpc.testthat)
-library(SKELETON)
+library(hySpc.ggplot2)
 
-test_check("SKELETON")
+test_check("hySpc.ggplot2")
