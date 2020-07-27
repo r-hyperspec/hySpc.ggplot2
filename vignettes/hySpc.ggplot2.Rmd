@@ -29,7 +29,7 @@ vignette: >
     % \VignetteKeyword{hyperSpec}
     % \VignetteKeyword{ggplot2}
     % \VignettePackage{hySpc.ggplot2}
-    % \VignetteDepends{hyperSpec, ggplot2, sessioninfo}
+    % \VignetteDepends{bookdown, hyperSpec, ggplot2, sessioninfo}
     % \VignetteEngine{knitr::rmarkdown}
     % \VignetteEncoding{UTF-8}
 # Citations/References -------------------------------------------------------
