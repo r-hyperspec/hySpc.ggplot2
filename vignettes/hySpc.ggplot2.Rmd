@@ -1,0 +1,200 @@
+---
+# For vignette ---------------------------------------------------------------
+title:       'Plotting "hyperSpec" with "ggplot2"'
+sutitle:     "Package ggplot2 Based Functionality for hyperSpec Objects"
+description: "ggplot2: Package ggplot2 based functionality for hyperSpec"
+# Authors --------------------------------------------------------------------
+author:
+  - name: Claudia Beleites^1,2,3,4,5^, Vilmantas Gegzna
+    email: chemometrie@beleites.de
+    corresponding : yes
+    affiliation   : |
+        1. DIA Raman Spectroscopy Group, University of Trieste/Italy (2005--2008)
+        2. Spectroscopy $\cdot$ Imaging, IPHT, Jena/Germany (2008--2017)
+        3. ÖPV, JKI, Berlin/Germany (2017--2019)
+        4. Arbeitskreis Lebensmittelmikrobiologie und Biotechnologie, Hamburg University, Hamburg/Germany (2019 -- 2020)
+        5. Chemometric Consulting and Chemometrix GmbH, Wölfersheim/Germany (since 2016)
+# Document -------------------------------------------------------------------
+date:      "`r Sys.Date()`"
+output:
+    bookdown::html_vignette2:
+      toc: yes
+      fig_caption: yes
+      css:
+        - vignette.css
+        - style.css
+vignette: >
+    % \VignetteIndexEntry{Plotting "hyperSpec" with "ggplot2"}
+    % \VignetteKeyword{hySpc.ggplot2}
+    % \VignetteKeyword{hyperSpec}
+    % \VignetteKeyword{ggplot2}
+    % \VignettePackage{hySpc.ggplot2}
+    % \VignetteDepends{hyperSpec, ggplot2, sessioninfo}
+    % \VignetteEngine{knitr::rmarkdown}
+    % \VignetteEncoding{UTF-8}
+# Citations/References -------------------------------------------------------
+link-citations: yes
+bibliography: resources/hySpc.ggplot2-pkg.bib
+biblio-style: plain
+csl: elsevier-with-titles.csl
+# Pkgdown --------------------------------------------------------------------
+pkgdown:
+  as_is: true
+  set_null_theme: no
+---
+
+
+```{r cleanup-plotting, include = FALSE}
+# Clean up to ensure reproducible workspace ----------------------------------
+rm(list = ls(all.names = TRUE))
+```
+
+```{r setup, include = FALSE}
+# Packages -------------------------------------------------------------------
+library(hyperSpec)
+library(ggplot2)
+library(hySpc.ggplot2)
+
+# Functions ------------------------------------------------------------------
+source("vignette-functions.R", encoding = "UTF-8")
+
+# Settings -------------------------------------------------------------------
+source("vignette-default-settings.R", encoding = "UTF-8")
+
+# Temporaty options ----------------------------------------------------------
+# Change the value of this option in "vignette-default-settings.R"
+show_reviewers_notes = getOption("show_reviewers_notes", TRUE)
+```
+
+```{r bib, echo=FALSE, paged.print=FALSE}
+dir.create("resources", showWarnings = FALSE)
+
+knitr::write_bib(
+  c(
+    "hyperSpec",
+    "ggplot2",
+    "hySpc.ggplot2"
+  ),
+  file = "resources/hySpc.ggplot2-pkg.bib"
+)
+```
+
+
+
+# Suggested Packages and Setup {-}
+
+
+```{block, type="note", echo=TRUE}
+**Reproducing the examples in this vignette.**
+
+All spectra used in this manual are installed automatically with package **hyperSpec**.
+
+```
+
+***
+
+> **Terminology**
+> Throughout the documentation of the package, the following terms are used:
+>
+> - **wavelength** indicates any type of spectral abscissa.
+> - **intensity**  indicates any type of spectral ordinate.
+> - **extra data** indicates non-spectroscopic data.
+
+
+```{r packages}
+library(hyperSpec)
+library(ggplot2)
+library(hySpc.ggplot2)
+
+
+par(mar = c(4.1, 4.1, 1, .6))
+
+set.seed(2020)
+```
+
+
+# Using **_ggplot2_** with **_hyperSpec_** objects {#plots-ggplot2}
+
+
+Class `hyperSpec`{.r}[`r cite_pkg("hyperSpec")`] objects do not yet directly support plotting with package **ggplot2**[`r cite_pkg("ggplot2")`].
+Nevertheless, package **ggplot2** graphics can easily be obtained, and `qplot*()`{.r} equivalents to `plotspc()`{.r} and `plotmap()`{.r}.
+
+
+## Function `qplotspc()`{.r} {#qplotspc}
+
+Plot spectra with `qplotspc()`{.r} (Fig. \@ref(fig:ggplotspc)).<!-- `as.long.df()`{.r}" -->
+
+```{r include=FALSE}
+CAPTION = "Plot spectra with `as.long.df()`{.r}  "
+```
+
+```{r ggplotspc, fig.cap=CAPTION}
+qplotspc(flu) + aes(colour = c)
+```
+
+
+## Function `ggplotmap()`{.r} {#ggplotmap}
+
+Fig. \@ref(fig:ggplotmap) shows a map created with package **ggplot2**.
+
+```{r include=FALSE}
+CAPTION = "False-colour map with package **ggplot2**  "
+```
+
+```{r ggplotmap, fig.cap=CAPTION}
+qplotmap(chondro) +
+    scale_fill_gradientn("spc", colours = matlab.palette())
+```
+
+The two special columns `.wavelength`{.r} and `.rownames`{.r} contain the wavelength axis and allow to distinguish the spectra.
+
+
+
+## More General Plotting with **_ggplot2_** {#general-plotting-ggplot2}
+
+
+For more general plotting, `as.long.df()`{.r} transforms a `hyperSpec`{.r} object into a long-form `data.frame`{.r} that is suitable for `qplot()`{.r}, while `as.t.df()`{.r} produces a `data.frame`{.r} where each spectrum is one column, and an additional first column gives the wavelength.
+Long `data.frame`{.r}s can be *very* memory consuming as they are of size $nrow · nwl × (ncol + 2)$ with respect to the dimensions of the `hyperSpec`{.r} object.
+Thus, e.g., the `chondro`{.r} data set (`r round (object.size (chondro) / 1048576, digits = 0)` MB) as `hyperSpec`{.r} object) needs `r round (object.size(as.long.df(chondro, rownames = TRUE)) / 1048576, digits = 0)` MB as long-format `data.frame`{.r}.
+It is therefore highly recommended to calculate the particular data to be plotted beforehand<!-- (Fig. \@ref(fig:ggplotmeansd))-->.
+
+
+```{r include=FALSE}
+CAPTION = "Mean $\\pm$ standard deviation with package **ggplot2**.  "
+```
+
+```{r ggplotmeansd, fig.cap=CAPTION, eval=FALSE}
+qplotspc(mean(chondro)) +
+  geom_ribbon(aes(
+    ymin = mean + sd,
+    ymax = mean - sd,
+    y = 0,
+    group = NA
+  ),
+    alpha = 0.25,
+    data = as.t.df(mean_sd(chondro))
+  )
+```
+
+Note that `qpotspc()`{.r} specifies aesthetics `y = spc` and `groups = .rownames`, which do not have corresponding columns in the `data.frame` returned by `as.t.df()`{.r}.
+These aesthetics must therefore be set manually in the aesthetics definition in `geom_ribbon()`{.r} (or any other `geom_*()`{.r} that uses `as.t.df()`{.r}).
+Otherwise, errors occur that object `spc` (and/or `.rownames`) cannot be found.
+Cut axes can be implemented by faceting (Fig. \@ref(fig:ggplotspccut)).
+
+```{r include=FALSE}
+CAPTION = "Cut spectra with package **ggplot2**.   "
+```
+
+```{r ggplotspccut, fig.cap=CAPTION}
+qplotspc(paracetamol / 1e4, wl.range = c(min ~ 1800, 2800 ~ max)) +
+  scale_x_continuous(breaks = seq(0, 3200, 400))
+```
+
+
+# Session Info {-}
+
+```{r session-info-plotting, paged.print=FALSE}
+sessioninfo::session_info("hyperSpec")
+```
+
+# References {-}
