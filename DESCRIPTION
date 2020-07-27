@@ -11,9 +11,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
-Remotes:
-    r-hyperspec/hySpc.testthat,
-    cbeleites/hyperSpec
 Depends:
     ggplot2,
     hyperSpec
