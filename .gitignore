@@ -5,4 +5,4 @@
 man/*.Rd
 docs/
 NAMESPACE
-docs
+_tmp/
