@@ -1,12 +1,12 @@
 
-#' @title `qplotmap` with colour mixing for multivariate overlay.
+#' @title `qplotmap` with colour mixing for multivariate overlay
 #' @description
 #' Map plot with colour overlay.
 #'
 #' @param object `hyperSpec` object
-#' @param ... handed over to [hyperSpec::qmixlegend()] and [hyperSpec::qmixtile()]
+#' @param ... handed over to [qmixlegend()] and [qmixtile()]
 #' @return invisible list with ggplot2 objects map and legend
-#' @seealso [hyperSpec::qmixtile()]
+#' @seealso [qmixtile()]
 #' @author Claudia Beleites
 #' @concept ggplot2
 #' @concept plots
@@ -48,7 +48,7 @@ qplotmixmap <- function(object, ...) {
   invisible(list(map = p, legend = l))
 }
 
-#' @title Plot multivariate data into colour channels.
+#' @title Plot multivariate data into colour channels
 #' @description
 #' Plot graph with legend right of it.
 #'
@@ -274,7 +274,7 @@ qmixlegend <- function(x, purecol, dx = 0.33, ny = 100, labels = names(purecol),
 }
 
 #' @rdname qplotmix
-#' @title Multi channel colour mixing.
+#' @title Multi channel colour mixing
 #' @param x matrix with component intensities in columns
 #' @param against value to mix against
 #'                (for `sub = TRUE` only, 1 = white, 0 = black)

@@ -1,5 +1,5 @@
 
-#' @title Spectra plotting with \pkg{ggplot2}: `qplotspc().`
+#' @title Spectra plotting with \pkg{ggplot2}: `qplotspc()`
 #' @description
 #' Spectra plotting with \pkg{ggplot2}.
 #'
@@ -19,11 +19,12 @@
 #' @concept plots
 #' @export
 #' @md
-#' @seealso [plotspc()]
+#' @seealso
+#' [hyperSpec::plotspc()]
 #'
 #' [ggplot2::ggplot()], [ggplot2::geom_line()]
-#' @examples
 #'
+#' @examples
 #' qplotspc(faux_cell)
 #'
 #' qplotspc(paracetamol, c(2800 ~ max, min ~ 1800)) +
@@ -38,11 +39,11 @@
 #'   mapping = aes(x = .wavelength, y = spc, colour = region, group = .rownames)
 #' ) +
 #'   facet_grid(region ~ .)
+#'
 qplotspc <- function(x,
                      wl.range = TRUE, ...,
                      mapping = aes_string(
-                       x = ".wavelength", y = "spc",
-                       group = ".rownames"
+                       x = ".wavelength", y = "spc", group = ".rownames"
                      ),
                      spc.nmax = hy.getOption("ggplot.spc.nmax"),
                      map.lineonly = FALSE,

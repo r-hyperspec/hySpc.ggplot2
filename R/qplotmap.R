@@ -1,5 +1,5 @@
 
-#' @title Spectra plotting with \pkg{ggplot2}: `qplotmap().`
+#' @title Spectra plotting with \pkg{ggplot2}: `qplotmap()`
 #' @description
 #' Spectra plotting with \pkg{ggplot2}.
 #'
@@ -14,16 +14,17 @@
 #' @param func function to summarize the wavelengths
 #' @param func.args arguments to `func`
 #' @param map.tileonly if `TRUE`, `mapping` will be handed to
-#'   [ggplot2::geom_tile()] instead of [ggplot2::ggplot()].
+#'        [ggplot2::geom_tile()] instead of [ggplot2::ggplot()].
 #' @return a [ggplot2::ggplot()] object
 #' @export
 #' @md
 #' @author Claudia Beleites
 #' @concept ggplot2
 #' @concept plots
-#' @seealso [plotmap()]
+#' @seealso
+#'  [hyperSpec::plotmap()]
 #'
-#'   [ggplot2::ggplot()], [ggplot2::geom_tile()]
+#'  [ggplot2::ggplot()], [ggplot2::geom_tile()]
 #' @examples
 #' qplotmap(faux_cell)
 #' qplotmap(faux_cell) + scale_fill_gradientn(colours = alois.palette())

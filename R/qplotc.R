@@ -1,10 +1,10 @@
 
-#' @title Spectra plotting with \pkg{ggplot2}: `qplotc().`
+#' @title Spectra plotting with \pkg{ggplot2}: `qplotc()`
 #' @description
 #' Spectra plotting with \pkg{ggplot2}.
 #'
-#' These functions are still experimental and may change in future.
-#' @title Spectra plotting with ggplot2
+#' These functions are still experimental and may change in the future.
+#'
 #' @param object hyperSpec object
 #' @param mapping see  [ggplot2::geom_point()]
 #' @param ... handed to [ggplot2::geom_point()]
@@ -18,8 +18,7 @@
 #' @author Claudia Beleites
 #' @concept ggplot2
 #' @concept plots
-#' @md
-#' @seealso [plotc()]
+#' @seealso [hyperSpec::plotc()]
 #'
 #'   [ggplot2::ggplot()], [ggplot2::geom_point()]
 #' @examples
