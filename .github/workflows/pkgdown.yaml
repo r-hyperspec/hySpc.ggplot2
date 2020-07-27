@@ -42,7 +42,8 @@ jobs:
           install.packages("remotes")
           install.packages("devtools")
           remotes::install_deps(dependencies = TRUE)
-          remotes::install_dev("pkgdown")
+          # remotes::install_dev("pkgdown")
+          remotes::install_github("forked-packages/pkgdown")
         shell: Rscript {0}
 
       - name: Roxygenize
