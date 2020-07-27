@@ -1,29 +1,34 @@
-Package: SKELETON
+Package: hySpc.ggplot2
 Type: Package
+Date: 2020-07-27
 Version: 0.0.0.9000
-Title: Package's Title
-Description: Short Description of the package.
+Title: Bridge Between Packages hyspeSpec and ggplot2
+Description: Package ggplot2 based functionality for hyperSpec objects.
 Authors@R: c(
-    person("Claudia",   "Beleites",  role = c("aut"), email = "Claudia.Beleites@chemometrix.gmbh"),
-    person("Erick",     "Oduniyi", role = c("aut","cre"), email = "eeoduniyi@gmail.com"),
-    person("Vilmantas", "Gegzna", role = c("aut")),
-    person("Bryan",     "Hanson", role = c("aut"))
+    person("Claudia",   "Beleites", role = c("aut", "cre"), email = "Claudia.Beleites@chemometrix.gmbh")
     )
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
 Remotes:
-    r-hyperspec/hySpc.testthat
+    r-hyperspec/hySpc.testthat,
+    cbeleites/hyperSpec
 Depends:
+    ggplot2,
     hyperSpec
 Imports: 
-    hySpc.testthat
+    hySpc.testthat,
+    lazyeval,
+    methods,
+    rlang
 Suggests:
+    covr,
     knitr,
-    covr
+    sessioninfo
 URL: 
-    https://github.com/r-hyperspec/hySpc.skeleton
-BugReports: https://github.com/r-hyperspec/hySpc.skeleton/issues
+    https://r-hyperspec.github.io/hySpc.ggplot2,
+    https://github.com/r-hyperspec/hySpc.ggplot2
+BugReports: https://github.com/r-hyperspec/hySpc.ggplot2/issues
 VignetteBuilder: knitr
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
