@@ -101,3 +101,38 @@ qplotspc <- function(x,
 
   p
 }
+
+
+# Unit tests -----------------------------------------------------------------
+#' @import hySpc.testthat
+hySpc.testthat::test(qplotspc) <- function() {
+  context("qplotspc")
+  # To update reference data for visual unit tests, run:
+  # vdiffr::manage_cases()
+
+  test_that("qplotspc() works", {
+
+    # Data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    expect_silent(hy_spectra <- hyperSpec:::generate_hy_spectra())
+    # expect_silent(hy_profile <- hyperSpec:::generate_hy_profile())
+    # expect_silent(hy_map     <- hyperSpec:::generate_hy_map())
+
+    # Regular tests: warnings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    # Regular tests: errors ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    expect_error(qplotspc(), 'argument "x" is missing, with no default')
+    expect_silent(gg <- qplotspc(hy_spectra))
+    expect_is(gg, "gg")
+    expect_is(gg, "ggplot")
+
+    expect_silent(gg2 <- qplotspc(hy_spectra, map.lineonly = TRUE))
+    expect_is(gg2, "gg")
+    expect_is(gg2, "ggplot")
+
+
+    # Visual tests
+    # vdiffr::expect_doppelganger("qplotspc-01",       gg)
+  })
+}
+
+
