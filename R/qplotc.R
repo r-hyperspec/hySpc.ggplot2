@@ -88,3 +88,36 @@ qplotc <- function(object, mapping = aes_string(x = "c", y = "spc"), ...,
   p + ylab(ylabel) +
     xlab(xlabel)
 }
+
+# Unit tests -----------------------------------------------------------------
+#' @import hySpc.testthat
+hySpc.testthat::test(qplotc) <- function() {
+  context("qplotc")
+  # To update reference data for visual unit tests, run:
+  # vdiffr::manage_cases()
+
+  test_that("qplotc() works", {
+
+    # Data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # expect_silent(hy_spectra <- hyperSpec:::generate_hy_spectra())
+    expect_silent(hy_profile <- hyperSpec:::generate_hy_profile())
+    # expect_silent(hy_map     <- hyperSpec:::generate_hy_map())
+
+    # Regular tests: warnings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    # Regular tests: errors ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    expect_error(qplotc(), 'argument "object" is missing, with no default')
+    expect_silent(gg <- qplotc(hy_profile))
+    expect_is(gg, "gg")
+    expect_is(gg, "ggplot")
+
+    expect_silent(gg2 <- qplotc(hy_profile, map.pointonly = TRUE))
+    expect_is(gg2, "gg")
+    expect_is(gg2, "ggplot")
+
+    # Visual tests
+    # vdiffr::expect_doppelganger("qplotspc-01",       gg)
+  })
+}
+
+
