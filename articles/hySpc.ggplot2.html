@@ -134,8 +134,7 @@ Throughout the documentation of the package, the following terms are used:</p>
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://r-hyperspec.github.io/hySpc.ggplot2">hySpc.ggplot2</a></span>)
 
-
-<span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(mar = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">4.1</span>, <span class="fl">4.1</span>, <span class="fl">1</span>, <span class="fl">.6</span>))
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>())
 
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">2020</span>)
 </pre></div>
@@ -166,8 +165,11 @@ Figure 1: Plot spectra with <code class="sourceCode r"><span class="kw">as.long.
 </h2>
 <p>Fig. <a href="#fig:ggplotmap">2</a> shows a map created with package <strong>ggplot2</strong>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span>(<span class="kw">chondro</span>) <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="st">"spc"</span>, colours = <span class="fu">matlab.palette</span>())
+<span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">7</span>)
+<span class="kw">faux_cell</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/faux_cell.html">generate_faux_cell</a></span>()
+
+<span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span>(<span class="kw">faux_cell</span>) <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="st">"spc"</span>, colours = <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/palettes.html">matlab.palette</a></span>())
 </pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotmap"></span>
@@ -183,10 +185,10 @@ Figure 2: False-colour map with package <strong>ggplot2</strong>
 </h2>
 <p>For more general plotting, <code class="sourceCode r"><span class="kw">as.long.df</span>()</code> transforms a <code class="sourceCode r">hyperSpec</code> object into a long-form <code class="sourceCode r">data.frame</code> that is suitable for <code class="sourceCode r"><span class="kw">qplot</span>()</code>, while <code class="sourceCode r"><span class="kw">as.t.df</span>()</code> produces a <code class="sourceCode r">data.frame</code> where each spectrum is one column, and an additional first column gives the wavelength.
 Long <code class="sourceCode r">data.frame</code>s can be <em>very</em> memory consuming as they are of size <span class="math inline">\(nrow · nwl × (ncol + 2)\)</span> with respect to the dimensions of the <code class="sourceCode r">hyperSpec</code> object.
-Thus, e.g., the <code class="sourceCode r">chondro</code> data set (2 MB) as <code class="sourceCode r">hyperSpec</code> object) needs 28 MB as long-format <code class="sourceCode r">data.frame</code>.
+Thus, e.g., the <code class="sourceCode r">faux_cell</code> data set (2 MB) as <code class="sourceCode r">hyperSpec</code> object) needs 26 MB as long-format <code class="sourceCode r">data.frame</code>.
 It is therefore highly recommended to calculate the particular data to be plotted beforehand<!-- (Fig. \@ref(fig:ggplotmeansd))-->.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(<span class="kw">chondro</span>)) <span class="op">+</span>
+<span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(<span class="kw">faux_cell</span>)) <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html">geom_ribbon</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(
     ymin = <span class="kw">mean</span> <span class="op">+</span> <span class="kw">sd</span>,
     ymax = <span class="kw">mean</span> <span class="op">-</span> <span class="kw">sd</span>,
@@ -194,7 +196,7 @@ It is therefore highly recommended to calculate the particular data to be plotte
     group = <span class="fl">NA</span>
   ),
     alpha = <span class="fl">0.25</span>,
-    data = <span class="fu">as.t.df</span>(<span class="fu">mean_sd</span>(<span class="kw">chondro</span>))
+    data = <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/asdataframe.html">as.t.df</a></span>(<span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/mean_sd.html">mean_sd</a></span>(<span class="kw">faux_cell</span>))
   )
 </pre></div>
 <p>Note that <code class="sourceCode r"><span class="kw">qpotspc</span>()</code> specifies aesthetics <code>y = spc</code> and <code>groups = .rownames</code>, which do not have corresponding columns in the <code>data.frame</code> returned by <code class="sourceCode r"><span class="kw">as.t.df</span>()</code>.
@@ -203,7 +205,7 @@ Otherwise, errors occur that object <code>spc</code> (and/or <code>.rownames</co
 Cut axes can be implemented by faceting (Fig. <a href="#fig:ggplotspccut">3</a>).</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(<span class="kw">paracetamol</span> <span class="op">/</span> <span class="fl">1e4</span>, wl.range = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="kw">min</span> <span class="op">~</span> <span class="fl">1800</span>, <span class="fl">2800</span> <span class="op">~</span> <span class="kw">max</span>)) <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span>(breaks = <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span>))
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span>(breaks = <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span>))
 </pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotspccut"></span>
@@ -231,62 +233,62 @@ Figure 3: Cut spectra with package <strong>ggplot2</strong>.
 <span class="co">#&gt;  date     2020-07-28                  </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; ─ Packages ───────────────────────────────────────────────────────────────────────────────────────</span>
-<span class="co">#&gt;  package      * version       date       lib source                              </span>
-<span class="co">#&gt;  assertthat     0.2.1         2019-03-21 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  backports      1.1.8         2020-06-17 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  callr          3.4.3         2020-03-28 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  cli            2.0.2         2020-02-28 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  colorspace     1.4-1         2019-03-18 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  crayon         1.3.4         2017-09-16 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  desc           1.2.0         2018-05-01 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  digest         0.6.25        2020-02-23 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  dplyr          1.0.0         2020-05-29 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  ellipsis       0.3.1         2020-05-15 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  evaluate       0.14          2019-05-28 [1] CRAN (R 4.0.1)                      </span>
-<span class="co">#&gt;  fansi          0.4.1         2020-01-08 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  farver         2.0.3         2020-01-16 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  generics       0.0.2         2018-11-29 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  ggplot2      * 3.3.2         2020-06-19 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  glue           1.4.1         2020-05-13 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  gtable         0.3.0         2019-03-25 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  hyperSpec    * 0.99-20200719 2020-07-28 [1] Github (cbeleites/hyperSpec@1dbf404)</span>
-<span class="co">#&gt;  isoband        0.2.2         2020-06-20 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  jpeg           0.1-8.1       2019-10-24 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  labeling       0.3           2014-08-23 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  lattice      * 0.20-41       2020-04-02 [2] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  latticeExtra   0.6-29        2019-12-19 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  lazyeval       0.2.2         2019-03-15 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  lifecycle      0.2.0         2020-03-06 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  magrittr       1.5           2014-11-22 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  MASS           7.3-51.6      2020-04-26 [2] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  Matrix         1.2-18        2019-11-27 [2] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  mgcv           1.8-31        2019-11-09 [2] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  munsell        0.5.0         2018-06-12 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  nlme           3.1-148       2020-05-24 [2] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  pillar         1.4.6         2020-07-10 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  pkgbuild       1.1.0         2020-07-13 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  pkgconfig      2.0.3         2019-09-22 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  pkgload        1.1.0         2020-05-29 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  png            0.1-7         2013-12-03 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  praise         1.0.0         2015-08-11 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  prettyunits    1.1.1         2020-01-24 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  processx       3.4.3         2020-07-05 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  ps             1.3.3         2020-05-08 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  purrr          0.3.4         2020-04-17 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  R6             2.4.1         2019-11-12 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  RColorBrewer   1.1-2         2014-12-07 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  rlang          0.4.7         2020-07-09 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  rprojroot      1.3-2         2018-01-03 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  rstudioapi     0.11          2020-02-07 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  scales         1.1.1         2020-05-11 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  testthat       2.3.2         2020-03-02 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  tibble         3.0.3         2020-07-10 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  tidyselect     1.1.0         2020-05-11 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  utf8           1.1.4         2018-05-24 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  vctrs          0.3.2         2020-07-15 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  viridisLite    0.3.0         2018-02-01 [1] CRAN (R 4.0.1)                      </span>
-<span class="co">#&gt;  withr          2.2.0         2020-04-20 [1] CRAN (R 4.0.2)                      </span>
-<span class="co">#&gt;  xml2           1.3.2         2020-04-23 [1] CRAN (R 4.0.2)                      </span>
+<span class="co">#&gt;  package      * version       date       lib source                            </span>
+<span class="co">#&gt;  assertthat     0.2.1         2019-03-21 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  backports      1.1.8         2020-06-17 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  callr          3.4.3         2020-03-28 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  cli            2.0.2         2020-02-28 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  colorspace     1.4-1         2019-03-18 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  crayon         1.3.4         2017-09-16 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  desc           1.2.0         2018-05-01 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  digest         0.6.25        2020-02-23 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  dplyr          1.0.0         2020-05-29 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  ellipsis       0.3.1         2020-05-15 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  evaluate       0.14          2019-05-28 [1] CRAN (R 4.0.1)                    </span>
+<span class="co">#&gt;  fansi          0.4.1         2020-01-08 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  farver         2.0.3         2020-01-16 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  generics       0.0.2         2018-11-29 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  ggplot2      * 3.3.2         2020-06-19 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  glue           1.4.1         2020-05-13 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  gtable         0.3.0         2019-03-25 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  hyperSpec    * 0.99-20200719 2020-07-28 [1] Github (GegznaV/hyperSpec@2227bf4)</span>
+<span class="co">#&gt;  isoband        0.2.2         2020-06-20 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  jpeg           0.1-8.1       2019-10-24 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  labeling       0.3           2014-08-23 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  lattice      * 0.20-41       2020-04-02 [2] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  latticeExtra   0.6-29        2019-12-19 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  lazyeval       0.2.2         2019-03-15 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  lifecycle      0.2.0         2020-03-06 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  magrittr       1.5           2014-11-22 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  MASS           7.3-51.6      2020-04-26 [2] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  Matrix         1.2-18        2019-11-27 [2] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  mgcv           1.8-31        2019-11-09 [2] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  munsell        0.5.0         2018-06-12 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  nlme           3.1-148       2020-05-24 [2] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  pillar         1.4.6         2020-07-10 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  pkgbuild       1.1.0         2020-07-13 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  pkgconfig      2.0.3         2019-09-22 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  pkgload        1.1.0         2020-05-29 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  png            0.1-7         2013-12-03 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  praise         1.0.0         2015-08-11 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  prettyunits    1.1.1         2020-01-24 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  processx       3.4.3         2020-07-05 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  ps             1.3.3         2020-05-08 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  purrr          0.3.4         2020-04-17 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  R6             2.4.1         2019-11-12 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  RColorBrewer   1.1-2         2014-12-07 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  rlang          0.4.7         2020-07-09 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  rprojroot      1.3-2         2018-01-03 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  rstudioapi     0.11          2020-02-07 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  scales         1.1.1         2020-05-11 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  testthat       2.3.2         2020-03-02 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  tibble         3.0.3         2020-07-10 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  tidyselect     1.1.0         2020-05-11 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  utf8           1.1.4         2018-05-24 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  vctrs          0.3.2         2020-07-15 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  viridisLite    0.3.0         2018-02-01 [1] CRAN (R 4.0.1)                    </span>
+<span class="co">#&gt;  withr          2.2.0         2020-04-20 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  xml2           1.3.2         2020-04-23 [1] CRAN (R 4.0.2)                    </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; [1] /Users/runner/work/_temp/Library</span>
 <span class="co">#&gt; [2] /Library/Frameworks/R.framework/Versions/4.0/Resources/library</span>
