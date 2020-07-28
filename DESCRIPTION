@@ -25,7 +25,8 @@ Suggests:
     bookdown,
     covr,
     knitr,
-    sessioninfo
+    sessioninfo,
+    vdiffr
 URL: 
     https://r-hyperspec.github.io/hySpc.ggplot2,
     https://github.com/r-hyperspec/hySpc.ggplot2
