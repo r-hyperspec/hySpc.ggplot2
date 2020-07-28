@@ -81,3 +81,35 @@ qplotmap <- function(object,
 
   p + labs(x = xlabel, y = ylabel, fill = flabel)
 }
+
+# Unit tests -----------------------------------------------------------------
+#' @import hySpc.testthat
+hySpc.testthat::test(qplotmap) <- function() {
+  context("qplotmap")
+  # To update reference data for visual unit tests, run:
+  # vdiffr::manage_cases()
+
+  test_that("qplotmap() works", {
+
+    # Data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # expect_silent(hy_spectra <- hyperSpec:::generate_hy_spectra())
+    # expect_silent(hy_profile <- hyperSpec:::generate_hy_profile())
+    expect_silent(hy_map     <- hyperSpec:::generate_hy_map())
+
+    # Regular tests: warnings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    # Regular tests: errors ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    expect_error(qplotmap(), 'argument "object" is missing, with no default')
+    expect_silent(gg <- qplotmap(hy_map))
+    expect_is(gg, "gg")
+    expect_is(gg, "ggplot")
+
+    expect_silent(gg2 <- qplotmap(hy_spectra, map.lineonly = TRUE))
+    expect_is(gg2, "gg")
+    expect_is(gg2, "ggplot")
+
+
+    # Visual tests
+    # vdiffr::expect_doppelganger("qplotspc-01",       gg)
+  })
+}
