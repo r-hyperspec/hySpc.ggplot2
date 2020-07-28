@@ -6,3 +6,4 @@ man/*.Rd
 docs/
 NAMESPACE
 _tmp/
+*.pdf
