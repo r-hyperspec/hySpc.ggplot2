@@ -314,8 +314,8 @@ colmix.rgb <- function(x, purecol, against = 1, sub = TRUE,
 
 # Unit tests -----------------------------------------------------------------
 #' @import hySpc.testthat
-hySpc.testthat::test(qplotmap) <- function() {
-  context("qplotmap")
+hySpc.testthat::test(qplotmixmap) <- function() {
+  context("qplotmixmap")
   # To update reference data for visual unit tests, run:
   # vdiffr::manage_cases()
 
