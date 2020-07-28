@@ -104,7 +104,7 @@ hySpc.testthat::test(qplotmap) <- function() {
     expect_is(gg, "gg")
     expect_is(gg, "ggplot")
 
-    expect_silent(gg2 <- qplotmap(hy_spectra, map.lineonly = TRUE))
+    expect_silent(gg2 <- qplotmap(hy_map, map.lineonly = TRUE))
     expect_is(gg2, "gg")
     expect_is(gg2, "ggplot")
 
