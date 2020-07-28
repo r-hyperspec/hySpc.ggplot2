@@ -310,3 +310,36 @@ colmix.rgb <- function(x, purecol, against = 1, sub = TRUE,
 
   cols
 }
+
+
+# Unit tests -----------------------------------------------------------------
+#' @import hySpc.testthat
+hySpc.testthat::test(qplotmap) <- function() {
+  context("qplotmap")
+  # To update reference data for visual unit tests, run:
+  # vdiffr::manage_cases()
+
+  test_that("qplotmixmap() works", {
+
+    # Data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # expect_silent(hy_spectra <- hyperSpec:::generate_hy_spectra())
+    # expect_silent(hy_profile <- hyperSpec:::generate_hy_profile())
+    expect_silent(hy_map <- hyperSpec:::generate_hy_map())
+
+    # Regular tests: warnings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    # Regular tests: errors ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    expect_error(qplotmixmap(), 'argument "object" is missing, with no default')
+    expect_warning(
+      gg <- qplotmixmap(
+        hy_map[, , c(5000, 6500, 8000)],
+        purecol = c(colg = "red", Phe = "green", Lipid = "blue")
+      )
+    )
+    expect_is(gg, "list")
+    expect_length(gg, 2)
+
+    # Visual tests
+    # vdiffr::expect_doppelganger("qplotspc-01",       gg)
+  })
+}
