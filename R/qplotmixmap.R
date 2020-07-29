@@ -1,28 +1,54 @@
 
-#' @title `qplotmap` with colour mixing for multivariate overlay
-#' @description
-#' Map plot with colour overlay.
+#' @title Quick False-Colour Map with Colour Mixing for Multivariate Overlay
 #'
-#' @param object `hyperSpec` object
-#' @param ... handed over to [qmixlegend()] and [qmixtile()]
-#' @return invisible list with ggplot2 objects map and legend
-#' @seealso [qmixtile()]
-#' @author Claudia Beleites
-#' @concept ggplot2
-#' @concept plots
+#' @description
+#' This function plots false-colour map with colour mixing for multivariate
+#' overlay by using \pkg{ggplot2} functions.
+#'
+#' **Note:** The function is still experimental and may change in the future.
+#'
+#' @param object A [`hyperSpec`][hyperSpec::hyperSpec-class] object.
+#' @param ... Further arguments handed to [qmixlegend()] and [qmixtile()].
+#'
+#' @return An invisible list with [ggplot2::ggplot()] objects for map and legend.
+#'
 #' @importFrom grid pushViewport viewport popViewport grid.layout unit
-#' @import ggplot2
+#' @importFrom lazyeval f_rhs
+#'
 #' @export
 #'
-#' @examples
-#' faux_cell <- faux_cell - spc.fit.poly.below(faux_cell)
-#' faux_cell <- sweep(faux_cell, 1, apply(faux_cell, 1, mean), "/")
-#' faux_cell <- sweep(faux_cell, 2, apply(faux_cell, 2, quantile, 0.05), "-")
+#' @concept ggplot2
+#' @concept quick plots
 #'
-#' qplotmixmap(faux_cell[, , c(940, 1002, 1440)],
-#'   purecol = c(colg = "red", Phe = "green", Lipid = "blue")
+#' @seealso [qmixtile()]
+#'
+#' @author Claudia Beleites
+#'
+#' @examples
+#' set.seed(1)
+#' faux_cell <- generate_faux_cell()
+#'
+#' # Original data at certan wavelengths
+#' qplotmixmap(faux_cell[, , c(800, 1200, 1500)],
+#'   purecol = c(matrix = "red", cell = "green", nucleus = "blue")
 #' )
-#' @importFrom lazyeval f_rhs
+#'
+#' # With baseline removed
+#' faux_cell_2 <- faux_cell - spc.fit.poly.below(faux_cell)
+#'
+#' qplotmixmap(faux_cell_2[, , c(800, 1200, 1500)],
+#'   purecol = c(matrix = "red", cell = "green", nucleus = "blue")
+#' )
+#'
+#' # With further pre-processing
+#' faux_cell_3 <- faux_cell_2
+#' faux_cell_3 <- sweep(faux_cell_3, 1, apply(faux_cell_3, 1, mean), "/")
+#' faux_cell_3 <- sweep(faux_cell_3, 2, apply(faux_cell_3, 2, quantile, 0.05), "-")
+#'
+#' ggg <- qplotmixmap(faux_cell_3[, , c(800, 1200, 1500)],
+#'   purecol = c(matrix = "red", cell = "green", nucleus = "blue")
+#' )
+
 qplotmixmap <- function(object, ...) {
   p <- qmixtile(object@data, ...) +
     coord_equal()
