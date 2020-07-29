@@ -41,7 +41,6 @@
 #'
 #' qplotmap(faux_cell[ , , 800])
 #'
-#'
 #' qplotmap(faux_cell[ , , 1200]) +
 #'    scale_fill_gradientn(colours = alois.palette())
 
