@@ -27,9 +27,9 @@ legendright <- function(p, l, legend.width = 8, legend.unit = "lines") {
 #' @param object matrix to be plotted with mixed colour channels
 #' @param purecol pure component colours, names determine legend labels
 #' @param mapping see [ggplot2::geom_tile()]
-#' @param ... `qmixtile`: handed to [colmix.rgb()]
+#' @param ... `qmixtile`: handed to [colmix_rgb()]
 #'
-#'   `qmixlegend()` and `colmix.rgb()` hand further arguments to the
+#'   `qmixlegend()` and `colmix_rgb()` hand further arguments to the
 #'   `normalize` function
 #' @param map.tileonly if `TRUE`, `mapping` will be handed to
 #'   [ggplot2::geom_tile()] instead of [ggplot2::ggplot()].
@@ -41,7 +41,7 @@ qmixtile <- function(object,
                      map.tileonly = FALSE) {
 
   ## calculate fill colours
-  fill <- colmix.rgb(object[[f_rhs(mapping$fill)]], purecol, ...)
+  fill <- colmix_rgb(object[[f_rhs(mapping$fill)]], purecol, ...)
   object[[f_rhs(mapping$fill)]] <- fill
 
   if (map.tileonly) {
@@ -190,7 +190,7 @@ qmixlegend <- function(x, purecol, dx = 0.33, ny = 100, labels = names(purecol),
 
   df <- data.frame()
   for (column in seq_along(purecol)) {
-    tmp <- colmix.rgb(l$fill[, column, drop = FALSE], purecol[column],
+    tmp <- colmix_rgb(l$fill[, column, drop = FALSE], purecol[column],
       normalize = NULL, ...
     )
 
@@ -236,7 +236,7 @@ qmixlegend <- function(x, purecol, dx = 0.33, ny = 100, labels = names(purecol),
 #' @concept plots
 #' @export
 #' @importFrom grDevices col2rgb rgb
-colmix.rgb <- function(x, purecol, against = 1, sub = TRUE,
+colmix_rgb <- function(x, purecol, against = 1, sub = TRUE,
                        normalize = normalize.colrange, ...) {
   if (!is.null(normalize)) {
     x <- normalize(x, ...)
