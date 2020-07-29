@@ -1,29 +1,41 @@
 
-#' @title Spectra plotting with \pkg{ggplot2}: `qplotc()`
+#' @title Plot Quick Spectroscopic Profile with \pkg{ggplot2}: `qplotc()`
+#'
 #' @description
-#' Spectra plotting with \pkg{ggplot2}.
+#' This function plots spectroscopic concenration, depth, time-series, etc.
+#' profiles by using \pkg{ggplot2}.
 #'
-#' These functions are still experimental and may change in the future.
+#' **Note:** The function is still experimental and may change in the future.
 #'
-#' @param object hyperSpec object
-#' @param mapping see  [ggplot2::geom_point()]
-#' @param ... handed to [ggplot2::geom_point()]
+#' @param object A [`hyperSpec`][hyperSpec::hyperSpec-class] object.
+#' @param mapping See [ggplot2::geom_point()].
+#' @param ... Further arguments handed to [ggplot2::geom_point()].
+#' @param func Function to summarize the wavelengths. If `NULL`, only the first
+#'        wavelength is used.
+#' @param func.args A named list with arguments to `func`.
+#' @param map.pointonly If `TRUE`, `mapping` will be handed to
+#'        [ggplot2::geom_point()] instead of [ggplot2::ggplot()].
+#'
+#' @return A [ggplot2::ggplot()] object.
+#'
 #' @export
-#' @param func function to summarize the wavelengths, if `NULL`, only the first
-#'   wavelength is used
-#' @param func.args arguments to `func`
-#' @param map.pointonly if `TRUE`, `mapping` will be handed to
-#'   [ggplot2::geom_point()] instead of [ggplot2::ggplot()].
-#' @return a [ggplot2::ggplot()] object
-#' @author Claudia Beleites
-#' @concept ggplot2
-#' @concept plots
-#' @seealso [hyperSpec::plotc()]
 #'
-#'   [ggplot2::ggplot()], [ggplot2::geom_point()]
+#' @concept ggplot2
+#' @concept quick plots
+#'
+#' @seealso
+#' - [hyperSpec::plotc()];
+#' - [ggplot2::ggplot()], [ggplot2::geom_point()].
+#'
+#' @author Claudia Beleites
+#'
 #' @examples
-#' qplotc(flu)
-#' qplotc(flu) + geom_smooth(method = "lm")
+#' qplotc(flu) # Notice the warning
+#'
+#' qplotc(flu[ , , 410])
+#'
+#' qplotc(flu[ , , 410]) + geom_smooth(method = "lm", formula = y ~ x)
+
 qplotc <- function(object, mapping = aes_string(x = "c", y = "spc"), ...,
                    func = NULL, func.args = list(),
                    map.pointonly = FALSE) {
