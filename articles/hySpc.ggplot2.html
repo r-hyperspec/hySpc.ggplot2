@@ -148,21 +148,26 @@ Nevertheless, package <strong>ggplot2</strong> graphics can easily be obtained b
 <h2 class="hasAnchor">
 <a href="#qplotspc" class="anchor"></a>Function <code class="sourceCode r"><span class="kw">qplotspc</span>()</code>
 </h2>
-<p>Plot spectra with <code class="sourceCode r"><span class="kw">qplotspc</span>()</code> (Fig. <a href="#fig:ggplotspc">1</a>).<!-- `as.long.df()`{.r}" --></p>
+<p>Plot spectra with <code class="sourceCode r"><span class="kw">qplotspc</span>()</code> (Fig. <a href="#fig:ggplotspc-01">1</a>).</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(<span class="kw">flu</span>) <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(colour = <span class="kw">c</span>)
 </pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:ggplotspc"></span>
-<img src="hySpc.ggplot2_files/figure-html/ggplotspc-1.png" alt="Plot spectra with `as.long.df()`{.r}  "><p class="caption">
-Figure 1: Plot spectra with <code class="sourceCode r"><span class="kw">as.long.df</span>()</code>
+<span id="fig:ggplotspc-01"></span>
+<img src="hySpc.ggplot2_files/figure-html/ggplotspc-01-1.png" alt="Spectra produced by `qplotspc()`{.r}: `flu` data.  "><p class="caption">
+Figure 1: Spectra produced by <code class="sourceCode r"><span class="kw">qplotspc</span>()</code>: <code>flu</code> data.
 </p>
 </div>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(<span class="kw">paracetamol</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2800</span> <span class="op">~</span> <span class="kw">max</span>, <span class="kw">min</span> <span class="op">~</span> <span class="fl">1800</span>)) <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_reverse</a></span>(breaks = <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span>))
 </pre></div>
-<p><img src="hySpc.ggplot2_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;"></p>
+<div class="figure" style="text-align: center">
+<span id="fig:ggplotspc-02"></span>
+<img src="hySpc.ggplot2_files/figure-html/ggplotspc-02-1.png" alt="Spectra with reversed order of x axis values: `paracetamol` data.  "><p class="caption">
+Figure 2: Spectra with reversed order of x axis values: <code>paracetamol</code> data.
+</p>
+</div>
 <p>Let’s look at the other dataset called <code>faux_cell</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">1</span>)
@@ -183,7 +188,12 @@ Figure 1: Plot spectra with <code class="sourceCode r"><span class="kw">as.long.
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">25</span>)
 <span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="kw">faux_cell</span>), spc.nmax = <span class="fl">10</span>) <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(colour = <span class="kw">region</span>)
 </pre></div>
-<p><img src="hySpc.ggplot2_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;"></p>
+<div class="figure" style="text-align: center">
+<span id="fig:ggplotspc-03"></span>
+<img src="hySpc.ggplot2_files/figure-html/ggplotspc-03-1.png" alt="Ten randomly selected spectra from `faux_cell` dataset.  "><p class="caption">
+Figure 3: Ten randomly selected spectra from <code>faux_cell</code> dataset.
+</p>
+</div>
 <p>Average spectra of each region.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(
@@ -192,7 +202,12 @@ Figure 1: Plot spectra with <code class="sourceCode r"><span class="kw">as.long.
 ) <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span>(<span class="kw">region</span> <span class="op">~</span> <span class="kw">.</span>)
 </pre></div>
-<p><img src="hySpc.ggplot2_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;"></p>
+<div class="figure" style="text-align: center">
+<span id="fig:ggplotspc-04"></span>
+<img src="hySpc.ggplot2_files/figure-html/ggplotspc-04-1.png" alt="Mean spectra of each region in `faux_cell` dataset.  "><p class="caption">
+Figure 4: Mean spectra of each region in <code>faux_cell</code> dataset.
+</p>
+</div>
 <p>Mean <span class="math inline">\(\pm\)</span> standard deviation:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(
@@ -201,7 +216,12 @@ Figure 1: Plot spectra with <code class="sourceCode r"><span class="kw">as.long.
 ) <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span>(<span class="kw">region</span> <span class="op">~</span> <span class="kw">.</span>)
 </pre></div>
-<p><img src="hySpc.ggplot2_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;"></p>
+<div class="figure" style="text-align: center">
+<span id="fig:ggplotspc-05"></span>
+<img src="hySpc.ggplot2_files/figure-html/ggplotspc-05-1.png" alt="Mean $\pm$ standard deviation spectra of each region in `faux_cell` dataset.  "><p class="caption">
+Figure 5: Mean <span class="math inline">\(\pm\)</span> standard deviation spectra of each region in <code>faux_cell</code> dataset.
+</p>
+</div>
 </div>
 <div id="qplotc" class="section level2">
 <h2 class="hasAnchor">
@@ -213,23 +233,38 @@ Figure 1: Plot spectra with <code class="sourceCode r"><span class="kw">as.long.
 <span class="fu"><a href="../reference/qplotc.html">qplotc</a></span>(<span class="kw">flu</span>)
 <span class="co">#&gt; Warning in qplotc(flu): Intensity at first wavelengh only is used.</span>
 </pre></div>
-<p><img src="hySpc.ggplot2_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;"></p>
+<div class="figure" style="text-align: center">
+<span id="fig:ggplotc-01"></span>
+<img src="hySpc.ggplot2_files/figure-html/ggplotc-01-1.png" alt="Concentration profile: intensities at the first available wavelength value.  "><p class="caption">
+Figure 6: Concentration profile: intensities at the first available wavelength value.
+</p>
+</div>
 <p>It is better to indicate the wavelength of interest explicitly.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotc.html">qplotc</a></span>(<span class="kw">flu</span>[ , , <span class="fl">410</span>])
 </pre></div>
-<p><img src="hySpc.ggplot2_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;"></p>
+<div class="figure" style="text-align: center">
+<span id="fig:ggplotc-02"></span>
+<img src="hySpc.ggplot2_files/figure-html/ggplotc-02-1.png" alt="Concentration profile: intensities at 410 nm.   "><p class="caption">
+Figure 7: Concentration profile: intensities at 410 nm.
+</p>
+</div>
 <div class="sourceCode" id="cb10"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotc.html">qplotc</a></span>(<span class="kw">flu</span>[ , , <span class="fl">410</span>]) <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span>(method = <span class="st">"lm"</span>, formula = <span class="kw">y</span> <span class="op">~</span> <span class="kw">x</span>)
 </pre></div>
-<p><img src="hySpc.ggplot2_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;"></p>
+<div class="figure" style="text-align: center">
+<span id="fig:ggplotc-03"></span>
+<img src="hySpc.ggplot2_files/figure-html/ggplotc-03-1.png" alt="Concentration profile with fitted line.  "><p class="caption">
+Figure 8: Concentration profile with fitted line.
+</p>
+</div>
 </div>
 <div id="ggplotmap" class="section level2">
 <h2 class="hasAnchor">
 <a href="#ggplotmap" class="anchor"></a>Function <code class="sourceCode r"><span class="kw">ggplotmap</span>()</code>
 </h2>
-<p>Fig. <a href="#fig:ggplotmap"><strong>??</strong></a> shows a map created with package <strong>ggplot2</strong>.</p>
+<p>Fig. <a href="#fig:ggplotmap-01">9</a> shows a map created with package <strong>ggplot2</strong>.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">7</span>)
 <span class="kw">faux_cell</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/faux_cell.html">generate_faux_cell</a></span>()
@@ -237,12 +272,22 @@ Figure 1: Plot spectra with <code class="sourceCode r"><span class="kw">as.long.
 <div class="sourceCode" id="cb12"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span>(<span class="kw">faux_cell</span>[ , , <span class="fl">1200</span>])
 </pre></div>
-<p><img src="hySpc.ggplot2_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;"></p>
+<div class="figure" style="text-align: center">
+<span id="fig:ggplotmap-01"></span>
+<img src="hySpc.ggplot2_files/figure-html/ggplotmap-01-1.png" alt="False-colour map produced by `qplotmap()`{.r}.  "><p class="caption">
+Figure 9: False-colour map produced by <code class="sourceCode r"><span class="kw">qplotmap</span>()</code>.
+</p>
+</div>
 <div class="sourceCode" id="cb13"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span>(<span class="kw">faux_cell</span>[ , , <span class="fl">1200</span>]) <span class="op">+</span>
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="st">"Intensity"</span>, colours = <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/palettes.html">matlab.palette</a></span>())
 </pre></div>
-<p><img src="hySpc.ggplot2_files/figure-html/unnamed-chunk-13-1.png" style="display: block; margin: auto;"></p>
+<div class="figure" style="text-align: center">
+<span id="fig:ggplotmap-02"></span>
+<img src="hySpc.ggplot2_files/figure-html/ggplotmap-02-1.png" alt="False-colour map produced by `qplotmap()`{.r}: different color palette.  "><p class="caption">
+Figure 10: False-colour map produced by <code class="sourceCode r"><span class="kw">qplotmap</span>()</code>: different color palette.
+</p>
+</div>
 <p>If you have package <strong>viridis</strong> installed, you may try:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span>(<span class="kw">faux_cell</span>[ , , <span class="fl">1200</span>]) <span class="op">+</span>
@@ -266,7 +311,12 @@ Figure 1: Plot spectra with <code class="sourceCode r"><span class="kw">as.long.
 )
 <span class="co">#&gt; Warning: Removed 300 rows containing missing values (geom_point).</span>
 </pre></div>
-<p><img src="hySpc.ggplot2_files/figure-html/unnamed-chunk-15-1.png" style="display: block; margin: auto;"></p>
+<div class="figure" style="text-align: center">
+<span id="fig:qplotmixmap-01"></span>
+<img src="hySpc.ggplot2_files/figure-html/qplotmixmap-01-1.png" alt="False-color map produced by `qplotmixmap()`{.r}: raw `faux_cell` spectra at 800, 1200, and 1500 $cm^{-1}.$    "><p class="caption">
+Figure 11: False-color map produced by <code class="sourceCode r"><span class="kw">qplotmixmap</span>()</code>: raw <code>faux_cell</code> spectra at 800, 1200, and 1500 <span class="math inline">\(cm^{-1}.\)</span>
+</p>
+</div>
 <p>With baseline removed:</p>
 <div class="sourceCode" id="cb17"><pre class="downlit">
 <span class="kw">faux_cell_2</span> <span class="op">&lt;-</span> <span class="kw">faux_cell</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/baselines.html">spc.fit.poly.below</a></span>(<span class="kw">faux_cell</span>)
@@ -276,7 +326,12 @@ Figure 1: Plot spectra with <code class="sourceCode r"><span class="kw">as.long.
 )
 <span class="co">#&gt; Warning: Removed 300 rows containing missing values (geom_point).</span>
 </pre></div>
-<p><img src="hySpc.ggplot2_files/figure-html/unnamed-chunk-16-1.png" style="display: block; margin: auto;"></p>
+<div class="figure" style="text-align: center">
+<span id="fig:qplotmixmap-02"></span>
+<img src="hySpc.ggplot2_files/figure-html/qplotmixmap-02-1.png" alt="False-color map of `faux_cell` spectra with base line removed.  "><p class="caption">
+Figure 12: False-color map of <code>faux_cell</code> spectra with base line removed.
+</p>
+</div>
 <p>With some further pre-processing:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit">
 <span class="kw">faux_cell_3</span> <span class="op">&lt;-</span> <span class="kw">faux_cell_2</span>
@@ -288,7 +343,12 @@ Figure 1: Plot spectra with <code class="sourceCode r"><span class="kw">as.long.
 )
 <span class="co">#&gt; Warning: Removed 300 rows containing missing values (geom_point).</span>
 </pre></div>
-<p><img src="hySpc.ggplot2_files/figure-html/unnamed-chunk-17-1.png" style="display: block; margin: auto;"></p>
+<div class="figure" style="text-align: center">
+<span id="fig:qplotmixmap-03"></span>
+<img src="hySpc.ggplot2_files/figure-html/qplotmixmap-03-1.png" alt="False-color map of pre-processed `faux_cell` spectra.  "><p class="caption">
+Figure 13: False-color map of pre-processed <code>faux_cell</code> spectra.
+</p>
+</div>
 </div>
 <div id="general-plotting-ggplot2" class="section level2">
 <h2 class="hasAnchor">
@@ -313,15 +373,15 @@ It is therefore highly recommended to calculate the particular data to be plotte
 <p>Note that <code class="sourceCode r"><span class="kw">qpotspc</span>()</code> specifies aesthetics <code>y = spc</code> and <code>groups = .rownames</code>, which do not have corresponding columns in the <code>data.frame</code> returned by <code class="sourceCode r"><span class="kw">as.t.df</span>()</code>.
 These aesthetics must therefore be set manually in the aesthetics definition in <code class="sourceCode r"><span class="kw">geom_ribbon</span>()</code> (or any other <code class="sourceCode r">geom_<span class="op">*</span>()</code> that uses <code class="sourceCode r"><span class="kw">as.t.df</span>()</code>).
 Otherwise, errors occur that object <code>spc</code> (and/or <code>.rownames</code>) cannot be found.
-Cut axes can be implemented by faceting (Fig. <a href="#fig:ggplotspccut">2</a>).</p>
+Cut axes can be implemented by faceting (Fig. <a href="#fig:ggplotspccut">14</a>).</p>
 <div class="sourceCode" id="cb20"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(<span class="kw">paracetamol</span> <span class="op">/</span> <span class="fl">1e4</span>, wl.range = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="kw">min</span> <span class="op">~</span> <span class="fl">1800</span>, <span class="fl">2800</span> <span class="op">~</span> <span class="kw">max</span>)) <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span>(breaks = <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span>))
 </pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotspccut"></span>
-<img src="hySpc.ggplot2_files/figure-html/ggplotspccut-1.png" alt="Cut spectra with package **ggplot2**.   "><p class="caption">
-Figure 2: Cut spectra with package <strong>ggplot2</strong>.
+<img src="hySpc.ggplot2_files/figure-html/ggplotspccut-1.png" alt="Plot separate regions of specra.  "><p class="caption">
+Figure 14: Plot separate regions of specra.
 </p>
 </div>
 </div>
