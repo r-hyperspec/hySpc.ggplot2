@@ -141,6 +141,9 @@ hySpc.testthat::test(qplotspc) <- function() {
     expect_is(gg2, "gg")
     expect_is(gg2, "ggplot")
 
+    expect_silent(gg3 <- qplotspc(hy_spectra, c(min ~ 500, 600 ~ max)))
+    expect_is(gg2, "gg")
+    expect_is(gg2, "ggplot")
 
     # Visual tests
     # vdiffr::expect_doppelganger("qplotspc-01",       gg)
