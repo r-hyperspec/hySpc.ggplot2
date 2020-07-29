@@ -121,17 +121,21 @@ Nevertheless, package **ggplot2** graphics can easily be obtained by using `qplo
 
 ## Function `qplotspc()`{.r} {#qplotspc}
 
-Plot spectra with `qplotspc()`{.r} (Fig. \@ref(fig:ggplotspc)).<!-- `as.long.df()`{.r}" -->
+Plot spectra with `qplotspc()`{.r} (Fig. \@ref(fig:ggplotspc-01)).
 
 ```{r include=FALSE}
-CAPTION = "Plot spectra with `as.long.df()`{.r}  "
+CAPTION = "Spectra produced by `qplotspc()`{.r}: `flu` data.  "
 ```
-
-```{r ggplotspc, fig.cap=CAPTION}
+```{r ggplotspc-01, fig.cap=CAPTION}
 qplotspc(flu) + aes(colour = c)
 ```
 
-```{r}
+
+```{r include=FALSE}
+CAPTION = "Spectra with reversed order of x axis values: `paracetamol` data.  "
+
+```
+```{r ggplotspc-02, fig.cap=CAPTION}
 qplotspc(paracetamol, c(2800 ~ max, min ~ 1800)) +
   scale_x_reverse(breaks = seq(0, 3200, 400))
 ```
@@ -142,15 +146,21 @@ set.seed(1)
 faux_cell <- generate_faux_cell()
 faux_cell
 ```
-
-```{r}
+```{r include=FALSE}
+CAPTION = "Ten randomly selected spectra from `faux_cell` dataset.  "
+```
+```{r ggplotspc-03, fig.cap=CAPTION}
 set.seed(25)
 qplotspc(sample(faux_cell), spc.nmax = 10) + aes(colour = region)
 ```
 
 Average spectra of each region.
 
-```{r}
+```{r include=FALSE}
+CAPTION = "Mean spectra of each region in `faux_cell` dataset.  "
+
+```
+```{r ggplotspc-04, fig.cap=CAPTION}
 qplotspc(
   aggregate(faux_cell, faux_cell$region, mean),
   mapping = aes(x = .wavelength, y = spc, colour = region)
@@ -159,7 +169,12 @@ qplotspc(
 ```
 
 Mean $\pm$ standard deviation:
-```{r}
+
+```{r include=FALSE}
+CAPTION = "Mean $\\pm$ standard deviation spectra of each region in `faux_cell` dataset.  "
+
+```
+```{r ggplotspc-05, fig.cap=CAPTION}
 qplotspc(
  aggregate(faux_cell, faux_cell$region, mean_pm_sd),
  mapping = aes(x = .wavelength, y = spc, colour = region, group = .rownames)
@@ -173,39 +188,54 @@ qplotspc(
 This function plots spectroscopic concenration, depth, time-series, etc. profiles.
 
 By default, plots spectrum only at the first wavelength.
-```{r}
+
+```{r include=FALSE}
+CAPTION = "Concentration profile: intensities at the first available wavelength value.  "
+```
+```{r ggplotc-01, fig.cap=CAPTION}
 qplotc(flu)
 ```
 
 It is better to indicate the wavelength of interest explicitly.
-```{r}
+
+```{r include=FALSE}
+CAPTION = "Concentration profile: intensities at 410 nm.   "
+```
+```{r ggplotc-02, fig.cap=CAPTION}
 qplotc(flu[ , , 410])
 ```
 
 
-```{r}
+
+```{r include=FALSE}
+CAPTION = "Concentration profile with fitted line.  "
+```
+```{r ggplotc-03, fig.cap=CAPTION}
 qplotc(flu[ , , 410]) + 
   geom_smooth(method = "lm", formula = y ~ x)
 ```
 
 ## Function `ggplotmap()`{.r} {#ggplotmap}
 
-Fig. \@ref(fig:ggplotmap) shows a map created with package **ggplot2**.
+Fig. \@ref(fig:ggplotmap-01) shows a map created with package **ggplot2**.
 
-```{r include=FALSE}
-CAPTION = "False-colour map with package **ggplot2**  "
-```
-
-```{r ggplotmap, fig.cap=CAPTION}
+```{r}
 set.seed(7)
 faux_cell <- generate_faux_cell()
 ```
 
-```{r}
+
+```{r include=FALSE}
+CAPTION = "False-colour map produced by `qplotmap()`{.r}.  "
+```
+```{r ggplotmap-01, fig.cap=CAPTION}
 qplotmap(faux_cell[ , , 1200])
 ```
 
-```{r}
+```{r include=FALSE}
+CAPTION = "False-colour map produced by `qplotmap()`{.r}: different color palette.  "
+```
+```{r ggplotmap-02, fig.cap=CAPTION}
 qplotmap(faux_cell[ , , 1200]) +
     scale_fill_gradientn("Intensity", colours = matlab.palette())
 ```
@@ -230,14 +260,21 @@ faux_cell <- generate_faux_cell()
 ```
 
 Without pre-processing:
-```{r}
+
+```{r include=FALSE}
+CAPTION = "False-color map produced by `qplotmixmap()`{.r}: raw `faux_cell` spectra at 800, 1200, and 1500 $cm^{-1}.$    "
+```
+```{r qplotmixmap-01, fig.cap=CAPTION}
 qplotmixmap(faux_cell[, , c(800, 1200, 1500)],
   purecol = c(matrix = "red", cell = "green", nucleus = "blue")
 )
 ```
 
 With baseline removed:
-```{r}
+```{r include=FALSE}
+CAPTION = "False-color map of `faux_cell` spectra with base line removed.  "
+```
+```{r qplotmixmap-02, fig.cap=CAPTION}
 faux_cell_2 <- faux_cell - spc.fit.poly.below(faux_cell)
 
 qplotmixmap(faux_cell_2[, , c(800, 1200, 1500)],
@@ -246,7 +283,10 @@ qplotmixmap(faux_cell_2[, , c(800, 1200, 1500)],
 ```
 
 With some further pre-processing:
-```{r}
+```{r include=FALSE}
+CAPTION = "False-color map of pre-processed `faux_cell` spectra.  "
+```
+```{r qplotmixmap-03, fig.cap=CAPTION}
 faux_cell_3 <- faux_cell_2
 faux_cell_3 <- sweep(faux_cell_3, 1, apply(faux_cell_3, 1, mean), "/")
 faux_cell_3 <- sweep(faux_cell_3, 2, apply(faux_cell_3, 2, quantile, 0.05), "-")
@@ -269,7 +309,6 @@ It is therefore highly recommended to calculate the particular data to be plotte
 ```{r include=FALSE}
 CAPTION = "Mean $\\pm$ standard deviation with package **ggplot2**.  "
 ```
-
 ```{r ggplotmeansd, fig.cap=CAPTION, eval=FALSE}
 qplotspc(mean(faux_cell)) +
   geom_ribbon(aes(
@@ -289,9 +328,8 @@ Otherwise, errors occur that object `spc` (and/or `.rownames`) cannot be found.
 Cut axes can be implemented by faceting (Fig. \@ref(fig:ggplotspccut)).
 
 ```{r include=FALSE}
-CAPTION = "Cut spectra with package **ggplot2**.   "
+CAPTION = "Plot separate regions of specra.  "
 ```
-
 ```{r ggplotspccut, fig.cap=CAPTION}
 qplotspc(paracetamol / 1e4, wl.range = c(min ~ 1800, 2800 ~ max)) +
   scale_x_continuous(breaks = seq(0, 3200, 400))
