@@ -1,5 +1,8 @@
 #' @keywords internal
+#'
 #' @import hyperSpec
+#' @import ggplot2
+#'
 #' @importFrom graphics plot.new
 #' @importFrom methods validObject
 "_PACKAGE"
