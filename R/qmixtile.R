@@ -56,7 +56,7 @@ qmixtile <- function(object,
 }
 
 #' @description
-#' `normalize.colrange()` normalizes the range of each column to \[0, 1\].
+#' `normalize_colrange()` normalizes the range of each column to \[0, 1\].
 #' @rdname qplotmix
 #' @export
 #'
@@ -66,7 +66,7 @@ qmixtile <- function(object,
 #' @return list with components `ymin`, `max` and `fill` to specify value and
 #'   fill colour value (still numeric!) for the legend, otherwise the
 #'   normalized values
-normalize.colrange <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
+normalize_colrange <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
   ## legend
   if (legend) {
     y <- apply(x, 2, function(x) seq(min(x), max(x), length.out = n))
@@ -85,11 +85,11 @@ normalize.colrange <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
 }
 
 #' @description
-#' `normalize.range()` normalizes the range of all columns to \[0, 1\].
+#' `normalize_range()` normalizes the range of all columns to \[0, 1\].
 #' @rdname qplotmix
 #' @export
 #'
-normalize.range <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
+normalize_range <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
   if (legend) {
     y <- matrix(seq(min(x), max(x), length.out = n), nrow = n, ncol = ncol(x))
     dy2 <- abs(y[2, ] - y[1, ]) / 2
@@ -106,11 +106,11 @@ normalize.range <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
 }
 
 #' @description
-#' `normalize.null()` does not touch the values.
+#' `normalize_null()` does not touch the values.
 #' @rdname qplotmix
 #' @export
 #'
-normalize.null <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
+normalize_null <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
   if (legend) {
     y <- apply(x, 2, function(x) seq(min(x), max(x), length.out = n))
 
@@ -125,14 +125,14 @@ normalize.null <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
 }
 
 #' @description
-#' `normalize.minmax()` normalizes the range of each column j to \[min_j, max_j\]
+#' `normalize_minmax()` normalizes the range of each column j to \[min_j, max_j\]
 #' @rdname qplotmix
 #' @export
 #' @param min numeric with value corresponding to "lowest" colour for each
 #'   column
 #' @param max numeric with value corresponding to "hightest" colour for each
 #'   column
-normalize.minmax <- function(x, min = 0, max = 1, legend = FALSE, n = 100,
+normalize_minmax <- function(x, min = 0, max = 1, legend = FALSE, n = 100,
                              ...) {
   if (legend) {
     y <- matrix(seq(0, 1, length.out = n), nrow = n, ncol = ncol(x))
@@ -170,7 +170,7 @@ normalize.minmax <- function(x, min = 0, max = 1, legend = FALSE, n = 100,
 #' @concept plots
 #' @export
 qmixlegend <- function(x, purecol, dx = 0.33, ny = 100, labels = names(purecol),
-                       normalize = normalize.colrange, ...) {
+                       normalize = normalize_colrange, ...) {
   if (!is.matrix(x)) {
     x <- matrix(x, ncol = 1)
   }
@@ -237,7 +237,7 @@ qmixlegend <- function(x, purecol, dx = 0.33, ny = 100, labels = names(purecol),
 #' @export
 #' @importFrom grDevices col2rgb rgb
 colmix_rgb <- function(x, purecol, against = 1, sub = TRUE,
-                       normalize = normalize.colrange, ...) {
+                       normalize = normalize_colrange, ...) {
   if (!is.null(normalize)) {
     x <- normalize(x, ...)
   }
