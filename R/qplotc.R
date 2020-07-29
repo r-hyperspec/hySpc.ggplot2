@@ -55,7 +55,7 @@ qplotc <- function(object, mapping = aes_string(x = "c", y = "spc"), ...,
   }
 
   if (!is.null(func)) {
-    ylabel <- make.fn.expr(substitute(func), c(ylabel, func.args))
+    ylabel <- make_fn_expr(substitute(func), c(ylabel, func.args))
   }
   ylabel <- as.expression(ylabel)
 

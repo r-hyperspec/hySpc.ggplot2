@@ -1,5 +1,5 @@
 
-make.fn.expr <- function(fn, l = list()) {
+make_fn_expr <- function(fn, l = list()) {
   if (length(fn) > 1L) {
     fn <- "f"
   }
