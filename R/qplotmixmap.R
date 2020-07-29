@@ -13,13 +13,13 @@
 #' @importFrom grid pushViewport viewport popViewport grid.layout unit
 #' @import ggplot2
 #' @export
-#' @md
+#'
 #' @examples
 #' faux_cell <- faux_cell - spc.fit.poly.below(faux_cell)
 #' faux_cell <- sweep(faux_cell, 1, apply(faux_cell, 1, mean), "/")
 #' faux_cell <- sweep(faux_cell, 2, apply(faux_cell, 2, quantile, 0.05), "-")
 #'
-#' qplotmixmap(faux_cell [, , c(940, 1002, 1440)],
+#' qplotmixmap(faux_cell[, , c(940, 1002, 1440)],
 #'   purecol = c(colg = "red", Phe = "green", Lipid = "blue")
 #' )
 #' @importFrom lazyeval f_rhs

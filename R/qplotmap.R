@@ -17,7 +17,7 @@
 #'        [ggplot2::geom_tile()] instead of [ggplot2::ggplot()].
 #' @return a [ggplot2::ggplot()] object
 #' @export
-#' @md
+#'
 #' @author Claudia Beleites
 #' @concept ggplot2
 #' @concept plots
@@ -107,7 +107,6 @@ hySpc.testthat::test(qplotmap) <- function() {
     expect_silent(gg2 <- qplotmap(hy_map, map.lineonly = TRUE))
     expect_is(gg2, "gg")
     expect_is(gg2, "ggplot")
-
 
     # Visual tests
     # vdiffr::expect_doppelganger("qplotspc-01",       gg)

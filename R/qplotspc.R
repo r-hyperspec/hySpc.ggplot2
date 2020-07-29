@@ -18,7 +18,7 @@
 #' @concept ggplot2
 #' @concept plots
 #' @export
-#' @md
+#'
 #' @seealso
 #' [hyperSpec::plotspc()]
 #'
