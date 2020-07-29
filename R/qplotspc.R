@@ -1,42 +1,55 @@
 
-#' @title Spectra plotting with \pkg{ggplot2}: `qplotspc()`
+#' @title Quick Plot of Spectra with \pkg{ggplot2}: `qplotspc()`
+#'
 #' @description
-#' Spectra plotting with \pkg{ggplot2}.
+#' This function plots spectroscopic line plot by using \pkg{ggplot2}.
 #'
-#' These functions are still experimental and may change in future.
+#' By default, only a few spectra are plotted (see argument `spc.nmax`).
 #'
-#' @param x `hyperSpec` object
-#' @param wl.range wavelength ranges to plot
-#' @param ... handed to [ggplot2::geom_line()]
-#' @param mapping see  [ggplot2::geom_line()]
-#' @param spc.nmax maximum number of spectra to plot
-#' @param map.lineonly if `TRUE`, `mapping` will be handed to
-#' [ggplot2::geom_line()] instead of [ggplot2::ggplot()].
-#' @param debuglevel if > 0, additional debug output is produced
-#' @return a [ggplot2::ggplot()] object
-#' @author Claudia Beleites
-#' @concept ggplot2
-#' @concept plots
+#' **Note:** The function is still experimental and may change in the future.
+#'
+#' @param x A [`hyperSpec`][hyperSpec::hyperSpec-class] object.
+#' @param wl.range Wavelength ranges to plot.
+#' @param ... Further arguments handed to[ggplot2::geom_line()].
+#' @param mapping see [ggplot2::geom_line()].
+#' @param spc.nmax (integer) Maximum number of spectra to plot.
+#' @param map.lineonly If `TRUE`, `mapping` will be handed to
+#'        [ggplot2::geom_line()] instead of [ggplot2::ggplot()].
+#' @param debuglevel (`0`|`1`|`2`|`3`) If > 0, additional debug output is produced.
+#'
+#' @return A [ggplot2::ggplot()] object.
+#'
 #' @export
 #'
-#' @seealso
-#' [hyperSpec::plotspc()]
+#' @concept ggplot2
+#' @concept quick plots
 #'
-#' [ggplot2::ggplot()], [ggplot2::geom_line()]
+#' @seealso
+#' - [hyperSpec::plotspc()];
+#' - [ggplot2::ggplot()], [ggplot2::geom_line()].
+#'
+#' @author Claudia Beleites
 #'
 #' @examples
-#' qplotspc(faux_cell)
+#' qplotspc(flu)
 #'
 #' qplotspc(paracetamol, c(2800 ~ max, min ~ 1800)) +
 #'   scale_x_reverse(breaks = seq(0, 3200, 400))
 #'
-#' qplotspc(aggregate(faux_cell, faux_cell$region, mean),
+#' set.seed(1)
+#' faux_cell <- generate_faux_cell()
+#'
+#' qplotspc(faux_cell)
+#'
+#' qplotspc(
+#'   aggregate(faux_cell, faux_cell$region, mean),
 #'   mapping = aes(x = .wavelength, y = spc, colour = region)
 #' ) +
 #'   facet_grid(region ~ .)
 #'
-#' qplotspc(aggregate(faux_cell, faux_cell$region, mean_pm_sd),
-#'   mapping = aes(x = .wavelength, y = spc, colour = region, group = .rownames)
+#' qplotspc(
+#'  aggregate(faux_cell, faux_cell$region, mean_pm_sd),
+#'  mapping = aes(x = .wavelength, y = spc, colour = region, group = .rownames)
 #' ) +
 #'   facet_grid(region ~ .)
 #'
@@ -78,7 +91,6 @@ qplotspc <- function(x,
 
     df$.wl.range <- rep(unlist(tmp), each = nrow(x))
   }
-
 
   df <- df[!is.na(df$spc), , drop = FALSE]
   if (map.lineonly) {
