@@ -8,4 +8,5 @@
 <!-- badges: end -->
 
 
-Package **hySpc.ggplot2** is a bridge between [**hyperSpec**](https://r-hyperspec.github.io/) and [**ggplot2**](https://ggplot2.tidyverse.org/).
+Package **hySpc.ggplot2** contains functions to plot [**hyperSpec**](https://r-hyperspec.github.io/) object by using [**ggplot2**](https://ggplot2.tidyverse.org/) functions.
+
