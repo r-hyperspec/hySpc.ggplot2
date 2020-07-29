@@ -44,10 +44,10 @@
 <meta property="og:title" content="Plot multivariate data into colour channels — legendright" />
 <meta property="og:description" content="Plot graph with legend right of it.
 Plot multivariate data into colour channels using ggplot2::geom_tile()
-normalize.colrange() normalizes the range of each column to [0, 1].
-normalize.range() normalizes the range of all columns to [0, 1].
-normalize.null() does not touch the values.
-normalize.minmax() normalizes the range of each column j to [min_j, max_j]
+normalize_colrange() normalizes the range of each column to [0, 1].
+normalize_range() normalizes the range of all columns to [0, 1].
+normalize_null() does not touch the values.
+normalize_minmax() normalizes the range of each column j to [min_j, max_j]
 legends for mixed colour plots" />
 
 
@@ -139,10 +139,10 @@ legends for mixed colour plots" />
     <div class="ref-description">
     <p>Plot graph with legend right of it.</p>
 <p>Plot multivariate data into colour channels using <code><a href='https://ggplot2.tidyverse.org/reference/geom_tile.html'>ggplot2::geom_tile()</a></code></p>
-<p><code>normalize.colrange()</code> normalizes the range of each column to [0, 1].</p>
-<p><code>normalize.range()</code> normalizes the range of all columns to [0, 1].</p>
-<p><code>normalize.null()</code> does not touch the values.</p>
-<p><code>normalize.minmax()</code> normalizes the range of each column j to [min_j, max_j]</p>
+<p><code>normalize_colrange()</code> normalizes the range of each column to [0, 1].</p>
+<p><code>normalize_range()</code> normalizes the range of all columns to [0, 1].</p>
+<p><code>normalize_null()</code> does not touch the values.</p>
+<p><code>normalize_minmax()</code> normalizes the range of each column j to [min_j, max_j]</p>
 <p>legends for mixed colour plots</p>
     </div>
 
@@ -156,13 +156,13 @@ legends for mixed colour plots" />
   map.tileonly = <span class='fl'>FALSE</span>
 )
 
-<span class='fu'>normalize.colrange</span>(<span class='kw'>x</span>, na.rm = <span class='fl'>TRUE</span>, legend = <span class='fl'>FALSE</span>, n = <span class='fl'>100</span>, <span class='kw'>...</span>)
+<span class='fu'>normalize_colrange</span>(<span class='kw'>x</span>, na.rm = <span class='fl'>TRUE</span>, legend = <span class='fl'>FALSE</span>, n = <span class='fl'>100</span>, <span class='kw'>...</span>)
 
-<span class='fu'>normalize.range</span>(<span class='kw'>x</span>, na.rm = <span class='fl'>TRUE</span>, legend = <span class='fl'>FALSE</span>, n = <span class='fl'>100</span>, <span class='kw'>...</span>)
+<span class='fu'>normalize_range</span>(<span class='kw'>x</span>, na.rm = <span class='fl'>TRUE</span>, legend = <span class='fl'>FALSE</span>, n = <span class='fl'>100</span>, <span class='kw'>...</span>)
 
-<span class='fu'>normalize.null</span>(<span class='kw'>x</span>, na.rm = <span class='fl'>TRUE</span>, legend = <span class='fl'>FALSE</span>, n = <span class='fl'>100</span>, <span class='kw'>...</span>)
+<span class='fu'>normalize_null</span>(<span class='kw'>x</span>, na.rm = <span class='fl'>TRUE</span>, legend = <span class='fl'>FALSE</span>, n = <span class='fl'>100</span>, <span class='kw'>...</span>)
 
-<span class='fu'>normalize.minmax</span>(<span class='kw'>x</span>, min = <span class='fl'>0</span>, max = <span class='fl'>1</span>, legend = <span class='fl'>FALSE</span>, n = <span class='fl'>100</span>, <span class='kw'>...</span>)
+<span class='fu'>normalize_minmax</span>(<span class='kw'>x</span>, min = <span class='fl'>0</span>, max = <span class='fl'>1</span>, legend = <span class='fl'>FALSE</span>, n = <span class='fl'>100</span>, <span class='kw'>...</span>)
 
 <span class='fu'>qmixlegend</span>(
   <span class='kw'>x</span>,
@@ -170,16 +170,16 @@ legends for mixed colour plots" />
   dx = <span class='fl'>0.33</span>,
   ny = <span class='fl'>100</span>,
   labels = <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='kw'>purecol</span>),
-  normalize = <span class='kw'>normalize.colrange</span>,
+  normalize = <span class='kw'>normalize_colrange</span>,
   <span class='kw'>...</span>
 )
 
-<span class='fu'>colmix.rgb</span>(
+<span class='fu'>colmix_rgb</span>(
   <span class='kw'>x</span>,
   <span class='kw'>purecol</span>,
   against = <span class='fl'>1</span>,
   sub = <span class='fl'>TRUE</span>,
-  normalize = <span class='kw'>normalize.colrange</span>,
+  normalize = <span class='kw'>normalize_colrange</span>,
   <span class='kw'>...</span>
 )</pre>
 
@@ -212,8 +212,8 @@ legends for mixed colour plots" />
     </tr>
     <tr>
       <th>...</th>
-      <td><p><code>qmixtile</code>: handed to <code>colmix.rgb()</code></p>
-<p><code>qmixlegend()</code> and <code>colmix.rgb()</code> hand further arguments to the
+      <td><p><code>qmixtile</code>: handed to <code>colmix_rgb()</code></p>
+<p><code>qmixlegend()</code> and <code>colmix_rgb()</code> hand further arguments to the
 <code>normalize</code> function</p></td>
     </tr>
     <tr>
