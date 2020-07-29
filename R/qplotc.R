@@ -35,6 +35,8 @@
 #' qplotc(flu[ , , 410])
 #'
 #' qplotc(flu[ , , 410]) + geom_smooth(method = "lm", formula = y ~ x)
+#'
+#' qplotc(flu, func = mean)
 
 qplotc <- function(object, mapping = aes_string(x = "c", y = "spc"), ...,
                    func = NULL, func.args = list(),
