@@ -37,9 +37,13 @@
 #' set.seed(1)
 #' faux_cell <- generate_faux_cell()
 #'
-#' qplotmap(faux_cell)
+#' qplotmap(faux_cell[ , , 1500])
 #'
-#' qplotmap(faux_cell) + scale_fill_gradientn(colours = alois.palette())
+#' qplotmap(faux_cell[ , , 800])
+#'
+#'
+#' qplotmap(faux_cell[ , , 1200]) +
+#'    scale_fill_gradientn(colours = alois.palette())
 
 qplotmap <- function(object,
                      mapping = aes_string(x = "x", y = "y", fill = "spc"),
