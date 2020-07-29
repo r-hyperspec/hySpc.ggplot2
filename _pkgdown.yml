@@ -64,6 +64,10 @@ reference:
 
 - title: Quick plots
 - contents:
+  - qplotspc
+  - qplotc
+  - qplotmap
+  - qplotmixmap
   - has_concept("quick plots")
 
 - title: Helper functions
