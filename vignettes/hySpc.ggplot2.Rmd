@@ -116,7 +116,7 @@ set.seed(2020)
 
 
 Class `hyperSpec`{.r}[`r cite_pkg("hyperSpec")`] objects do not yet directly support plotting with package **ggplot2**[`r cite_pkg("ggplot2")`].
-Nevertheless, package **ggplot2** graphics can easily be obtained, and `qplot*()`{.r} equivalents to `plotspc()`{.r} and `plotmap()`{.r}.
+Nevertheless, package **ggplot2** graphics can easily be obtained by using `qplot*()`{.r} equivalents to `hyperSpec::plotspc()`{.r}, `hyperSpec::plotc()`{.r}, and `hyperSpec::plotmap()`{.r}.
 
 
 ## Function `qplotspc()`{.r} {#qplotspc}
@@ -131,6 +131,62 @@ CAPTION = "Plot spectra with `as.long.df()`{.r}  "
 qplotspc(flu) + aes(colour = c)
 ```
 
+```{r}
+qplotspc(paracetamol, c(2800 ~ max, min ~ 1800)) +
+  scale_x_reverse(breaks = seq(0, 3200, 400))
+```
+
+Let's look at the other dataset called `faux_cell`.
+```{r}
+set.seed(1)
+faux_cell <- generate_faux_cell()
+faux_cell
+```
+
+```{r}
+set.seed(25)
+qplotspc(sample(faux_cell), spc.nmax = 10) + aes(colour = region)
+```
+
+Average spectra of each region.
+
+```{r}
+qplotspc(
+  aggregate(faux_cell, faux_cell$region, mean),
+  mapping = aes(x = .wavelength, y = spc, colour = region)
+) +
+  facet_grid(region ~ .)
+```
+
+Mean $\pm$ standard deviation:
+```{r}
+qplotspc(
+ aggregate(faux_cell, faux_cell$region, mean_pm_sd),
+ mapping = aes(x = .wavelength, y = spc, colour = region, group = .rownames)
+) +
+  facet_grid(region ~ .)
+
+```
+
+## Function `qplotc()`{.r} {#qplotc}
+
+This function plots spectroscopic concenration, depth, time-series, etc. profiles.
+
+By default, plots spectrum only at the first wavelength.
+```{r}
+qplotc(flu)
+```
+
+It is better to indicate the wavelength of interest explicitly.
+```{r}
+qplotc(flu[ , , 410])
+```
+
+
+```{r}
+qplotc(flu[ , , 410]) + 
+  geom_smooth(method = "lm", formula = y ~ x)
+```
 
 ## Function `ggplotmap()`{.r} {#ggplotmap}
 
@@ -143,13 +199,62 @@ CAPTION = "False-colour map with package **ggplot2**  "
 ```{r ggplotmap, fig.cap=CAPTION}
 set.seed(7)
 faux_cell <- generate_faux_cell()
+```
 
-qplotmap(faux_cell) +
-    scale_fill_gradientn("spc", colours = matlab.palette())
+```{r}
+qplotmap(faux_cell[ , , 1200])
+```
+
+```{r}
+qplotmap(faux_cell[ , , 1200]) +
+    scale_fill_gradientn("Intensity", colours = matlab.palette())
+```
+
+If you have package `viridis`{.pkg} installed, you may try:
+```r
+qplotmap(faux_cell[ , , 1200]) +
+    viridis::scale_fill_viridis("Intensity")
 ```
 
 The two special columns `.wavelength`{.r} and `.rownames`{.r} contain the wavelength axis and allow to distinguish the spectra.
 
+
+
+## Function `qplotmixmap()`{.r} {#qplotmixmap}
+
+This function plots false-colour map with colour mixing for multivariate overlay.
+
+```{r}
+set.seed(1)
+faux_cell <- generate_faux_cell()
+```
+
+Without pre-processing:
+```{r}
+qplotmixmap(faux_cell[, , c(800, 1200, 1500)],
+  purecol = c(matrix = "red", cell = "green", nucleus = "blue")
+)
+```
+
+With baseline removed:
+```{r}
+faux_cell_2 <- faux_cell - spc.fit.poly.below(faux_cell)
+
+qplotmixmap(faux_cell_2[, , c(800, 1200, 1500)],
+  purecol = c(matrix = "red", cell = "green", nucleus = "blue")
+)
+```
+
+With some further pre-processing:
+```{r}
+faux_cell_3 <- faux_cell_2
+faux_cell_3 <- sweep(faux_cell_3, 1, apply(faux_cell_3, 1, mean), "/")
+faux_cell_3 <- sweep(faux_cell_3, 2, apply(faux_cell_3, 2, quantile, 0.05), "-")
+
+qplotmixmap(faux_cell_3[, , c(800, 1200, 1500)],
+  purecol = c(matrix = "red", cell = "green", nucleus = "blue")
+)
+```
 
 
 ## More General Plotting with **_ggplot2_** {#general-plotting-ggplot2}
