@@ -84,8 +84,6 @@ hySpc.testthat::test(qplotmixmap) <- function() {
   test_that("qplotmixmap() works", {
 
     # Data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    # expect_silent(hy_spectra <- hyperSpec:::generate_hy_spectra())
-    # expect_silent(hy_profile <- hyperSpec:::generate_hy_profile())
     expect_silent(hy_map <- hyperSpec:::generate_hy_map())
 
     # Regular tests: warnings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,7 +99,62 @@ hySpc.testthat::test(qplotmixmap) <- function() {
     expect_is(gg, "list")
     expect_length(gg, 2)
 
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     # Visual tests
     # vdiffr::expect_doppelganger("qplotspc-01",       gg)
+  })
+
+  # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  test_that("qplotmixmap() parameter `normalize` works", {
+
+    # Data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    expect_silent(hy_map <- hyperSpec:::generate_hy_map())
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    expect_warning(
+      gg <- qplotmixmap(
+        hy_map[, , c(5000, 6500, 8000)],
+        purecol = c(colg = "red", Phe = "green", Lipid = "blue"),
+        normalize = normalize_colrange
+      )
+    )
+    expect_is(gg, "list")
+    expect_length(gg, 2)
+
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    expect_warning(
+      gg <- qplotmixmap(
+        hy_map[, , c(5000, 6500, 8000)],
+        purecol = c(colg = "red", Phe = "green", Lipid = "blue"),
+        normalize = normalize_range
+      )
+    )
+    expect_is(gg, "list")
+    expect_length(gg, 2)
+
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    expect_warning(
+      gg <- qplotmixmap(
+        hy_map[, , c(5000, 6500, 8000)],
+        purecol = c(colg = "red", Phe = "green", Lipid = "blue"),
+        normalize = normalize_minmax
+      )
+    )
+    expect_is(gg, "list")
+    expect_length(gg, 2)
+
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # FIXME: fails, if `normalize = normalize_null`
+
+    # expect_warning(
+    #   gg <- qplotmixmap(
+    #     purecol = c(colg = "red", Phe = "green", Lipid = "blue"),
+    #     normalize = normalize_null,
+    #     hy_map[, , c(5000, 6500, 8000)]
+    #   )
+    # )
+    # expect_is(gg, "list")
+    # expect_length(gg, 2)
   })
 }
