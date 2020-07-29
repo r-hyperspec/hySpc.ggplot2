@@ -1,16 +1,29 @@
-#' @title Plot multivariate data into colour channels
-#' @description
-#' Plot graph with legend right of it.
-#'
-#' @param p plot object
-#' @param l legend object
-#' @param legend.width,legend.unit size of legend part
-#' @return invisible `NULL`
-#' @author Claudia Beleites
+
 #' @rdname qplotmix
-#' @concept ggplot2
-#' @concept plots
+#'
+#' @title Plot Multivariate Data into Colour Channels
+#'
+#' @description
+#' **Note:** These functions are still experimental and may change in the future.
+#'
+#' - `legendright()` plots graph with legend right to it.
+#'
+#' @param p Plot object.
+#' @param l Legend object.
+#' @param legend.width,legend.unit Size of legend part.
+#'
+#' @return
+#' - `legendright()`: invisible `NULL`.
+#'
+#' @seealso [qplotmixmap()]
+#'
 #' @export
+#'
+#' @concept ggplot2
+#' @concept helpers
+#'
+#' @author Claudia Beleites
+
 legendright <- function(p, l, legend.width = 8, legend.unit = "lines") {
   plot.new()
   pushViewport(viewport(layout = grid.layout(1, 2,
@@ -21,19 +34,24 @@ legendright <- function(p, l, legend.width = 8, legend.unit = "lines") {
   popViewport()
 }
 
-#' @description
-#' Plot multivariate data into colour channels using [ggplot2::geom_tile()]
+
 #' @rdname qplotmix
-#' @param object matrix to be plotted with mixed colour channels
-#' @param purecol pure component colours, names determine legend labels
-#' @param mapping see [ggplot2::geom_tile()]
-#' @param ... `qmixtile`: handed to [colmix_rgb()]
 #'
-#'   `qmixlegend()` and `colmix_rgb()` hand further arguments to the
-#'   `normalize` function
-#' @param map.tileonly if `TRUE`, `mapping` will be handed to
-#'   [ggplot2::geom_tile()] instead of [ggplot2::ggplot()].
+#' @description
+#' - `qmixtile()` plots multivariate data into colour channels using
+#'   [ggplot2::geom_tile()].
 #'
+#' @param object Matrix to be plotted with mixed colour channels.
+#' @param purecol Pure component colours, names determine legend labels.
+#' @param mapping See [ggplot2::geom_tile()].
+#' @param ...
+#'
+#' - `qmixtile()`: handed to [colmix_rgb()].
+#' - `qmixlegend()` and `colmix_rgb()` hand further arguments to the `normalize`
+#'    function.
+#' @param map.tileonly If `TRUE`, `mapping` will be handed to
+#'        [ggplot2::geom_tile()] instead of [ggplot2::ggplot()].
+
 qmixtile <- function(object,
                      purecol = stop("pure component colors needed."),
                      mapping = aes_string(x = "x", y = "y", fill = "spc"),
@@ -55,17 +73,25 @@ qmixtile <- function(object,
   p + scale_fill_identity() + theme(legend.position = "none")
 }
 
-#' @description
-#' `normalize_colrange()` normalizes the range of each column to \[0, 1\].
+
 #' @rdname qplotmix
-#' @export
 #'
-#' @param na.rm see [base::min()]
-#' @param legend should a legend be produced instead of normalized values?
-#' @param n of colours to produce in legend
-#' @return list with components `ymin`, `max` and `fill` to specify value and
-#'   fill colour value (still numeric!) for the legend, otherwise the
-#'   normalized values
+#' @description
+#' - `normalize_colrange()` normalizes the range of each column to \[0, 1\].
+#'
+#' @param na.rm See [base::min()].
+#' @param legend (logical)
+#'        Should a legend be produced instead of normalized values?
+#' @param n (integer) Number of colours to produce in legend.
+#'
+#' @return
+#' - `normalize_colrange()` (and other `normalize_*()` functions):
+#'   list with components `ymin`, `max` and `fill` to specify value and fill
+#'   colour value (still *numerical*!) for the legend, otherwise the normalized
+#'   values.
+#'
+#' @export
+
 normalize_colrange <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
   ## legend
   if (legend) {
@@ -84,11 +110,14 @@ normalize_colrange <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
   }
 }
 
-#' @description
-#' `normalize_range()` normalizes the range of all columns to \[0, 1\].
+
 #' @rdname qplotmix
-#' @export
 #'
+#' @description
+#' - `normalize_range()` normalizes the range of all columns to \[0, 1\].
+#'
+#' @export
+
 normalize_range <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
   if (legend) {
     y <- matrix(seq(min(x), max(x), length.out = n), nrow = n, ncol = ncol(x))
@@ -105,11 +134,14 @@ normalize_range <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
   }
 }
 
-#' @description
-#' `normalize_null()` does not touch the values.
+
 #' @rdname qplotmix
-#' @export
 #'
+#' @description
+#' - `normalize_null()` does not touch the values.
+#'
+#' @export
+
 normalize_null <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
   if (legend) {
     y <- apply(x, 2, function(x) seq(min(x), max(x), length.out = n))
@@ -124,16 +156,18 @@ normalize_null <- function(x, na.rm = TRUE, legend = FALSE, n = 100, ...) {
   }
 }
 
-#' @description
-#' `normalize_minmax()` normalizes the range of each column j to \[min_j, max_j\]
+
 #' @rdname qplotmix
+#'
+#' @description
+#' - `normalize_minmax()` normalizes the range of each column j to \[min_j, max_j\].
+#'
+#' @param min numeric with value corresponding to "lowest" colour for each column.
+#' @param max numeric with value corresponding to "highest" colour for each column.
+#'
 #' @export
-#' @param min numeric with value corresponding to "lowest" colour for each
-#'   column
-#' @param max numeric with value corresponding to "hightest" colour for each
-#'   column
-normalize_minmax <- function(x, min = 0, max = 1, legend = FALSE, n = 100,
-                             ...) {
+
+normalize_minmax <- function(x, min = 0, max = 1, legend = FALSE, n = 100, ...) {
   if (legend) {
     y <- matrix(seq(0, 1, length.out = n), nrow = n, ncol = ncol(x))
     y <- sweep(y, 2, max - min, `*`)
@@ -158,17 +192,23 @@ normalize_minmax <- function(x, min = 0, max = 1, legend = FALSE, n = 100,
   }
 }
 
-#' @description
-#' legends for mixed colour plots
+
 #' @rdname qplotmix
-#' @param dx width of label bar
-#' @param ny number of colours in legend
-#' @param labels component names
-#' @return ggplot object with legend
-#' @author Claudia Beleites
-#' @concept ggplot2
-#' @concept plots
+#'
+#' @description
+#' - `qmixlegend()` legends for mixed colour plots.
+#'
+#' @param dx Width of label bar.
+#' @param ny Number of colours in legend.
+#' @param labels Component names.
+#'
+#' @return
+#' - `qmixlegend()`: [ggplot2::ggplot()] object with legend.
+#'
 #' @export
+
+# @author Claudia Beleites
+
 qmixlegend <- function(x, purecol, dx = 0.33, ny = 100, labels = names(purecol),
                        normalize = normalize_colrange, ...) {
   if (!is.matrix(x)) {
@@ -223,19 +263,26 @@ qmixlegend <- function(x, purecol, dx = 0.33, ny = 100, labels = names(purecol),
   l
 }
 
+
 #' @rdname qplotmix
-#' @title Multi channel colour mixing
-#' @param x matrix with component intensities in columns
-#' @param against value to mix against
+#'
+#' @description
+#' - `colmix_rgb()`: multi-channel colour mixing.
+#'
+#' @param x Matrix with component intensities in columns.
+#' @param against Value to mix against
 #'                (for `sub = TRUE` only, 1 = white, 0 = black)
-#' @param sub subtractive color mixing?
-#' @param normalize function to normalize the values.
-#' @return character with colours
-#' @author Claudia Beleites
-#' @concept ggplot2
-#' @concept plots
-#' @export
+#' @param sub Subtractive colour mixing?
+#' @param normalize Function to normalize the values.
+#'
+#' @return
+#' - `colmix_rgb()`: character vector with colours.
+#'
 #' @importFrom grDevices col2rgb rgb
+#' @export
+
+# @author Claudia Beleites
+
 colmix_rgb <- function(x, purecol, against = 1, sub = TRUE,
                        normalize = normalize_colrange, ...) {
   if (!is.null(normalize)) {
