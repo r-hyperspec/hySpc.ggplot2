@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Spectra plotting with <span class="pkg">ggplot2</span>: <code>qplotc()</code> — qplotc • hySpc.ggplot2</title>
+<title>Plot Quick Spectroscopic Profile with <span class="pkg">ggplot2</span>: <code>qplotc()</code> — qplotc • hySpc.ggplot2</title>
 
 
 <!-- jquery -->
@@ -41,9 +41,10 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Spectra plotting with <span class="pkg">ggplot2</span>: <code>qplotc()</code> — qplotc" />
-<meta property="og:description" content="Spectra plotting with ggplot2.
-These functions are still experimental and may change in the future." />
+<meta property="og:title" content="Plot Quick Spectroscopic Profile with <span class="pkg">ggplot2</span>: <code>qplotc()</code> — qplotc" />
+<meta property="og:description" content="This function plots spectroscopic concenration, depth, time-series, etc.
+profiles by using ggplot2.
+Note: The function is still experimental and may change in the future." />
 
 
 
@@ -126,14 +127,15 @@ These functions are still experimental and may change in the future." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Spectra plotting with <span class="pkg">ggplot2</span>: <code>qplotc()</code></h1>
+    <h1>Plot Quick Spectroscopic Profile with <span class="pkg">ggplot2</span>: <code>qplotc()</code></h1>
     <small class="dont-index">Source: <a href='https://github.com/r-hyperspec/hySpc.ggplot2/blob/master/R/qplotc.R'><code>R/qplotc.R</code></a></small>
     <div class="hidden name"><code>qplotc.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Spectra plotting with <span class="pkg">ggplot2</span>.</p>
-<p>These functions are still experimental and may change in the future.</p>
+    <p>This function plots spectroscopic concenration, depth, time-series, etc.
+profiles by using <span class="pkg">ggplot2</span>.</p>
+<p><strong>Note:</strong> The function is still experimental and may change in the future.</p>
     </div>
 
     <pre class="usage"><span class='fu'>qplotc</span>(
@@ -150,45 +152,51 @@ These functions are still experimental and may change in the future." />
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>object</th>
-      <td><p>hyperSpec object</p></td>
+      <td><p>A <code><a href='https://rdrr.io/pkg/hyperSpec/man/hyperSpec-class.html'>hyperSpec</a></code> object.</p></td>
     </tr>
     <tr>
       <th>mapping</th>
-      <td><p>see  <code><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>ggplot2::geom_point()</a></code></p></td>
+      <td><p>See <code><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>ggplot2::geom_point()</a></code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>handed to <code><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>ggplot2::geom_point()</a></code></p></td>
+      <td><p>Further arguments handed to <code><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>ggplot2::geom_point()</a></code>.</p></td>
     </tr>
     <tr>
       <th>func</th>
-      <td><p>function to summarize the wavelengths, if <code>NULL</code>, only the first
-wavelength is used</p></td>
+      <td><p>Function to summarize the wavelengths. If <code>NULL</code>, only the first
+wavelength is used.</p></td>
     </tr>
     <tr>
       <th>func.args</th>
-      <td><p>arguments to <code>func</code></p></td>
+      <td><p>A named list with arguments to <code>func</code>.</p></td>
     </tr>
     <tr>
       <th>map.pointonly</th>
-      <td><p>if <code>TRUE</code>, <code>mapping</code> will be handed to
+      <td><p>If <code>TRUE</code>, <code>mapping</code> will be handed to
 <code><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>ggplot2::geom_point()</a></code> instead of <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot2::ggplot()</a></code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot2::ggplot()</a></code> object</p>
+    <p>A <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot2::ggplot()</a></code> object.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/hyperSpec/man/plotc.html'>hyperSpec::plotc()</a></code></p>
-<p><code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot2::ggplot()</a></code>, <code><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>ggplot2::geom_point()</a></code></p></div>
+    <div class='dont-index'>
+<ul>
+<li><p><code><a href='https://rdrr.io/pkg/hyperSpec/man/plotc.html'>hyperSpec::plotc()</a></code>;</p></li>
+<li><p><code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot2::ggplot()</a></code>, <code><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>ggplot2::geom_point()</a></code>.</p></li>
+</ul>
+</div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Claudia Beleites</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>qplotc</span>(<span class='kw'>flu</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Intensity at first wavelengh only is used.</span></div><div class='img'><img src='qplotc-1.png' alt='' width='466' height='288' /></div><div class='input'><span class='fu'>qplotc</span>(<span class='kw'>flu</span>) <span class='op'>+</span> <span class='fu'>geom_smooth</span>(method = <span class='st'>"lm"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Intensity at first wavelengh only is used.</span></div><div class='output co'>#&gt; <span class='message'>`geom_smooth()` using formula 'y ~ x'</span></div><div class='img'><img src='qplotc-2.png' alt='' width='466' height='288' /></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>qplotc</span>(<span class='kw'>flu</span>) <span class='co'># Notice the warning</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Intensity at first wavelengh only is used.</span></div><div class='img'><img src='qplotc-1.png' alt='' width='466' height='288' /></div><div class='input'>
+<span class='fu'>qplotc</span>(<span class='kw'>flu</span>[ , , <span class='fl'>410</span>])</div><div class='img'><img src='qplotc-2.png' alt='' width='466' height='288' /></div><div class='input'>
+<span class='fu'>qplotc</span>(<span class='kw'>flu</span>[ , , <span class='fl'>410</span>]) <span class='op'>+</span> <span class='fu'>geom_smooth</span>(method = <span class='st'>"lm"</span>, formula = <span class='kw'>y</span> <span class='op'>~</span> <span class='kw'>x</span>)</div><div class='img'><img src='qplotc-3.png' alt='' width='466' height='288' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
