@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Plot multivariate data into colour channels — legendright • hySpc.ggplot2</title>
+<title>Plot Multivariate Data into Colour Channels — legendright • hySpc.ggplot2</title>
 
 
 <!-- jquery -->
@@ -41,14 +41,40 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Plot multivariate data into colour channels — legendright" />
-<meta property="og:description" content="Plot graph with legend right of it.
-Plot multivariate data into colour channels using ggplot2::geom_tile()
+<meta property="og:title" content="Plot Multivariate Data into Colour Channels — legendright" />
+<meta property="og:description" content="Note: These functions are still experimental and may change in the future.
+legendright() plots graph with legend right to it.
+
+
+
+qmixtile() plots multivariate data into colour channels using
+ggplot2::geom_tile().
+
+
+
 normalize_colrange() normalizes the range of each column to [0, 1].
+
+
+
 normalize_range() normalizes the range of all columns to [0, 1].
+
+
+
 normalize_null() does not touch the values.
-normalize_minmax() normalizes the range of each column j to [min_j, max_j]
-legends for mixed colour plots" />
+
+
+
+normalize_minmax() normalizes the range of each column j to [min_j, max_j].
+
+
+
+qmixlegend() legends for mixed colour plots.
+
+
+
+colmix_rgb(): multi-channel colour mixing.
+
+" />
 
 
 
@@ -131,19 +157,45 @@ legends for mixed colour plots" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Plot multivariate data into colour channels</h1>
+    <h1>Plot Multivariate Data into Colour Channels</h1>
     <small class="dont-index">Source: <a href='https://github.com/r-hyperspec/hySpc.ggplot2/blob/master/R/qmixtile.R'><code>R/qmixtile.R</code></a></small>
     <div class="hidden name"><code>qplotmix.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Plot graph with legend right of it.</p>
-<p>Plot multivariate data into colour channels using <code><a href='https://ggplot2.tidyverse.org/reference/geom_tile.html'>ggplot2::geom_tile()</a></code></p>
-<p><code>normalize_colrange()</code> normalizes the range of each column to [0, 1].</p>
-<p><code>normalize_range()</code> normalizes the range of all columns to [0, 1].</p>
-<p><code>normalize_null()</code> does not touch the values.</p>
-<p><code>normalize_minmax()</code> normalizes the range of each column j to [min_j, max_j]</p>
-<p>legends for mixed colour plots</p>
+    <p><strong>Note:</strong> These functions are still experimental and may change in the future.</p><ul>
+<li><p><code>legendright()</code> plots graph with legend right to it.</p></li>
+</ul>
+
+<ul>
+<li><p><code>qmixtile()</code> plots multivariate data into colour channels using
+<code><a href='https://ggplot2.tidyverse.org/reference/geom_tile.html'>ggplot2::geom_tile()</a></code>.</p></li>
+</ul>
+
+<ul>
+<li><p><code>normalize_colrange()</code> normalizes the range of each column to [0, 1].</p></li>
+</ul>
+
+<ul>
+<li><p><code>normalize_range()</code> normalizes the range of all columns to [0, 1].</p></li>
+</ul>
+
+<ul>
+<li><p><code>normalize_null()</code> does not touch the values.</p></li>
+</ul>
+
+<ul>
+<li><p><code>normalize_minmax()</code> normalizes the range of each column j to [min_j, max_j].</p></li>
+</ul>
+
+<ul>
+<li><p><code>qmixlegend()</code> legends for mixed colour plots.</p></li>
+</ul>
+
+<ul>
+<li><p><code>colmix_rgb()</code>: multi-channel colour mixing.</p></li>
+</ul>
+
     </div>
 
     <pre class="usage"><span class='fu'>legendright</span>(<span class='kw'>p</span>, <span class='kw'>l</span>, legend.width = <span class='fl'>8</span>, legend.unit = <span class='st'>"lines"</span>)
@@ -188,105 +240,121 @@ legends for mixed colour plots" />
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>p</th>
-      <td><p>plot object</p></td>
+      <td><p>Plot object.</p></td>
     </tr>
     <tr>
       <th>l</th>
-      <td><p>legend object</p></td>
+      <td><p>Legend object.</p></td>
     </tr>
     <tr>
       <th>legend.width, legend.unit</th>
-      <td><p>size of legend part</p></td>
+      <td><p>Size of legend part.</p></td>
     </tr>
     <tr>
       <th>object</th>
-      <td><p>matrix to be plotted with mixed colour channels</p></td>
+      <td><p>Matrix to be plotted with mixed colour channels.</p></td>
     </tr>
     <tr>
       <th>purecol</th>
-      <td><p>pure component colours, names determine legend labels</p></td>
+      <td><p>Pure component colours, names determine legend labels.</p></td>
     </tr>
     <tr>
       <th>mapping</th>
-      <td><p>see <code><a href='https://ggplot2.tidyverse.org/reference/geom_tile.html'>ggplot2::geom_tile()</a></code></p></td>
+      <td><p>See <code><a href='https://ggplot2.tidyverse.org/reference/geom_tile.html'>ggplot2::geom_tile()</a></code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p><code>qmixtile</code>: handed to <code>colmix_rgb()</code></p>
-<p><code>qmixlegend()</code> and <code>colmix_rgb()</code> hand further arguments to the
-<code>normalize</code> function</p></td>
+      <td><ul>
+<li><p><code>qmixtile()</code>: handed to <code>colmix_rgb()</code>.</p></li>
+<li><p><code>qmixlegend()</code> and <code>colmix_rgb()</code> hand further arguments to the <code>normalize</code>
+function.</p></li>
+</ul></td>
     </tr>
     <tr>
       <th>map.tileonly</th>
-      <td><p>if <code>TRUE</code>, <code>mapping</code> will be handed to
+      <td><p>If <code>TRUE</code>, <code>mapping</code> will be handed to
 <code><a href='https://ggplot2.tidyverse.org/reference/geom_tile.html'>ggplot2::geom_tile()</a></code> instead of <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot2::ggplot()</a></code>.</p></td>
     </tr>
     <tr>
       <th>x</th>
-      <td><p>matrix with component intensities in columns</p></td>
+      <td><p>Matrix with component intensities in columns.</p></td>
     </tr>
     <tr>
       <th>na.rm</th>
-      <td><p>see <code><a href='https://rdrr.io/r/base/Extremes.html'>base::min()</a></code></p></td>
+      <td><p>See <code><a href='https://rdrr.io/r/base/Extremes.html'>base::min()</a></code>.</p></td>
     </tr>
     <tr>
       <th>legend</th>
-      <td><p>should a legend be produced instead of normalized values?</p></td>
+      <td><p>(logical)
+Should a legend be produced instead of normalized values?</p></td>
     </tr>
     <tr>
       <th>n</th>
-      <td><p>of colours to produce in legend</p></td>
+      <td><p>(integer) Number of colours to produce in legend.</p></td>
     </tr>
     <tr>
       <th>min</th>
-      <td><p>numeric with value corresponding to "lowest" colour for each
-column</p></td>
+      <td><p>numeric with value corresponding to "lowest" colour for each column.</p></td>
     </tr>
     <tr>
       <th>max</th>
-      <td><p>numeric with value corresponding to "hightest" colour for each
-column</p></td>
+      <td><p>numeric with value corresponding to "highest" colour for each column.</p></td>
     </tr>
     <tr>
       <th>dx</th>
-      <td><p>width of label bar</p></td>
+      <td><p>Width of label bar.</p></td>
     </tr>
     <tr>
       <th>ny</th>
-      <td><p>number of colours in legend</p></td>
+      <td><p>Number of colours in legend.</p></td>
     </tr>
     <tr>
       <th>labels</th>
-      <td><p>component names</p></td>
+      <td><p>Component names.</p></td>
     </tr>
     <tr>
       <th>normalize</th>
-      <td><p>function to normalize the values.</p></td>
+      <td><p>Function to normalize the values.</p></td>
     </tr>
     <tr>
       <th>against</th>
-      <td><p>value to mix against
+      <td><p>Value to mix against
 (for <code>sub = TRUE</code> only, 1 = white, 0 = black)</p></td>
     </tr>
     <tr>
       <th>sub</th>
-      <td><p>subtractive color mixing?</p></td>
+      <td><p>Subtractive colour mixing?</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>invisible <code>NULL</code></p>
-<p>list with components <code>ymin</code>, <code>max</code> and <code>fill</code> to specify value and
-fill colour value (still numeric!) for the legend, otherwise the
-normalized values</p>
-<p>ggplot object with legend</p>
-<p>character with colours</p>
+    
+<ul>
+<li><p><code>legendright()</code>: invisible <code>NULL</code>.</p></li>
+</ul>
+
+<ul>
+<li><p><code>normalize_colrange()</code> (and other <code>normalize_*()</code> functions):
+list with components <code>ymin</code>, <code>max</code> and <code>fill</code> to specify value and fill
+colour value (still <em>numerical</em>!) for the legend, otherwise the normalized
+values.</p></li>
+</ul>
+
+<ul>
+<li><p><code>qmixlegend()</code>: <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot2::ggplot()</a></code> object with legend.</p></li>
+</ul>
+
+<ul>
+<li><p><code>colmix_rgb()</code>: character vector with colours.</p></li>
+</ul>
+
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code>qplotmixmap()</code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Claudia Beleites</p>
-<p>Claudia Beleites</p>
-<p>Claudia Beleites</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -196,7 +196,8 @@ wavelength is used.</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>qplotc</span>(<span class='kw'>flu</span>) <span class='co'># Notice the warning</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Intensity at first wavelengh only is used.</span></div><div class='img'><img src='qplotc-1.png' alt='' width='466' height='288' /></div><div class='input'>
 <span class='fu'>qplotc</span>(<span class='kw'>flu</span>[ , , <span class='fl'>410</span>])</div><div class='img'><img src='qplotc-2.png' alt='' width='466' height='288' /></div><div class='input'>
-<span class='fu'>qplotc</span>(<span class='kw'>flu</span>[ , , <span class='fl'>410</span>]) <span class='op'>+</span> <span class='fu'>geom_smooth</span>(method = <span class='st'>"lm"</span>, formula = <span class='kw'>y</span> <span class='op'>~</span> <span class='kw'>x</span>)</div><div class='img'><img src='qplotc-3.png' alt='' width='466' height='288' /></div></pre>
+<span class='fu'>qplotc</span>(<span class='kw'>flu</span>[ , , <span class='fl'>410</span>]) <span class='op'>+</span> <span class='fu'>geom_smooth</span>(method = <span class='st'>"lm"</span>, formula = <span class='kw'>y</span> <span class='op'>~</span> <span class='kw'>x</span>)</div><div class='img'><img src='qplotc-3.png' alt='' width='466' height='288' /></div><div class='input'>
+<span class='fu'>qplotc</span>(<span class='kw'>flu</span>, func = <span class='kw'>mean</span>)</div><div class='img'><img src='qplotc-4.png' alt='' width='466' height='288' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
