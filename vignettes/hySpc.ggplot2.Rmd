@@ -210,7 +210,7 @@ qplotmap(faux_cell[ , , 1200]) +
     scale_fill_gradientn("Intensity", colours = matlab.palette())
 ```
 
-If you have package `viridis`{.pkg} installed, you may try:
+If you have package **viridis** installed, you may try:
 ```r
 qplotmap(faux_cell[ , , 1200]) +
     viridis::scale_fill_viridis("Intensity")
@@ -263,7 +263,7 @@ qplotmixmap(faux_cell_3[, , c(800, 1200, 1500)],
 For more general plotting, `as.long.df()`{.r} transforms a `hyperSpec`{.r} object into a long-form `data.frame`{.r} that is suitable for `qplot()`{.r}, while `as.t.df()`{.r} produces a `data.frame`{.r} where each spectrum is one column, and an additional first column gives the wavelength.
 Long `data.frame`{.r}s can be *very* memory consuming as they are of size $nrow · nwl × (ncol + 2)$ with respect to the dimensions of the `hyperSpec`{.r} object.
 Thus, e.g., the `faux_cell`{.r} data set (`r round (object.size(faux_cell) / 1048576, digits = 0)` MB) as `hyperSpec`{.r} object) needs `r round (object.size(as.long.df(faux_cell, rownames = TRUE)) / 1048576, digits = 0)` MB as long-format `data.frame`{.r}.
-It is therefore highly recommended to calculate the particular data to be plotted beforehand<!-- (Fig. \@ref(fig:ggplotmeansd))-->.
+It is therefore highly recommended to calculate the particular data to be plotted beforehand.
 
 
 ```{r include=FALSE}
