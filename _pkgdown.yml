@@ -57,35 +57,23 @@ development:
 # -------------------------------------------------------------------------
 # # If you need custom webpage for reference, modify this section:
 
-# reference:
-# - title: 'Package "..."'
+reference:
+# - title: 'Package "hySpc.ggplot2"'
 # - contents:
 #   - has_keyword("package")
-#   - has_keyword("classes")
-# - title: Datasets
-#   desc: "Datasets in package."
-# - contents:
-#   - has_concept("datasets")
-# - title: Plots
-# - subtitle: R base and package "lattice" based plots
-# - contents:
-#   - "plot-methods"
-#   - has_keyword("aplot")
-#   - has_keyword("dplot")
-#   - has_keyword("hplot")
-#   - has_keyword("iplot")
-#   - has_keyword("color")
-# - subtitle: Package "ggplot2" based plots
-# - contents:
-#   - has_concept("ggplot2")
-# - title: Other functions
-# - subtitle: Other active functions
-# - contents:
-#   - lacks_concepts("deprecated")
-# - subtitle: Deprecated and defunct functions
-#   desc: "You should **not** use these functions."
-# - contents:
-#   - has_concept("deprecated", internal = TRUE)
+
+- title: Quick plots
+- contents:
+  - has_concept("quick plots")
+
+- title: Helper functions
+- contents:
+  - has_concept("helpers")
+
+- title: Other functions and objects
+  desc: "Functions not mentioned above."
+- contents:
+  - lacks_concepts(c("quick plots", "helpers"))
 
 # -------------------------------------------------------------------------
 
