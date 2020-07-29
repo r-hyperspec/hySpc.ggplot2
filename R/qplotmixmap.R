@@ -45,7 +45,7 @@
 #' faux_cell_3 <- sweep(faux_cell_3, 1, apply(faux_cell_3, 1, mean), "/")
 #' faux_cell_3 <- sweep(faux_cell_3, 2, apply(faux_cell_3, 2, quantile, 0.05), "-")
 #'
-#' ggg <- qplotmixmap(faux_cell_3[, , c(800, 1200, 1500)],
+#' qplotmixmap(faux_cell_3[, , c(800, 1200, 1500)],
 #'   purecol = c(matrix = "red", cell = "green", nucleus = "blue")
 #' )
 
