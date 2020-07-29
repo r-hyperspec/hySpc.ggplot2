@@ -1,39 +1,51 @@
 
-#' @title Spectra plotting with \pkg{ggplot2}: `qplotmap()`
+#' @title Quick False-Colour Map with \pkg{ggplot2}: `qplotmap()`
+#'
 #' @description
-#' Spectra plotting with \pkg{ggplot2}.
+#' This function plots false-colour map by using \pkg{ggplot2} functions.
 #'
-#' These functions are still experimental and may change in future.
-#'
-#' Note that `qplotmap()` will currently produce the wrong scales if x or y are
+#' Note that `qplotmap()` will currently produce wrong scales if `x` or `y` are
 #' discrete.
 #'
-#' @param object  hyperSpec object
-#' @param mapping see  [ggplot2::geom_tile()]
-#' @param ... handed to [ggplot2::geom_tile()]
-#' @param func function to summarize the wavelengths
-#' @param func.args arguments to `func`
-#' @param map.tileonly if `TRUE`, `mapping` will be handed to
+#' **Note:** The function is still experimental and may change in the future.
+#'
+#' @param object A [`hyperSpec`][hyperSpec::hyperSpec-class] object.
+#' @param mapping See [ggplot2::geom_tile()].
+#' @param ... Further arguments handed to [ggplot2::geom_tile()].
+#' @param func Function to summarize the wavelengths.
+#' @param func.args A named list with arguments to `func`.
+#' @param map.tileonly If `TRUE`, `mapping` will be handed to
 #'        [ggplot2::geom_tile()] instead of [ggplot2::ggplot()].
-#' @return a [ggplot2::ggplot()] object
-#' @export
 #'
-#' @author Claudia Beleites
-#' @concept ggplot2
-#' @concept plots
-#' @seealso
-#'  [hyperSpec::plotmap()]
+#' @return A [ggplot2::ggplot()] object.
 #'
-#'  [ggplot2::ggplot()], [ggplot2::geom_tile()]
-#' @examples
-#' qplotmap(faux_cell)
-#' qplotmap(faux_cell) + scale_fill_gradientn(colours = alois.palette())
 #' @importFrom utils tail
 #' @importFrom rlang as_label
+#'
+#' @export
+#'
+#' @concept ggplot2
+#' @concept quick plots
+#'
+#' @seealso
+#' - [hyperSpec::plotmap()];
+#' - [ggplot2::ggplot()], [ggplot2::geom_tile()].
+#'
+#' @author Claudia Beleites
+#'
+#' @examples
+#' set.seed(1)
+#' faux_cell <- generate_faux_cell()
+#'
+#' qplotmap(faux_cell)
+#'
+#' qplotmap(faux_cell) + scale_fill_gradientn(colours = alois.palette())
+
 qplotmap <- function(object,
                      mapping = aes_string(x = "x", y = "y", fill = "spc"),
                      ...,
-                     func = mean, func.args = list(),
+                     func = mean,
+                     func.args = list(),
                      map.tileonly = FALSE) {
   chk.hy(object)
   validObject(object)
