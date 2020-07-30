@@ -107,8 +107,6 @@ hySpc.testthat::test(qplotmap) <- function() {
   test_that("qplotmap() works", {
 
     # Data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    # expect_silent(hy_spectra <- hyperSpec:::generate_hy_spectra())
-    # expect_silent(hy_profile <- hyperSpec:::generate_hy_profile())
     expect_silent(hy_map     <- hyperSpec:::generate_hy_map())
 
     # Regular tests: warnings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,9 +117,17 @@ hySpc.testthat::test(qplotmap) <- function() {
     expect_is(gg, "gg")
     expect_is(gg, "ggplot")
 
-    expect_silent(gg2 <- qplotmap(hy_map, map.lineonly = TRUE))
+    expect_silent(gg2 <- qplotmap(hy_map, map.tileonly = TRUE))
     expect_is(gg2, "gg")
     expect_is(gg2, "ggplot")
+
+    # With no labels
+    hy_map_2 <- hy_map
+    labels(hy_map_2) <- lapply(labels(hy_map), function(x) NULL)
+
+    expect_silent(gg3 <- qplotmap(hy_map_2, map.tileonly = TRUE))
+    expect_is(gg3, "gg")
+    expect_is(gg3, "ggplot")
 
     # Visual tests
     # vdiffr::expect_doppelganger("qplotspc-01",       gg)
