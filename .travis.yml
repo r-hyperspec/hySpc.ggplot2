@@ -1,11 +1,12 @@
-language: R
-sudo: false
+language: r
 cache: packages
 warnings_are_errors: true
 
 os:
   - linux
   - osx
+
+dist: xenial
 
 r:
 #  - oldrel
