@@ -1,12 +1,11 @@
-language: r
+language: R
+sudo: false
 cache: packages
 warnings_are_errors: true
 
 os:
   - linux
   - osx
-
-dist: xenial
 
 r:
 #  - oldrel
@@ -19,7 +18,8 @@ jobs:
     r: devel
 
 before_script:
-  - R -e "install.packages('roxygen2'); roxygen2::roxygenize('.', roclets = c('rd', 'collate', 'namespace', 'vignette'))"
+  - R -e 'install.packages("roxygen2")'
+  - R -e 'roxygen2::roxygenize(".", roclets = c("rd", "collate", "namespace", "vignette"))'
 
 after_success:
   - Rscript -e 'covr::codecov()'
