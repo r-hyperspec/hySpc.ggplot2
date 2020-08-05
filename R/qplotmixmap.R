@@ -1,5 +1,5 @@
 
-#' @title Quick False-Colour Map with Colour Mixing for Multivariate Overlay
+#' @title Plot False-Colour Map with Colour Mixing for Multivariate Overlay (\pkg{ggplot2})
 #'
 #' @description
 #' This function plots false-colour map with colour mixing for multivariate

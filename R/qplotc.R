@@ -1,5 +1,5 @@
 
-#' @title Plot Quick Spectroscopic Profile with \pkg{ggplot2}: `qplotc()`
+#' @title Plot Spectroscopic Profile with \pkg{ggplot2}
 #'
 #' @description
 #' This function plots spectroscopic concenration, depth, time-series, etc.

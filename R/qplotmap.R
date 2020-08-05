@@ -1,5 +1,5 @@
 
-#' @title Quick False-Colour Map with \pkg{ggplot2}: `qplotmap()`
+#' @title Plot False-Colour Map with \pkg{ggplot2}
 #'
 #' @description
 #' This function plots false-colour map by using \pkg{ggplot2} functions.

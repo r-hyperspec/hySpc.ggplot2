@@ -1,5 +1,5 @@
 
-#' @title Quick Plot of Spectra with \pkg{ggplot2}: `qplotspc()`
+#' @title Plot Spectra (Line Plot) with \pkg{ggplot2}
 #'
 #' @description
 #' This function plots spectroscopic line plot by using \pkg{ggplot2}.
