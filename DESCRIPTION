@@ -11,8 +11,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
-Remotes:
-    GegznaV/hyperSpec/hyperSpec@tmp/with-documentation
+Additional_repositories: 
+    https://r-hyperspec.github.io/hySpc.pkgs/
 Depends:
     ggplot2 (>= 2.3.0),
     hyperSpec
