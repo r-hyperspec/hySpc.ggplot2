@@ -1,7 +1,7 @@
 Package: hySpc.ggplot2
 Type: Package
 Date: 2020-07-27
-Version: 0.0.0.9000
+Version: 0.0.0.1000
 Title: Bridge Between Packages hyspeSpec and ggplot2
 Description: Package ggplot2 based functionality for hyperSpec objects.
 Authors@R: c(
