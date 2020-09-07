@@ -12,7 +12,7 @@ Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
 Additional_repositories: 
-    https://r-hyperspec.github.io/hySpc.pkgs/
+    https://r-hyperspec.github.io/pkg-repo/
 Depends:
     ggplot2 (>= 2.3.0),
     hyperSpec
