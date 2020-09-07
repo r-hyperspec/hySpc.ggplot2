@@ -104,7 +104,7 @@
 <br><a class="author_email" href="mailto:#"></a><a href="mailto:chemometrie@beleites.de" class="email">chemometrie@beleites.de</a>
       </address>
                   
-            <h4 class="date">2020-08-24</h4>
+            <h4 class="date">2020-09-07</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/r-hyperspec/hySpc.ggplot2/blob/master/vignettes/hySpc-ggplot2.Rmd"><code>vignettes/hySpc-ggplot2.Rmd</code></a></small>
       <div class="hidden name"><code>hySpc-ggplot2.Rmd</code></div>
@@ -144,8 +144,7 @@ Throughout the documentation of the package, the following terms are used:</p>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>())
 
-<span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">2020</span>)
-</pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">2020</span>)</pre></div>
 </div>
 <div id="plots-ggplot2" class="section level1">
 <h1 class="hasAnchor">
@@ -158,8 +157,7 @@ Nevertheless, package <strong>ggplot2</strong> graphics can easily be obtained b
 </h2>
 <p>Plot spectra with <code class="sourceCode r"><span class="kw">qplotspc</span>()</code> (Fig. <a href="#fig:ggplotspc-01">1</a>).</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(<span class="kw">flu</span>) <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(colour = <span class="kw">c</span>)
-</pre></div>
+<span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(<span class="kw">flu</span>) <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(colour = <span class="kw">c</span>)</pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotspc-01"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspc-01-1.png" alt="Spectra produced by `qplotspc()`{.r}: `flu` data.  "><p class="caption">
@@ -168,8 +166,7 @@ Figure 1: Spectra produced by <code class="sourceCode r"><span class="kw">qplots
 </div>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(<span class="kw">paracetamol</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2800</span> <span class="op">~</span> <span class="kw">max</span>, <span class="kw">min</span> <span class="op">~</span> <span class="fl">1800</span>)) <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_reverse</a></span>(breaks = <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span>))
-</pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_reverse</a></span>(breaks = <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span>))</pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotspc-02"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspc-02-1.png" alt="Spectra with reversed order of x axis values: `paracetamol` data.  "><p class="caption">
@@ -190,12 +187,10 @@ Figure 2: Spectra with reversed order of x axis values: <code>paracetamol</code>
 <span class="co">#&gt;    1. x: x position [numeric] -11.55 -10.55 ... 22.45 </span>
 <span class="co">#&gt;    2. y: y position [numeric] -4.77 -4.77 ... 19.23 </span>
 <span class="co">#&gt;    3. region:  [factor] matrix matrix ... matrix </span>
-<span class="co">#&gt;    4. spc: intensity (arbitrary units) [matrix, array300] 54 75 ... 108</span>
-</pre></div>
+<span class="co">#&gt;    4. spc: intensity (arbitrary units) [matrix, array300] 54 75 ... 108</span></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">25</span>)
-<span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="kw">faux_cell</span>), spc.nmax = <span class="fl">10</span>) <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(colour = <span class="kw">region</span>)
-</pre></div>
+<span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="kw">faux_cell</span>), spc.nmax = <span class="fl">10</span>) <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(colour = <span class="kw">region</span>)</pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotspc-03"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspc-03-1.png" alt="Ten randomly selected spectra from `faux_cell` dataset.  "><p class="caption">
@@ -208,8 +203,7 @@ Figure 3: Ten randomly selected spectra from <code>faux_cell</code> dataset.
   <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/aggregate.html">aggregate</a></span>(<span class="kw">faux_cell</span>, <span class="kw">faux_cell</span><span class="op">$</span><span class="kw">region</span>, <span class="kw">mean</span>),
   mapping = <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="kw">.wavelength</span>, y = <span class="kw">spc</span>, colour = <span class="kw">region</span>)
 ) <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span>(<span class="kw">region</span> <span class="op">~</span> <span class="kw">.</span>)
-</pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span>(<span class="kw">region</span> <span class="op">~</span> <span class="kw">.</span>)</pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotspc-04"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspc-04-1.png" alt="Mean spectra of each region in `faux_cell` dataset.  "><p class="caption">
@@ -222,8 +216,7 @@ Figure 4: Mean spectra of each region in <code>faux_cell</code> dataset.
  <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/aggregate.html">aggregate</a></span>(<span class="kw">faux_cell</span>, <span class="kw">faux_cell</span><span class="op">$</span><span class="kw">region</span>, <span class="kw">mean_pm_sd</span>),
  mapping = <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="kw">.wavelength</span>, y = <span class="kw">spc</span>, colour = <span class="kw">region</span>, group = <span class="kw">.rownames</span>)
 ) <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span>(<span class="kw">region</span> <span class="op">~</span> <span class="kw">.</span>)
-</pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span>(<span class="kw">region</span> <span class="op">~</span> <span class="kw">.</span>)</pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotspc-05"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspc-05-1.png" alt="Mean $\pm$ standard deviation spectra of each region in `faux_cell` dataset.  "><p class="caption">
@@ -239,8 +232,7 @@ Figure 5: Mean <span class="math inline">\(\pm\)</span> standard deviation spect
 <p>By default, plots spectrum only at the first wavelength.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotc.html">qplotc</a></span>(<span class="kw">flu</span>)
-<span class="co">#&gt; Warning in qplotc(flu): Intensity at first wavelengh only is used.</span>
-</pre></div>
+<span class="co">#&gt; Warning in qplotc(flu): Intensity at first wavelengh only is used.</span></pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotc-01"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotc-01-1.png" alt="Concentration profile: intensities at the first available wavelength value.  "><p class="caption">
@@ -249,8 +241,7 @@ Figure 6: Concentration profile: intensities at the first available wavelength v
 </div>
 <p>It is better to indicate the wavelength of interest explicitly.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit">
-<span class="fu"><a href="../reference/qplotc.html">qplotc</a></span>(<span class="kw">flu</span>[ , , <span class="fl">410</span>])
-</pre></div>
+<span class="fu"><a href="../reference/qplotc.html">qplotc</a></span>(<span class="kw">flu</span>[ , , <span class="fl">410</span>])</pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotc-02"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotc-02-1.png" alt="Concentration profile: intensities at 410 nm.   "><p class="caption">
@@ -259,8 +250,7 @@ Figure 7: Concentration profile: intensities at 410 nm.
 </div>
 <div class="sourceCode" id="cb10"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotc.html">qplotc</a></span>(<span class="kw">flu</span>[ , , <span class="fl">410</span>]) <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span>(method = <span class="st">"lm"</span>, formula = <span class="kw">y</span> <span class="op">~</span> <span class="kw">x</span>)
-</pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span>(method = <span class="st">"lm"</span>, formula = <span class="kw">y</span> <span class="op">~</span> <span class="kw">x</span>)</pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotc-03"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotc-03-1.png" alt="Concentration profile with fitted line.  "><p class="caption">
@@ -275,11 +265,9 @@ Figure 8: Concentration profile with fitted line.
 <p>Fig. <a href="#fig:ggplotmap-01">9</a> shows a map created with package <strong>ggplot2</strong>.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">7</span>)
-<span class="kw">faux_cell</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/faux_cell.html">generate_faux_cell</a></span>()
-</pre></div>
+<span class="kw">faux_cell</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/faux_cell.html">generate_faux_cell</a></span>()</pre></div>
 <div class="sourceCode" id="cb12"><pre class="downlit">
-<span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span>(<span class="kw">faux_cell</span>[ , , <span class="fl">1200</span>])
-</pre></div>
+<span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span>(<span class="kw">faux_cell</span>[ , , <span class="fl">1200</span>])</pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotmap-01"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotmap-01-1.png" alt="False-colour map produced by `qplotmap()`{.r}.  "><p class="caption">
@@ -288,8 +276,7 @@ Figure 9: False-colour map produced by <code class="sourceCode r"><span class="k
 </div>
 <div class="sourceCode" id="cb13"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span>(<span class="kw">faux_cell</span>[ , , <span class="fl">1200</span>]) <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="st">"Intensity"</span>, colours = <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/palettes.html">matlab.palette</a></span>())
-</pre></div>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="st">"Intensity"</span>, colours = <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/palettes.html">matlab.palette</a></span>())</pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotmap-02"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotmap-02-1.png" alt="False-colour map produced by `qplotmap()`{.r}: different color palette.  "><p class="caption">
@@ -299,8 +286,7 @@ Figure 10: False-colour map produced by <code class="sourceCode r"><span class="
 <p>If you have package <strong>viridis</strong> installed, you may try:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span>(<span class="kw">faux_cell</span>[ , , <span class="fl">1200</span>]) <span class="op">+</span>
-    <span class="kw">viridis</span>::<span class="fu">scale_fill_viridis</span>(<span class="st">"Intensity"</span>)
-</pre></div>
+    <span class="kw">viridis</span>::<span class="fu">scale_fill_viridis</span>(<span class="st">"Intensity"</span>)</pre></div>
 <p>The two special columns <code class="sourceCode r">.wavelength</code> and <code class="sourceCode r">.rownames</code> contain the wavelength axis and allow to distinguish the spectra.</p>
 </div>
 <div id="qplotmixmap" class="section level2">
@@ -310,15 +296,13 @@ Figure 10: False-colour map produced by <code class="sourceCode r"><span class="
 <p>This function plots false-colour map with colour mixing for multivariate overlay.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">1</span>)
-<span class="kw">faux_cell</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/faux_cell.html">generate_faux_cell</a></span>()
-</pre></div>
+<span class="kw">faux_cell</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/faux_cell.html">generate_faux_cell</a></span>()</pre></div>
 <p>Without pre-processing:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotmixmap.html">qplotmixmap</a></span>(<span class="kw">faux_cell</span>[, , <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">800</span>, <span class="fl">1200</span>, <span class="fl">1500</span>)],
   purecol = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(matrix = <span class="st">"red"</span>, cell = <span class="st">"green"</span>, nucleus = <span class="st">"blue"</span>)
 )
-<span class="co">#&gt; Warning: Removed 300 rows containing missing values (geom_point).</span>
-</pre></div>
+<span class="co">#&gt; Warning: Removed 300 rows containing missing values (geom_point).</span></pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:qplotmixmap-01"></span>
 <img src="hySpc-ggplot2_files/figure-html/qplotmixmap-01-1.png" alt="False-color map produced by `qplotmixmap()`{.r}: raw `faux_cell` spectra at 800, 1200, and 1500 $cm^{-1}.$    "><p class="caption">
@@ -332,8 +316,7 @@ Figure 11: False-color map produced by <code class="sourceCode r"><span class="k
 <span class="fu"><a href="../reference/qplotmixmap.html">qplotmixmap</a></span>(<span class="kw">faux_cell_2</span>[, , <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">800</span>, <span class="fl">1200</span>, <span class="fl">1500</span>)],
   purecol = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(matrix = <span class="st">"red"</span>, cell = <span class="st">"green"</span>, nucleus = <span class="st">"blue"</span>)
 )
-<span class="co">#&gt; Warning: Removed 300 rows containing missing values (geom_point).</span>
-</pre></div>
+<span class="co">#&gt; Warning: Removed 300 rows containing missing values (geom_point).</span></pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:qplotmixmap-02"></span>
 <img src="hySpc-ggplot2_files/figure-html/qplotmixmap-02-1.png" alt="False-color map of `faux_cell` spectra with base line removed.  "><p class="caption">
@@ -349,8 +332,7 @@ Figure 12: False-color map of <code>faux_cell</code> spectra with base line remo
 <span class="fu"><a href="../reference/qplotmixmap.html">qplotmixmap</a></span>(<span class="kw">faux_cell_3</span>[, , <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">800</span>, <span class="fl">1200</span>, <span class="fl">1500</span>)],
   purecol = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(matrix = <span class="st">"red"</span>, cell = <span class="st">"green"</span>, nucleus = <span class="st">"blue"</span>)
 )
-<span class="co">#&gt; Warning: Removed 300 rows containing missing values (geom_point).</span>
-</pre></div>
+<span class="co">#&gt; Warning: Removed 300 rows containing missing values (geom_point).</span></pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:qplotmixmap-03"></span>
 <img src="hySpc-ggplot2_files/figure-html/qplotmixmap-03-1.png" alt="False-color map of pre-processed `faux_cell` spectra.  "><p class="caption">
@@ -376,16 +358,14 @@ It is therefore highly recommended to calculate the particular data to be plotte
   ),
     alpha = <span class="fl">0.25</span>,
     data = <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/asdataframe.html">as.t.df</a></span>(<span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/mean_sd.html">mean_sd</a></span>(<span class="kw">faux_cell</span>))
-  )
-</pre></div>
+  )</pre></div>
 <p>Note that <code class="sourceCode r"><span class="kw">qpotspc</span>()</code> specifies aesthetics <code>y = spc</code> and <code>groups = .rownames</code>, which do not have corresponding columns in the <code>data.frame</code> returned by <code class="sourceCode r"><span class="kw">as.t.df</span>()</code>.
 These aesthetics must therefore be set manually in the aesthetics definition in <code class="sourceCode r"><span class="kw">geom_ribbon</span>()</code> (or any other <code class="sourceCode r">geom_<span class="op">*</span>()</code> that uses <code class="sourceCode r"><span class="kw">as.t.df</span>()</code>).
 Otherwise, errors occur that object <code>spc</code> (and/or <code>.rownames</code>) cannot be found.
 Cut axes can be implemented by faceting (Fig. <a href="#fig:ggplotspccut">14</a>).</p>
 <div class="sourceCode" id="cb20"><pre class="downlit">
 <span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span>(<span class="kw">paracetamol</span> <span class="op">/</span> <span class="fl">1e4</span>, wl.range = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="kw">min</span> <span class="op">~</span> <span class="fl">1800</span>, <span class="fl">2800</span> <span class="op">~</span> <span class="kw">max</span>)) <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span>(breaks = <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span>))
-</pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span>(breaks = <span class="fu"><a href="https://rdrr.io/pkg/hyperSpec/man/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span>))</pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotspccut"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspccut-1.png" alt="Plot separate regions of specra.  "><p class="caption">
@@ -409,77 +389,76 @@ Figure 14: Plot separate regions of specra.
 <span class="co">#&gt;  collate  en_US.UTF-8                 </span>
 <span class="co">#&gt;  ctype    en_US.UTF-8                 </span>
 <span class="co">#&gt;  tz       UTC                         </span>
-<span class="co">#&gt;  date     2020-08-24                  </span>
+<span class="co">#&gt;  date     2020-09-07                  </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; ─ Packages ───────────────────────────────────────────────────────────────────────────────────────</span>
-<span class="co">#&gt;  package        * version       date       lib source                            </span>
-<span class="co">#&gt;  assertthat       0.2.1         2019-03-21 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  backports        1.1.9         2020-08-24 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  callr            3.4.3         2020-03-28 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  cli              2.0.2         2020-02-28 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  colorspace       1.4-1         2019-03-18 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  crayon           1.3.4         2017-09-16 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  desc             1.2.0         2018-05-01 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  digest           0.6.25        2020-02-23 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  dplyr            1.0.2         2020-08-18 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  ellipsis         0.3.1         2020-05-15 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  evaluate         0.14          2019-05-28 [1] CRAN (R 4.0.1)                    </span>
-<span class="co">#&gt;  fansi            0.4.1         2020-01-08 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  farver           2.0.3         2020-01-16 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  generics         0.0.2         2018-11-29 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  ggplot2        * 3.3.2         2020-06-19 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  glue             1.4.1         2020-05-13 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  gtable           0.3.0         2019-03-25 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  hyperSpec      * 0.99-20200728 2020-08-20 [1] Github (GegznaV/hyperSpec@2aa83c3)</span>
-<span class="co">#&gt;  hySpc.testthat   0.2.1         2020-06-24 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  isoband          0.2.2         2020-06-20 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  jpeg             0.1-8.1       2019-10-24 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  labeling         0.3           2014-08-23 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  lattice        * 0.20-41       2020-04-02 [2] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  latticeExtra     0.6-29        2019-12-19 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  lazyeval         0.2.2         2019-03-15 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  lifecycle        0.2.0         2020-03-06 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  magrittr         1.5           2014-11-22 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  MASS             7.3-51.6      2020-04-26 [2] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  Matrix           1.2-18        2019-11-27 [2] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  mgcv             1.8-31        2019-11-09 [2] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  munsell          0.5.0         2018-06-12 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  nlme             3.1-148       2020-05-24 [2] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  pillar           1.4.6         2020-07-10 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  pkgbuild         1.1.0         2020-07-13 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  pkgconfig        2.0.3         2019-09-22 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  pkgload          1.1.0         2020-05-29 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  png              0.1-7         2013-12-03 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  praise           1.0.0         2015-08-11 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  prettyunits      1.1.1         2020-01-24 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  processx         3.4.3         2020-07-05 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  ps               1.3.4         2020-08-11 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  purrr            0.3.4         2020-04-17 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  R6               2.4.1         2019-11-12 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  RColorBrewer     1.1-2         2014-12-07 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  rlang            0.4.7         2020-07-09 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  rprojroot        1.3-2         2018-01-03 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  rstudioapi       0.11          2020-02-07 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  scales           1.1.1         2020-05-11 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  testthat         2.3.2         2020-03-02 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  tibble           3.0.3         2020-07-10 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  tidyselect       1.1.0         2020-05-11 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  utf8             1.1.4         2018-05-24 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  vctrs            0.3.2         2020-07-15 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  viridisLite      0.3.0         2018-02-01 [1] CRAN (R 4.0.1)                    </span>
-<span class="co">#&gt;  withr            2.2.0         2020-04-20 [1] CRAN (R 4.0.2)                    </span>
-<span class="co">#&gt;  xml2             1.3.2         2020-04-23 [1] CRAN (R 4.0.2)                    </span>
+<span class="co">#&gt;  package        * version    date       lib source        </span>
+<span class="co">#&gt;  assertthat       0.2.1      2019-03-21 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  backports        1.1.9      2020-08-24 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  callr            3.4.3      2020-03-28 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  cli              2.0.2      2020-02-28 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  colorspace       1.4-1      2019-03-18 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  crayon           1.3.4      2017-09-16 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  desc             1.2.0      2018-05-01 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  digest           0.6.25     2020-02-23 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  dplyr            1.0.2      2020-08-18 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  ellipsis         0.3.1      2020-05-15 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  evaluate         0.14       2019-05-28 [1] CRAN (R 4.0.1)</span>
+<span class="co">#&gt;  fansi            0.4.1      2020-01-08 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  farver           2.0.3      2020-01-16 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  generics         0.0.2      2018-11-29 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  ggplot2        * 3.3.2      2020-06-19 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  glue             1.4.2      2020-08-27 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  gtable           0.3.0      2019-03-25 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  hyperSpec      * 0.100.0    2020-09-07 [1] local         </span>
+<span class="co">#&gt;  hySpc.testthat   0.2.1.9000 2020-09-07 [1] local         </span>
+<span class="co">#&gt;  isoband          0.2.2      2020-06-20 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  jpeg             0.1-8.1    2019-10-24 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  labeling         0.3        2014-08-23 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  lattice        * 0.20-41    2020-04-02 [2] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  latticeExtra     0.6-29     2019-12-19 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  lazyeval         0.2.2      2019-03-15 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  lifecycle        0.2.0      2020-03-06 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  magrittr         1.5        2014-11-22 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  MASS             7.3-51.6   2020-04-26 [2] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  Matrix           1.2-18     2019-11-27 [2] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  mgcv             1.8-31     2019-11-09 [2] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  munsell          0.5.0      2018-06-12 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  nlme             3.1-148    2020-05-24 [2] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  pillar           1.4.6      2020-07-10 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  pkgbuild         1.1.0      2020-07-13 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  pkgconfig        2.0.3      2019-09-22 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  pkgload          1.1.0      2020-05-29 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  png              0.1-7      2013-12-03 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  praise           1.0.0      2015-08-11 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  prettyunits      1.1.1      2020-01-24 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  processx         3.4.4      2020-09-03 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  ps               1.3.4      2020-08-11 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  purrr            0.3.4      2020-04-17 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  R6               2.4.1      2019-11-12 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  RColorBrewer     1.1-2      2014-12-07 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  rlang            0.4.7      2020-07-09 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  rprojroot        1.3-2      2018-01-03 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  rstudioapi       0.11       2020-02-07 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  scales           1.1.1      2020-05-11 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  testthat         2.3.2      2020-03-02 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  tibble           3.0.3      2020-07-10 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  tidyselect       1.1.0      2020-05-11 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  utf8             1.1.4      2018-05-24 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  vctrs            0.3.4      2020-08-29 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  viridisLite      0.3.0      2018-02-01 [1] CRAN (R 4.0.1)</span>
+<span class="co">#&gt;  withr            2.2.0      2020-04-20 [1] CRAN (R 4.0.2)</span>
+<span class="co">#&gt;  xml2             1.3.2      2020-04-23 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; [1] /Users/runner/work/_temp/Library</span>
-<span class="co">#&gt; [2] /Library/Frameworks/R.framework/Versions/4.0/Resources/library</span>
-</pre></div>
+<span class="co">#&gt; [2] /Library/Frameworks/R.framework/Versions/4.0/Resources/library</span></pre></div>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
 <div id="refs" class="references">
 <div id="ref-R-hyperSpec">
-<p>[1] C. Beleites, V. Sergo, HyperSpec: Work with hyperspectral data, i.e. Spectra + meta information (spatial, time, concentration, ...), 2020.</p>
+<p>[1] C. Beleites, V. Gegzna, B. Hanson, R. Kiselev, E. Oduniyi, V. Sergo, HyperSpec: Work with hyperspectral data, i.e. Spectra + meta information (spatial, time, concentration, ...), 2020.</p>
 </div>
 <div id="ref-R-ggplot2">
 <p>[2] H. Wickham, W. Chang, L. Henry, T.L. Pedersen, K. Takahashi, C. Wilke, K. Woo, H. Yutani, D. Dunnington, Ggplot2: Create elegant data visualisations using the grammar of graphics, 2020. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.</p>

@@ -178,13 +178,15 @@ overlay by using <span class="pkg">ggplot2</span> functions.</p>
 <span class='co'># Original data at certan wavelengths</span>
 <span class='fu'>qplotmixmap</span>(<span class='kw'>faux_cell</span>[, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span>)],
   purecol = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(matrix = <span class='st'>"red"</span>, cell = <span class='st'>"green"</span>, nucleus = <span class='st'>"blue"</span>)
-)</div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 300 rows containing missing values (geom_point).</span></div><div class='img'><img src='qplotmixmap-1.png' alt='' width='466' height='288' /></div><div class='input'>
+)
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 300 rows containing missing values (geom_point).</span></div><div class='img'><img src='qplotmixmap-1.png' alt='' width='466' height='288' /></div><div class='input'>
 <span class='co'># With baseline removed</span>
 <span class='kw'>faux_cell_2</span> <span class='op'>&lt;-</span> <span class='kw'>faux_cell</span> <span class='op'>-</span> <span class='fu'>spc.fit.poly.below</span>(<span class='kw'>faux_cell</span>)
 
 <span class='fu'>qplotmixmap</span>(<span class='kw'>faux_cell_2</span>[, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span>)],
   purecol = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(matrix = <span class='st'>"red"</span>, cell = <span class='st'>"green"</span>, nucleus = <span class='st'>"blue"</span>)
-)</div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 300 rows containing missing values (geom_point).</span></div><div class='img'><img src='qplotmixmap-2.png' alt='' width='466' height='288' /></div><div class='input'>
+)
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 300 rows containing missing values (geom_point).</span></div><div class='img'><img src='qplotmixmap-2.png' alt='' width='466' height='288' /></div><div class='input'>
 <span class='co'># With further pre-processing</span>
 <span class='kw'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='kw'>faux_cell_2</span>
 <span class='kw'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sweep.html'>sweep</a></span>(<span class='kw'>faux_cell_3</span>, <span class='fl'>1</span>, <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span>(<span class='kw'>faux_cell_3</span>, <span class='fl'>1</span>, <span class='kw'>mean</span>), <span class='st'>"/"</span>)
@@ -192,7 +194,8 @@ overlay by using <span class="pkg">ggplot2</span> functions.</p>
 
 <span class='fu'>qplotmixmap</span>(<span class='kw'>faux_cell_3</span>[, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span>)],
   purecol = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(matrix = <span class='st'>"red"</span>, cell = <span class='st'>"green"</span>, nucleus = <span class='st'>"blue"</span>)
-)</div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 300 rows containing missing values (geom_point).</span></div><div class='img'><img src='qplotmixmap-3.png' alt='' width='466' height='288' /></div></pre>
+)
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 300 rows containing missing values (geom_point).</span></div><div class='img'><img src='qplotmixmap-3.png' alt='' width='466' height='288' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
