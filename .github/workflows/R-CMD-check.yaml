@@ -70,10 +70,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          repos <- c("https://r-hyperspec.github.io/hySpc.pkgs/", getOption("repos"))
-          install.packages("hyperSpec", repos = repos)
-          remotes::install_cran(c("rcmdcheck", "devtools"))
           remotes::install_deps(dependencies = TRUE)
+          remotes::install_cran("rcmdcheck")
+          remotes::install_cran("devtools")
         shell: Rscript {0}
 
       - name: Session info
