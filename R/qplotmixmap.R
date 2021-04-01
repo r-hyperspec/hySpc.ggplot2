@@ -34,7 +34,7 @@
 #' )
 #'
 #' # With baseline removed
-#' faux_cell_2 <- faux_cell - spc.fit.poly.below(faux_cell)
+#' faux_cell_2 <- faux_cell - spc_fit_poly_below(faux_cell)
 #'
 #' qplotmixmap(faux_cell_2[, , c(800, 1200, 1500)],
 #'   purecol = c(matrix = "red", cell = "green", nucleus = "blue")
