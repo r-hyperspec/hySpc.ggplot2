@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Plot False-Colour Map with Colour Mixing for Multivariate Overlay (<span class="pkg">ggplot2</span>) — qplotmixmap • hySpc.ggplot2</title>
+<title>Plot False-Colour Map with Colour Mixing for Multivariate Overlay (ggplot2) — qplotmixmap • hySpc.ggplot2</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,7 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Plot False-Colour Map with Colour Mixing for Multivariate Overlay (<span class="pkg">ggplot2</span>) — qplotmixmap" />
+<meta property="og:title" content="Plot False-Colour Map with Colour Mixing for Multivariate Overlay (ggplot2) — qplotmixmap" />
 <meta property="og:description" content="This function plots false-colour map with colour mixing for multivariate
 overlay by using ggplot2 functions.
 Note: The function is still experimental and may change in the future." />
@@ -84,7 +84,7 @@ Note: The function is still experimental and may change in the future." />
       <ul class="nav navbar-nav">
         <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fa fa-book"></span>
+    <span class="fas fa-book"></span>
      
      
     <span class="caret"></span>
@@ -101,7 +101,7 @@ Note: The function is still experimental and may change in the future." />
 </li>
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -118,7 +118,7 @@ Note: The function is still experimental and may change in the future." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/r-hyperspec/hySpc.ggplot2/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -146,18 +146,18 @@ overlay by using <span class="pkg">ggplot2</span> functions.</p>
 <p><strong>Note:</strong> The function is still experimental and may change in the future.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>qplotmixmap</span>(<span class='kw'>object</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>qplotmixmap</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>object</th>
-      <td><p>A <code><a href='https://rdrr.io/pkg/hyperSpec/man/hyperSpec-class.html'>hyperSpec</a></code> object.</p></td>
+      <td><p>A <code><a href='https://cbeleites.github.io/hyperSpec/reference/hyperSpec-class.html'>hyperSpec</a></code> object.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Further arguments handed to <code>qmixlegend()</code> and <code>qmixtile()</code>.</p></td>
+      <td><p>Further arguments handed to <code><a href='legendright.html'>qmixlegend()</a></code> and <code><a href='legendright.html'>qmixtile()</a></code>.</p></td>
     </tr>
     </table>
 
@@ -166,35 +166,35 @@ overlay by using <span class="pkg">ggplot2</span> functions.</p>
     <p>An invisible list with <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot2::ggplot()</a></code> objects for map and legend.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code>qmixtile()</code></p></div>
+    <div class='dont-index'><p><code><a href='legendright.html'>qmixtile()</a></code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Claudia Beleites</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span>(<span class='fl'>1</span>)
-<span class='kw'>faux_cell</span> <span class='op'>&lt;-</span> <span class='fu'>generate_faux_cell</span>()
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
+<span class='va'>faux_cell</span> <span class='op'>&lt;-</span> <span class='fu'>generate_faux_cell</span><span class='op'>(</span><span class='op'>)</span>
 
 <span class='co'># Original data at certan wavelengths</span>
-<span class='fu'>qplotmixmap</span>(<span class='kw'>faux_cell</span>[, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span>)],
-  purecol = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(matrix = <span class='st'>"red"</span>, cell = <span class='st'>"green"</span>, nucleus = <span class='st'>"blue"</span>)
-)
+<span class='fu'>qplotmixmap</span><span class='op'>(</span><span class='va'>faux_cell</span><span class='op'>[</span>, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span><span class='op'>)</span><span class='op'>]</span>,
+  purecol <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>matrix <span class='op'>=</span> <span class='st'>"red"</span>, cell <span class='op'>=</span> <span class='st'>"green"</span>, nucleus <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span>
+<span class='op'>)</span>
 </div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 300 rows containing missing values (geom_point).</span></div><div class='img'><img src='qplotmixmap-1.png' alt='' width='466' height='288' /></div><div class='input'>
 <span class='co'># With baseline removed</span>
-<span class='kw'>faux_cell_2</span> <span class='op'>&lt;-</span> <span class='kw'>faux_cell</span> <span class='op'>-</span> <span class='fu'>spc.fit.poly.below</span>(<span class='kw'>faux_cell</span>)
+<span class='va'>faux_cell_2</span> <span class='op'>&lt;-</span> <span class='va'>faux_cell</span> <span class='op'>-</span> <span class='fu'>spc_fit_poly_below</span><span class='op'>(</span><span class='va'>faux_cell</span><span class='op'>)</span>
 
-<span class='fu'>qplotmixmap</span>(<span class='kw'>faux_cell_2</span>[, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span>)],
-  purecol = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(matrix = <span class='st'>"red"</span>, cell = <span class='st'>"green"</span>, nucleus = <span class='st'>"blue"</span>)
-)
+<span class='fu'>qplotmixmap</span><span class='op'>(</span><span class='va'>faux_cell_2</span><span class='op'>[</span>, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span><span class='op'>)</span><span class='op'>]</span>,
+  purecol <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>matrix <span class='op'>=</span> <span class='st'>"red"</span>, cell <span class='op'>=</span> <span class='st'>"green"</span>, nucleus <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span>
+<span class='op'>)</span>
 </div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 300 rows containing missing values (geom_point).</span></div><div class='img'><img src='qplotmixmap-2.png' alt='' width='466' height='288' /></div><div class='input'>
 <span class='co'># With further pre-processing</span>
-<span class='kw'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='kw'>faux_cell_2</span>
-<span class='kw'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sweep.html'>sweep</a></span>(<span class='kw'>faux_cell_3</span>, <span class='fl'>1</span>, <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span>(<span class='kw'>faux_cell_3</span>, <span class='fl'>1</span>, <span class='kw'>mean</span>), <span class='st'>"/"</span>)
-<span class='kw'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sweep.html'>sweep</a></span>(<span class='kw'>faux_cell_3</span>, <span class='fl'>2</span>, <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span>(<span class='kw'>faux_cell_3</span>, <span class='fl'>2</span>, <span class='kw'>quantile</span>, <span class='fl'>0.05</span>), <span class='st'>"-"</span>)
+<span class='va'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='va'>faux_cell_2</span>
+<span class='va'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sweep.html'>sweep</a></span><span class='op'>(</span><span class='va'>faux_cell_3</span>, <span class='fl'>1</span>, <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>faux_cell_3</span>, <span class='fl'>1</span>, <span class='va'>mean</span><span class='op'>)</span>, <span class='st'>"/"</span><span class='op'>)</span>
+<span class='va'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sweep.html'>sweep</a></span><span class='op'>(</span><span class='va'>faux_cell_3</span>, <span class='fl'>2</span>, <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>faux_cell_3</span>, <span class='fl'>2</span>, <span class='va'>quantile</span>, <span class='fl'>0.05</span><span class='op'>)</span>, <span class='st'>"-"</span><span class='op'>)</span>
 
-<span class='fu'>qplotmixmap</span>(<span class='kw'>faux_cell_3</span>[, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span>)],
-  purecol = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(matrix = <span class='st'>"red"</span>, cell = <span class='st'>"green"</span>, nucleus = <span class='st'>"blue"</span>)
-)
+<span class='fu'>qplotmixmap</span><span class='op'>(</span><span class='va'>faux_cell_3</span><span class='op'>[</span>, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span><span class='op'>)</span><span class='op'>]</span>,
+  purecol <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>matrix <span class='op'>=</span> <span class='st'>"red"</span>, cell <span class='op'>=</span> <span class='st'>"green"</span>, nucleus <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span>
+<span class='op'>)</span>
 </div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 300 rows containing missing values (geom_point).</span></div><div class='img'><img src='qplotmixmap-3.png' alt='' width='466' height='288' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -211,7 +211,7 @@ overlay by using <span class="pkg">ggplot2</span> functions.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
