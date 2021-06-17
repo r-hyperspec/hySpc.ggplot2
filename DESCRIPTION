@@ -11,12 +11,12 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
-Additional_repositories: 
+Additional_repositories:
     https://r-hyperspec.github.io/pkg-repo/
 Depends:
     ggplot2 (>= 2.3.0),
     hyperSpec
-Imports: 
+Imports:
     hySpc.testthat,
     lazyeval,
     methods,
@@ -26,8 +26,9 @@ Suggests:
     covr,
     knitr,
     sessioninfo,
-    vdiffr
-URL: 
+    vdiffr,
+    rmarkdown
+URL:
     https://r-hyperspec.github.io/hySpc.ggplot2,
     https://github.com/r-hyperspec/hySpc.ggplot2
 BugReports: https://github.com/r-hyperspec/hySpc.ggplot2/issues
