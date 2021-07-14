@@ -42,7 +42,7 @@
 #' qplotmap(faux_cell[ , , 800])
 #'
 #' qplotmap(faux_cell[ , , 1200]) +
-#'    scale_fill_gradientn(colours = alois.palette())
+#'    scale_fill_gradientn(colours = palette_alois())
 
 qplotmap <- function(object,
                      mapping = aes_string(x = "x", y = "y", fill = "spc"),
