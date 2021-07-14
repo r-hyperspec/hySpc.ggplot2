@@ -75,7 +75,8 @@ knitr::write_bib(
     "ggplot2",
     "hySpc.ggplot2"
   ),
-  file = "resources/hySpc.ggplot2-pkg.bib"
+  file = "resources/hySpc.ggplot2-pkg.bib",
+  prefix = "R_"
 )
 ```
 
@@ -211,7 +212,7 @@ qplotc(flu[ , , 410])
 CAPTION = "Concentration profile with fitted line.  "
 ```
 ```{r ggplotc-03, fig.cap=CAPTION}
-qplotc(flu[ , , 410]) + 
+qplotc(flu[ , , 410]) +
   geom_smooth(method = "lm", formula = y ~ x)
 ```
 
