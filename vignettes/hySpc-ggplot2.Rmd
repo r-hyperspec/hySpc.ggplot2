@@ -238,7 +238,7 @@ CAPTION = "False-colour map produced by `qplotmap()`{.r}: different color palett
 ```
 ```{r ggplotmap-02, fig.cap=CAPTION}
 qplotmap(faux_cell[ , , 1200]) +
-    scale_fill_gradientn("Intensity", colours = matlab.palette())
+    scale_fill_gradientn("Intensity", colours = palette_matlab())
 ```
 
 If you have package **viridis** installed, you may try:
