@@ -104,7 +104,7 @@
 <br><a class="author_email" href="mailto:#"></a><a href="mailto:chemometrie@beleites.de" class="email">chemometrie@beleites.de</a>
       </address>
                   
-            <h4 class="date">2021-06-17</h4>
+            <h4 class="date">2021-07-14</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/r-hyperspec/hySpc.ggplot2/blob/master/vignettes/hySpc-ggplot2.Rmd"><code>vignettes/hySpc-ggplot2.Rmd</code></a></small>
       <div class="hidden name"><code>hySpc-ggplot2.Rmd</code></div>
@@ -138,7 +138,7 @@ Throughout the documentation of the package, the following terms are used:</p>
 </ul>
 </blockquote>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://cbeleites.github.io/hyperSpec">hyperSpec</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-hyperspec.github.io/hyperSpec">hyperSpec</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-hyperspec.github.io/hySpc.ggplot2">hySpc.ggplot2</a></span><span class="op">)</span>
 
@@ -149,7 +149,7 @@ Throughout the documentation of the package, the following terms are used:</p>
 <div id="plots-ggplot2" class="section level1">
 <h1 class="hasAnchor">
 <a href="#plots-ggplot2" class="anchor"></a>Using <strong><em>ggplot2</em></strong> with <strong><em>hyperSpec</em></strong> objects</h1>
-<p>Class <code class="sourceCode r">hyperSpec</code><span class="citation">[<a href="#ref-R-hyperSpec" role="doc-biblioref">1</a>]</span> objects do not yet directly support plotting with package <strong>ggplot2</strong><span class="citation">[<a href="#ref-R-ggplot2" role="doc-biblioref">2</a>,<a href="#ref-ggplot22016" role="doc-biblioref">3</a>]</span>.
+<p>Class <code class="sourceCode r">hyperSpec</code><span class="citation">[<span class="citeproc-not-found" data-reference-id="R-hyperSpec"><strong>???</strong></span>]</span> objects do not yet directly support plotting with package <strong>ggplot2</strong><span class="citation">[<span class="citeproc-not-found" data-reference-id="R-ggplot2"><strong>???</strong></span>,<a href="#ref-ggplot22016" role="doc-biblioref">1</a>]</span>.
 Nevertheless, package <strong>ggplot2</strong> graphics can easily be obtained by using <code class="sourceCode r">qplot<span class="op">*</span>()</code> equivalents to <code class="sourceCode r">hyperSpec<span class="op">::</span><span class="kw">plotspc</span>()</code>, <code class="sourceCode r">hyperSpec<span class="op">::</span><span class="kw">plotc</span>()</code>, and <code class="sourceCode r">hyperSpec<span class="op">::</span><span class="kw">plotmap</span>()</code>.</p>
 <div id="qplotspc" class="section level2">
 <h2 class="hasAnchor">
@@ -166,7 +166,7 @@ Figure 1: Spectra produced by <code class="sourceCode r"><span class="kw">qplots
 </div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span><span class="op">(</span><span class="va">paracetamol</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2800</span> <span class="op">~</span> <span class="va">max</span>, <span class="va">min</span> <span class="op">~</span> <span class="fl">1800</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_reverse</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_reverse</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotspc-02"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspc-02-1.png" alt="Spectra with reversed order of x axis values: `paracetamol` data.  "><p class="caption">
@@ -176,7 +176,7 @@ Figure 2: Spectra with reversed order of x axis values: <code>paracetamol</code>
 <p>Let’s look at the other dataset called <code>faux_cell</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
-<span class="va">faux_cell</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/faux_cell.html">generate_faux_cell</a></span><span class="op">(</span><span class="op">)</span>
+<span class="va">faux_cell</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/faux_cell.html">generate_faux_cell</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">faux_cell</span>
 <span class="co">#&gt; hyperSpec object</span>
 <span class="co">#&gt;    875 spectra</span>
@@ -194,7 +194,7 @@ Figure 3: Ten randomly selected spectra from <code>faux_cell</code> dataset.
 <p>Average spectra of each region.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span><span class="op">(</span>
-  <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/aggregate.html">aggregate</a></span><span class="op">(</span><span class="va">faux_cell</span>, <span class="va">faux_cell</span><span class="op">$</span><span class="va">region</span>, <span class="va">mean</span><span class="op">)</span>,
+  <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/aggregate.html">aggregate</a></span><span class="op">(</span><span class="va">faux_cell</span>, <span class="va">faux_cell</span><span class="op">$</span><span class="va">region</span>, <span class="va">mean</span><span class="op">)</span>,
   mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">.wavelength</span>, y <span class="op">=</span> <span class="va">spc</span>, colour <span class="op">=</span> <span class="va">region</span><span class="op">)</span>
 <span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">region</span> <span class="op">~</span> <span class="va">.</span><span class="op">)</span></code></pre></div>
@@ -207,8 +207,8 @@ Figure 4: Mean spectra of each region in <code>faux_cell</code> dataset.
 <p>Mean <span class="math inline">\(\pm\)</span> standard deviation:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span><span class="op">(</span>
- <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/aggregate.html">aggregate</a></span><span class="op">(</span><span class="va">faux_cell</span>, <span class="va">faux_cell</span><span class="op">$</span><span class="va">region</span>, <span class="va">mean_pm_sd</span><span class="op">)</span>,
- mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">.wavelength</span>, y <span class="op">=</span> <span class="va">spc</span>, colour <span class="op">=</span> <span class="va">region</span>, group <span class="op">=</span> <span class="va">.rownames</span><span class="op">)</span>
+  <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/aggregate.html">aggregate</a></span><span class="op">(</span><span class="va">faux_cell</span>, <span class="va">faux_cell</span><span class="op">$</span><span class="va">region</span>, <span class="va">mean_pm_sd</span><span class="op">)</span>,
+  mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">.wavelength</span>, y <span class="op">=</span> <span class="va">spc</span>, colour <span class="op">=</span> <span class="va">region</span>, group <span class="op">=</span> <span class="va">.rownames</span><span class="op">)</span>
 <span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">region</span> <span class="op">~</span> <span class="va">.</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
@@ -235,7 +235,7 @@ Figure 6: Concentration profile: intensities at the first available wavelength v
 </div>
 <p>It is better to indicate the wavelength of interest explicitly.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/qplotc.html">qplotc</a></span><span class="op">(</span><span class="va">flu</span><span class="op">[</span> , , <span class="fl">410</span><span class="op">]</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/qplotc.html">qplotc</a></span><span class="op">(</span><span class="va">flu</span><span class="op">[</span>, , <span class="fl">410</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotc-02"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotc-02-1.png" alt="Concentration profile: intensities at 410 nm.   "><p class="caption">
@@ -243,7 +243,7 @@ Figure 7: Concentration profile: intensities at 410 nm.
 </p>
 </div>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/qplotc.html">qplotc</a></span><span class="op">(</span><span class="va">flu</span><span class="op">[</span> , , <span class="fl">410</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span> 
+<code class="sourceCode R"><span class="fu"><a href="../reference/qplotc.html">qplotc</a></span><span class="op">(</span><span class="va">flu</span><span class="op">[</span>, , <span class="fl">410</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, formula <span class="op">=</span> <span class="va">y</span> <span class="op">~</span> <span class="va">x</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotc-03"></span>
@@ -259,9 +259,9 @@ Figure 8: Concentration profile with fitted line.
 <p>Fig. <a href="#fig:ggplotmap-01">9</a> shows a map created with package <strong>ggplot2</strong>.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">7</span><span class="op">)</span>
-<span class="va">faux_cell</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/faux_cell.html">generate_faux_cell</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<span class="va">faux_cell</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/faux_cell.html">generate_faux_cell</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span><span class="op">(</span><span class="va">faux_cell</span><span class="op">[</span> , , <span class="fl">1200</span><span class="op">]</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span><span class="op">(</span><span class="va">faux_cell</span><span class="op">[</span>, , <span class="fl">1200</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotmap-01"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotmap-01-1.png" alt="False-colour map produced by `qplotmap()`{.r}.  "><p class="caption">
@@ -269,8 +269,8 @@ Figure 9: False-colour map produced by <code class="sourceCode r"><span class="k
 </p>
 </div>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span><span class="op">(</span><span class="va">faux_cell</span><span class="op">[</span> , , <span class="fl">1200</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span><span class="op">(</span><span class="st">"Intensity"</span>, colours <span class="op">=</span> <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/palettes.html">matlab.palette</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span><span class="op">(</span><span class="va">faux_cell</span><span class="op">[</span>, , <span class="fl">1200</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span><span class="op">(</span><span class="st">"Intensity"</span>, colours <span class="op">=</span> <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/palettes.html">palette_matlab</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotmap-02"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotmap-02-1.png" alt="False-colour map produced by `qplotmap()`{.r}: different color palette.  "><p class="caption">
@@ -290,7 +290,7 @@ Figure 10: False-colour map produced by <code class="sourceCode r"><span class="
 <p>This function plots false-colour map with colour mixing for multivariate overlay.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
-<span class="va">faux_cell</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/faux_cell.html">generate_faux_cell</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<span class="va">faux_cell</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/faux_cell.html">generate_faux_cell</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Without pre-processing:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/qplotmixmap.html">qplotmixmap</a></span><span class="op">(</span><span class="va">faux_cell</span><span class="op">[</span>, , <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">800</span>, <span class="fl">1200</span>, <span class="fl">1500</span><span class="op">)</span><span class="op">]</span>,
@@ -305,7 +305,7 @@ Figure 11: False-color map produced by <code class="sourceCode r"><span class="k
 </div>
 <p>With baseline removed:</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">faux_cell_2</span> <span class="op">&lt;-</span> <span class="va">faux_cell</span> <span class="op">-</span> <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/baselines.html">spc_fit_poly_below</a></span><span class="op">(</span><span class="va">faux_cell</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">faux_cell_2</span> <span class="op">&lt;-</span> <span class="va">faux_cell</span> <span class="op">-</span> <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/baselines.html">spc_fit_poly_below</a></span><span class="op">(</span><span class="va">faux_cell</span><span class="op">)</span>
 
 <span class="fu"><a href="../reference/qplotmixmap.html">qplotmixmap</a></span><span class="op">(</span><span class="va">faux_cell_2</span><span class="op">[</span>, , <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">800</span>, <span class="fl">1200</span>, <span class="fl">1500</span><span class="op">)</span><span class="op">]</span>,
   purecol <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>matrix <span class="op">=</span> <span class="st">"red"</span>, cell <span class="op">=</span> <span class="st">"green"</span>, nucleus <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span>
@@ -320,8 +320,8 @@ Figure 12: False-color map of <code>faux_cell</code> spectra with base line remo
 <p>With some further pre-processing:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">faux_cell_3</span> <span class="op">&lt;-</span> <span class="va">faux_cell_2</span>
-<span class="va">faux_cell_3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/sweep.html">sweep</a></span><span class="op">(</span><span class="va">faux_cell_3</span>, <span class="fl">1</span>, <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/apply.html">apply</a></span><span class="op">(</span><span class="va">faux_cell_3</span>, <span class="fl">1</span>, <span class="va">mean</span><span class="op">)</span>, <span class="st">"/"</span><span class="op">)</span>
-<span class="va">faux_cell_3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/sweep.html">sweep</a></span><span class="op">(</span><span class="va">faux_cell_3</span>, <span class="fl">2</span>, <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/apply.html">apply</a></span><span class="op">(</span><span class="va">faux_cell_3</span>, <span class="fl">2</span>, <span class="va">quantile</span>, <span class="fl">0.05</span><span class="op">)</span>, <span class="st">"-"</span><span class="op">)</span>
+<span class="va">faux_cell_3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/sweep.html">sweep</a></span><span class="op">(</span><span class="va">faux_cell_3</span>, <span class="fl">1</span>, <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/apply.html">apply</a></span><span class="op">(</span><span class="va">faux_cell_3</span>, <span class="fl">1</span>, <span class="va">mean</span><span class="op">)</span>, <span class="st">"/"</span><span class="op">)</span>
+<span class="va">faux_cell_3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/sweep.html">sweep</a></span><span class="op">(</span><span class="va">faux_cell_3</span>, <span class="fl">2</span>, <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/apply.html">apply</a></span><span class="op">(</span><span class="va">faux_cell_3</span>, <span class="fl">2</span>, <span class="va">quantile</span>, <span class="fl">0.05</span><span class="op">)</span>, <span class="st">"-"</span><span class="op">)</span>
 
 <span class="fu"><a href="../reference/qplotmixmap.html">qplotmixmap</a></span><span class="op">(</span><span class="va">faux_cell_3</span><span class="op">[</span>, , <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">800</span>, <span class="fl">1200</span>, <span class="fl">1500</span><span class="op">)</span><span class="op">]</span>,
   purecol <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>matrix <span class="op">=</span> <span class="st">"red"</span>, cell <span class="op">=</span> <span class="st">"green"</span>, nucleus <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span>
@@ -350,8 +350,8 @@ It is therefore highly recommended to calculate the particular data to be plotte
     y <span class="op">=</span> <span class="fl">0</span>,
     group <span class="op">=</span> <span class="cn">NA</span>
   <span class="op">)</span>,
-    alpha <span class="op">=</span> <span class="fl">0.25</span>,
-    data <span class="op">=</span> <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/asdataframe.html">as.t.df</a></span><span class="op">(</span><span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/mean_sd.html">mean_sd</a></span><span class="op">(</span><span class="va">faux_cell</span><span class="op">)</span><span class="op">)</span>
+  alpha <span class="op">=</span> <span class="fl">0.25</span>,
+  data <span class="op">=</span> <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/asdataframe.html">as.t.df</a></span><span class="op">(</span><span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/mean_sd.html">mean_sd</a></span><span class="op">(</span><span class="va">faux_cell</span><span class="op">)</span><span class="op">)</span>
   <span class="op">)</span></code></pre></div>
 <p>Note that <code class="sourceCode r"><span class="kw">qpotspc</span>()</code> specifies aesthetics <code>y = spc</code> and <code>groups = .rownames</code>, which do not have corresponding columns in the <code>data.frame</code> returned by <code class="sourceCode r"><span class="kw">as.t.df</span>()</code>.
 These aesthetics must therefore be set manually in the aesthetics definition in <code class="sourceCode r"><span class="kw">geom_ribbon</span>()</code> (or any other <code class="sourceCode r">geom_<span class="op">*</span>()</code> that uses <code class="sourceCode r"><span class="kw">as.t.df</span>()</code>).
@@ -359,7 +359,7 @@ Otherwise, errors occur that object <code>spc</code> (and/or <code>.rownames</co
 Cut axes can be implemented by faceting (Fig. <a href="#fig:ggplotspccut">14</a>).</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span><span class="op">(</span><span class="va">paracetamol</span> <span class="op">/</span> <span class="fl">1e4</span>, wl.range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">min</span> <span class="op">~</span> <span class="fl">1800</span>, <span class="fl">2800</span> <span class="op">~</span> <span class="va">max</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://cbeleites.github.io/hyperSpec/reference/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span id="fig:ggplotspccut"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspccut-1.png" alt="Plot separate regions of specra.  "><p class="caption">
@@ -383,30 +383,30 @@ Figure 14: Plot separate regions of specra.
 <span class="co">#&gt;  collate  en_US.UTF-8                 </span>
 <span class="co">#&gt;  ctype    en_US.UTF-8                 </span>
 <span class="co">#&gt;  tz       UTC                         </span>
-<span class="co">#&gt;  date     2021-06-17                  </span>
+<span class="co">#&gt;  date     2021-07-14                  </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; ─ Packages ───────────────────────────────────────────────────────────────────────────────────────</span>
 <span class="co">#&gt;  package        * version    date       lib source        </span>
 <span class="co">#&gt;  brio             1.1.2      2021-04-23 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  callr            3.7.0      2021-04-20 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  cli              2.5.0      2021-04-26 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  colorspace       2.0-1      2021-05-04 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  cli              3.0.0      2021-06-30 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  colorspace       2.0-2      2021-06-24 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  crayon           1.4.1      2021-02-08 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  desc             1.3.0      2021-03-05 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  diffobj          0.3.4      2021-03-22 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  digest           0.6.27     2020-10-24 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  dplyr            1.0.6      2021-05-05 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  dplyr            1.0.7      2021-06-18 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  ellipsis         0.3.2      2021-04-29 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  evaluate         0.14       2019-05-28 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  fansi            0.5.0      2021-05-25 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  farver           2.1.0      2021-02-28 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  generics         0.1.0      2020-10-31 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  ggplot2        * 3.3.4      2021-06-16 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  ggplot2        * 3.3.5      2021-06-25 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  glue             1.4.2      2020-08-27 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  gtable           0.3.0      2019-03-25 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  hyperSpec      * 0.100.0    2021-06-17 [1] local         </span>
-<span class="co">#&gt;  hySpc.testthat   0.2.1.9000 2021-06-17 [1] local         </span>
-<span class="co">#&gt;  isoband          0.2.4      2021-03-03 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  hyperSpec      * 0.100.0    2021-07-14 [1] local         </span>
+<span class="co">#&gt;  hySpc.testthat   0.2.1.9000 2021-07-14 [1] local         </span>
+<span class="co">#&gt;  isoband          0.2.5      2021-07-13 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  jpeg             0.1-8.1    2019-10-24 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  jsonlite         1.7.2      2020-12-09 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  labeling         0.4.2      2020-10-20 [1] CRAN (R 4.1.0)</span>
@@ -435,7 +435,7 @@ Figure 14: Plot separate regions of specra.
 <span class="co">#&gt;  rprojroot        2.0.2      2020-11-15 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  rstudioapi       0.13       2020-11-12 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  scales           1.1.1      2020-05-11 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  testthat         3.0.3      2021-06-16 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  testthat         3.0.4      2021-07-01 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  tibble           3.1.2      2021-05-16 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  tidyselect       1.1.1      2021-04-30 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  utf8             1.2.1      2021-03-12 [1] CRAN (R 4.1.0)</span>
@@ -452,14 +452,8 @@ Figure 14: Plot separate regions of specra.
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
 <div id="refs" class="references">
-<div id="ref-R-hyperSpec">
-<p>[1] C. Beleites, V. Gegzna, B. Hanson, R. Kiselev, E. Oduniyi, V. Sergo, HyperSpec: Work with hyperspectral data, i.e. Spectra + meta information (spatial, time, concentration, ...), 2020.</p>
-</div>
-<div id="ref-R-ggplot2">
-<p>[2] H. Wickham, W. Chang, L. Henry, T.L. Pedersen, K. Takahashi, C. Wilke, K. Woo, H. Yutani, D. Dunnington, Ggplot2: Create elegant data visualisations using the grammar of graphics, 2021. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.</p>
-</div>
 <div id="ref-ggplot22016">
-<p>[3] H. Wickham, Ggplot2: Elegant graphics for data analysis, Springer-Verlag New York, 2016. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.</p>
+<p>[1] H. Wickham, Ggplot2: Elegant graphics for data analysis, Springer-Verlag New York, 2016. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.</p>
 </div>
 </div>
 </div>
