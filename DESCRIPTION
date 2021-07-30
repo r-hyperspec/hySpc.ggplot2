@@ -5,18 +5,21 @@ Version: 0.0.0.9000
 Title: Bridge Between Packages hyspeSpec and ggplot2
 Description: Package ggplot2 based functionality for hyperSpec objects.
 Authors@R: c(
-    person("Claudia",   "Beleites", role = c("aut", "cre"), email = "Claudia.Beleites@chemometrix.gmbh")
-    )
+    person("Claudia", "Beleites",
+           role = c("aut", "cre"),
+           email = "Claudia.Beleites@chemometrix.gmbh"),
+    person("Roman", "Kiselev",
+           role = "aut"))
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
-Remotes:
-    GegznaV/hyperSpec/hyperSpec@tmp/with-documentation
+Additional_repositories:
+    https://r-hyperspec.github.io/pkg-repo/
 Depends:
     ggplot2 (>= 2.3.0),
     hyperSpec
-Imports: 
+Imports:
     hySpc.testthat,
     lazyeval,
     methods,
@@ -26,8 +29,10 @@ Suggests:
     covr,
     knitr,
     sessioninfo,
-    vdiffr
-URL: 
+    vdiffr,
+    rmarkdown,
+    styler
+URL:
     https://r-hyperspec.github.io/hySpc.ggplot2,
     https://github.com/r-hyperspec/hySpc.ggplot2
 BugReports: https://github.com/r-hyperspec/hySpc.ggplot2/issues

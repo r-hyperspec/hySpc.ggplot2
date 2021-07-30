@@ -75,7 +75,8 @@ knitr::write_bib(
     "ggplot2",
     "hySpc.ggplot2"
   ),
-  file = "resources/hySpc.ggplot2-pkg.bib"
+  file = "resources/hySpc.ggplot2-pkg.bib",
+  prefix = "R_"
 )
 ```
 
@@ -211,7 +212,7 @@ qplotc(flu[ , , 410])
 CAPTION = "Concentration profile with fitted line.  "
 ```
 ```{r ggplotc-03, fig.cap=CAPTION}
-qplotc(flu[ , , 410]) + 
+qplotc(flu[ , , 410]) +
   geom_smooth(method = "lm", formula = y ~ x)
 ```
 
@@ -237,7 +238,7 @@ CAPTION = "False-colour map produced by `qplotmap()`{.r}: different color palett
 ```
 ```{r ggplotmap-02, fig.cap=CAPTION}
 qplotmap(faux_cell[ , , 1200]) +
-    scale_fill_gradientn("Intensity", colours = matlab.palette())
+    scale_fill_gradientn("Intensity", colours = palette_matlab())
 ```
 
 If you have package **viridis** installed, you may try:
@@ -275,7 +276,7 @@ With baseline removed:
 CAPTION = "False-color map of `faux_cell` spectra with base line removed.  "
 ```
 ```{r qplotmixmap-02, fig.cap=CAPTION}
-faux_cell_2 <- faux_cell - spc.fit.poly.below(faux_cell)
+faux_cell_2 <- faux_cell - spc_fit_poly_below(faux_cell)
 
 qplotmixmap(faux_cell_2[, , c(800, 1200, 1500)],
   purecol = c(matrix = "red", cell = "green", nucleus = "blue")
