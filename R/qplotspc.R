@@ -58,9 +58,9 @@ qplotspc <- function(x,
                      mapping = aes_string(
                        x = ".wavelength", y = "spc", group = ".rownames"
                      ),
-                     spc.nmax = hy.getOption("ggplot.spc.nmax"),
+                     spc.nmax = hy_get_option("ggplot.spc.nmax"),
                      map.lineonly = FALSE,
-                     debuglevel = hy.getOption("debuglevel")) {
+                     debuglevel = hy_get_option("debuglevel")) {
   chk.hy(x)
   validObject(x)
 
