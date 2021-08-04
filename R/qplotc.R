@@ -41,7 +41,7 @@
 qplotc <- function(object, mapping = aes_string(x = "c", y = "spc"), ...,
                    func = NULL, func.args = list(),
                    map.pointonly = FALSE) {
-  chk.hy(object)
+  assert_hyperSpec(object)
   validObject(object)
 
   if (!is.null(func)) {

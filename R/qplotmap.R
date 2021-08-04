@@ -50,7 +50,7 @@ qplotmap <- function(object,
                      func = mean,
                      func.args = list(),
                      map.tileonly = FALSE) {
-  chk.hy(object)
+  assert_hyperSpec(object)
   validObject(object)
 
   if (nwl(object) > 1 & !is.null(func)) {

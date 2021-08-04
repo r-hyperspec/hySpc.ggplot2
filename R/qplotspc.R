@@ -61,7 +61,7 @@ qplotspc <- function(x,
                      spc.nmax = hy_get_option("ggplot.spc.nmax"),
                      map.lineonly = FALSE,
                      debuglevel = hy_get_option("debuglevel")) {
-  chk.hy(x)
+  assert_hyperSpec(x)
   validObject(x)
 
   ## cut away everything that isn't asked for before transforming to data.frame
