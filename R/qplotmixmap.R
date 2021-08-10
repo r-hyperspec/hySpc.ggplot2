@@ -69,7 +69,7 @@ qplotmixmap <- function(object, ...) {
 
   l <- qmixlegend(object@data$spc, ...)
 
-  legendright(p, l)
+  legend_right(p, l)
 
   invisible(list(map = p, legend = l))
 }

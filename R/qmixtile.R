@@ -6,14 +6,14 @@
 #' @description
 #' **Note:** These functions are still experimental and may change in the future.
 #'
-#' - `legendright()` plots graph with legend right to it.
+#' - `legend_right()` plots graph with legend right to it.
 #'
 #' @param p Plot object.
 #' @param l Legend object.
 #' @param legend.width,legend.unit Size of legend part.
 #'
 #' @return
-#' - `legendright()`: invisible `NULL`.
+#' - `legend_right()`: invisible `NULL`.
 #'
 #' @seealso [qplotmixmap()]
 #'
@@ -24,7 +24,7 @@
 #'
 #' @author Claudia Beleites
 
-legendright <- function(p, l, legend.width = 8, legend.unit = "lines") {
+legend_right <- function(p, l, legend.width = 8, legend.unit = "lines") {
   plot.new()
   pushViewport(viewport(layout = grid.layout(1, 2,
     widths = unit(c(1, legend.width), c("null", legend.unit))
