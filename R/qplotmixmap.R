@@ -77,7 +77,6 @@ qplotmixmap <- function(object, ...) {
 # Unit tests -----------------------------------------------------------------
 #' @import hySpc.testthat
 hySpc.testthat::test(qplotmixmap) <- function() {
-  context("qplotmixmap")
   # To update reference data for visual unit tests, run:
   # vdiffr::manage_cases()
 

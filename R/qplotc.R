@@ -106,7 +106,6 @@ qplotc <- function(object, mapping = aes_string(x = "c", y = "spc"), ...,
 # Unit tests -----------------------------------------------------------------
 #' @import hySpc.testthat
 hySpc.testthat::test(qplotc) <- function() {
-  context("qplotc")
   # To update reference data for visual unit tests, run:
   # vdiffr::manage_cases()
 

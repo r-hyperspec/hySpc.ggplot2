@@ -100,7 +100,6 @@ qplotmap <- function(object,
 # Unit tests -----------------------------------------------------------------
 #' @import hySpc.testthat
 hySpc.testthat::test(qplotmap) <- function() {
-  context("qplotmap")
   # To update reference data for visual unit tests, run:
   # vdiffr::manage_cases()
 

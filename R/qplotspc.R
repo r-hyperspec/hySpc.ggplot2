@@ -118,7 +118,6 @@ qplotspc <- function(x,
 # Unit tests -----------------------------------------------------------------
 #' @import hySpc.testthat
 hySpc.testthat::test(qplotspc) <- function() {
-  context("qplotspc")
   # To update reference data for visual unit tests, run:
   # vdiffr::manage_cases()
 
