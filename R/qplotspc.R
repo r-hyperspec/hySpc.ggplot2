@@ -134,16 +134,16 @@ hySpc.testthat::test(qplotspc) <- function() {
     # Regular tests: errors ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     expect_error(qplotspc(), 'argument "x" is missing, with no default')
     expect_silent(gg <- qplotspc(hy_spectra))
-    expect_is(gg, "gg")
-    expect_is(gg, "ggplot")
+    expect_s3_class(gg, "gg")
+    expect_s3_class(gg, "ggplot")
 
     expect_silent(gg2 <- qplotspc(hy_spectra, map.lineonly = TRUE))
-    expect_is(gg2, "gg")
-    expect_is(gg2, "ggplot")
+    expect_s3_class(gg2, "gg")
+    expect_s3_class(gg2, "ggplot")
 
     expect_silent(gg3 <- qplotspc(hy_spectra, c(min ~ 500, 600 ~ max)))
-    expect_is(gg2, "gg")
-    expect_is(gg2, "ggplot")
+    expect_s3_class(gg2, "gg")
+    expect_s3_class(gg2, "ggplot")
 
     # Visual tests
     # vdiffr::expect_doppelganger("qplotspc-01",       gg)

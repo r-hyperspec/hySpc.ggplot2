@@ -96,7 +96,7 @@ hySpc.testthat::test(qplotmixmap) <- function() {
         purecol = c(colg = "red", Phe = "green", Lipid = "blue")
       )
     )
-    expect_is(gg, "list")
+    expect_s3_class(gg, "list")
     expect_length(gg, 2)
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,7 +119,7 @@ hySpc.testthat::test(qplotmixmap) <- function() {
         normalize = normalize_colrange
       )
     )
-    expect_is(gg, "list")
+    expect_s3_class(gg, "list")
     expect_length(gg, 2)
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -130,7 +130,7 @@ hySpc.testthat::test(qplotmixmap) <- function() {
         normalize = normalize_range
       )
     )
-    expect_is(gg, "list")
+    expect_s3_class(gg, "list")
     expect_length(gg, 2)
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -141,7 +141,7 @@ hySpc.testthat::test(qplotmixmap) <- function() {
         normalize = normalize_minmax
       )
     )
-    expect_is(gg, "list")
+    expect_s3_class(gg, "list")
     expect_length(gg, 2)
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -154,7 +154,7 @@ hySpc.testthat::test(qplotmixmap) <- function() {
     #     hy_map[, , c(5000, 6500, 8000)]
     #   )
     # )
-    # expect_is(gg, "list")
+    # expect_s3_class(gg, "list")
     # expect_length(gg, 2)
   })
 }
