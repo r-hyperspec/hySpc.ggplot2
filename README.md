@@ -30,9 +30,9 @@ The documentation of the other **`r-hyperspec`** family packages can be found at
 
 <!-- ---------------------------------------------------------------------- -->
 
-## Installation
-
 <!--
+## Installation of Released Version
+
 # Install from CRAN
 
 You can install the released version of **hySpc.ggplot2** from [CRAN](https://cran.r-project.org/package=hySpc.ggplot2) with:
@@ -41,6 +41,18 @@ You can install the released version of **hySpc.ggplot2** from [CRAN](https://cr
 install.packages("hySpc.ggplot2")
 ```
 -->
+
+## Installation of In-Development Version
+
+### Install from CRAN-like Repository
+
+The recommended way to install the in-development version:
+
+```r
+repos <- c("https://r-hyperspec.github.io/pkg-repo/", getOption("repos"))
+install.packages("hySpc.ggplot2", repos = repos)
+```
+
 
 ### Install from GitHub
 
