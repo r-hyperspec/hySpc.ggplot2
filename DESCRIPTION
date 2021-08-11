@@ -29,6 +29,7 @@ Suggests:
     covr,
     knitr,
     sessioninfo,
+    testthat (>= 3.0.0),
     vdiffr,
     rmarkdown,
     styler
