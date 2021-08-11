@@ -18,7 +18,7 @@ Additional_repositories:
     https://r-hyperspec.github.io/pkg-repo/
 Depends:
     ggplot2 (>= 2.3.0),
-    hyperSpec
+    hyperSpec (>= 0.100.0.9001)
 Imports:
     hySpc.testthat,
     lazyeval,
