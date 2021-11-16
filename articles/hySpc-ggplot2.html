@@ -104,7 +104,7 @@
 <br><a class="author_email" href="mailto:#"></a><a href="mailto:chemometrie@beleites.de" class="email">chemometrie@beleites.de</a>
       </address>
                   
-            <h4 class="date">2021-08-11</h4>
+            <h4 class="date">2021-11-16</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/r-hyperspec/hySpc.ggplot2/blob/master/vignettes/hySpc-ggplot2.Rmd"><code>vignettes/hySpc-ggplot2.Rmd</code></a></small>
       <div class="hidden name"><code>hySpc-ggplot2.Rmd</code></div>
@@ -159,7 +159,7 @@ Nevertheless, package <strong>ggplot2</strong> graphics can easily be obtained b
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span><span class="op">(</span><span class="va">flu</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="va">c</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:ggplotspc-01"></span>
+<span style="display:block;" id="fig:ggplotspc-01"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspc-01-1.png" alt="Spectra produced by `qplotspc()`{.r}: `flu` data.  "><p class="caption">
 Figure 1: Spectra produced by <code class="sourceCode r"><span class="kw">qplotspc</span>()</code>: <code>flu</code> data.
 </p>
@@ -168,7 +168,7 @@ Figure 1: Spectra produced by <code class="sourceCode r"><span class="kw">qplots
 <code class="sourceCode R"><span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span><span class="op">(</span><span class="va">paracetamol</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2800</span> <span class="op">~</span> <span class="va">max</span>, <span class="va">min</span> <span class="op">~</span> <span class="fl">1800</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_reverse</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:ggplotspc-02"></span>
+<span style="display:block;" id="fig:ggplotspc-02"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspc-02-1.png" alt="Spectra with reversed order of x axis values: `paracetamol` data.  "><p class="caption">
 Figure 2: Spectra with reversed order of x axis values: <code>paracetamol</code> data.
 </p>
@@ -184,9 +184,9 @@ Figure 2: Spectra with reversed order of x axis values: <code>paracetamol</code>
 <span class="co">#&gt;    300 data points / spectrum</span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">25</span><span class="op">)</span>
-<span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">faux_cell</span><span class="op">)</span>, spc.nmax <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="va">region</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span><span class="op">(</span><span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/sample.html">sample</a></span><span class="op">(</span><span class="va">faux_cell</span><span class="op">)</span>, spc.nmax <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="va">region</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:ggplotspc-03"></span>
+<span style="display:block;" id="fig:ggplotspc-03"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspc-03-1.png" alt="Ten randomly selected spectra from `faux_cell` dataset.  "><p class="caption">
 Figure 3: Ten randomly selected spectra from <code>faux_cell</code> dataset.
 </p>
@@ -199,7 +199,7 @@ Figure 3: Ten randomly selected spectra from <code>faux_cell</code> dataset.
 <span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">region</span> <span class="op">~</span> <span class="va">.</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:ggplotspc-04"></span>
+<span style="display:block;" id="fig:ggplotspc-04"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspc-04-1.png" alt="Mean spectra of each region in `faux_cell` dataset.  "><p class="caption">
 Figure 4: Mean spectra of each region in <code>faux_cell</code> dataset.
 </p>
@@ -212,7 +212,7 @@ Figure 4: Mean spectra of each region in <code>faux_cell</code> dataset.
 <span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">region</span> <span class="op">~</span> <span class="va">.</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:ggplotspc-05"></span>
+<span style="display:block;" id="fig:ggplotspc-05"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspc-05-1.png" alt="Mean $\pm$ standard deviation spectra of each region in `faux_cell` dataset.  "><p class="caption">
 Figure 5: Mean <span class="math inline">\(\pm\)</span> standard deviation spectra of each region in <code>faux_cell</code> dataset.
 </p>
@@ -228,7 +228,7 @@ Figure 5: Mean <span class="math inline">\(\pm\)</span> standard deviation spect
 <code class="sourceCode R"><span class="fu"><a href="../reference/qplotc.html">qplotc</a></span><span class="op">(</span><span class="va">flu</span><span class="op">)</span>
 <span class="co">#&gt; Warning in qplotc(flu): Intensity at first wavelengh only is used.</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:ggplotc-01"></span>
+<span style="display:block;" id="fig:ggplotc-01"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotc-01-1.png" alt="Concentration profile: intensities at the first available wavelength value.  "><p class="caption">
 Figure 6: Concentration profile: intensities at the first available wavelength value.
 </p>
@@ -237,7 +237,7 @@ Figure 6: Concentration profile: intensities at the first available wavelength v
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/qplotc.html">qplotc</a></span><span class="op">(</span><span class="va">flu</span><span class="op">[</span>, , <span class="fl">410</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:ggplotc-02"></span>
+<span style="display:block;" id="fig:ggplotc-02"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotc-02-1.png" alt="Concentration profile: intensities at 410 nm.   "><p class="caption">
 Figure 7: Concentration profile: intensities at 410 nm.
 </p>
@@ -246,7 +246,7 @@ Figure 7: Concentration profile: intensities at 410 nm.
 <code class="sourceCode R"><span class="fu"><a href="../reference/qplotc.html">qplotc</a></span><span class="op">(</span><span class="va">flu</span><span class="op">[</span>, , <span class="fl">410</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, formula <span class="op">=</span> <span class="va">y</span> <span class="op">~</span> <span class="va">x</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:ggplotc-03"></span>
+<span style="display:block;" id="fig:ggplotc-03"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotc-03-1.png" alt="Concentration profile with fitted line.  "><p class="caption">
 Figure 8: Concentration profile with fitted line.
 </p>
@@ -263,7 +263,7 @@ Figure 8: Concentration profile with fitted line.
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span><span class="op">(</span><span class="va">faux_cell</span><span class="op">[</span>, , <span class="fl">1200</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:ggplotmap-01"></span>
+<span style="display:block;" id="fig:ggplotmap-01"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotmap-01-1.png" alt="False-colour map produced by `qplotmap()`{.r}.  "><p class="caption">
 Figure 9: False-colour map produced by <code class="sourceCode r"><span class="kw">qplotmap</span>()</code>.
 </p>
@@ -272,7 +272,7 @@ Figure 9: False-colour map produced by <code class="sourceCode r"><span class="k
 <code class="sourceCode R"><span class="fu"><a href="../reference/qplotmap.html">qplotmap</a></span><span class="op">(</span><span class="va">faux_cell</span><span class="op">[</span>, , <span class="fl">1200</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span><span class="op">(</span><span class="st">"Intensity"</span>, colours <span class="op">=</span> <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/palettes.html">palette_matlab</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:ggplotmap-02"></span>
+<span style="display:block;" id="fig:ggplotmap-02"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotmap-02-1.png" alt="False-colour map produced by `qplotmap()`{.r}: different color palette.  "><p class="caption">
 Figure 10: False-colour map produced by <code class="sourceCode r"><span class="kw">qplotmap</span>()</code>: different color palette.
 </p>
@@ -298,7 +298,7 @@ Figure 10: False-colour map produced by <code class="sourceCode r"><span class="
 <span class="op">)</span>
 <span class="co">#&gt; Warning: Removed 300 rows containing missing values (geom_point).</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:qplotmixmap-01"></span>
+<span style="display:block;" id="fig:qplotmixmap-01"></span>
 <img src="hySpc-ggplot2_files/figure-html/qplotmixmap-01-1.png" alt="False-color map produced by `qplotmixmap()`{.r}: raw `faux_cell` spectra at 800, 1200, and 1500 $cm^{-1}.$    "><p class="caption">
 Figure 11: False-color map produced by <code class="sourceCode r"><span class="kw">qplotmixmap</span>()</code>: raw <code>faux_cell</code> spectra at 800, 1200, and 1500 <span class="math inline">\(cm^{-1}.\)</span>
 </p>
@@ -312,7 +312,7 @@ Figure 11: False-color map produced by <code class="sourceCode r"><span class="k
 <span class="op">)</span>
 <span class="co">#&gt; Warning: Removed 300 rows containing missing values (geom_point).</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:qplotmixmap-02"></span>
+<span style="display:block;" id="fig:qplotmixmap-02"></span>
 <img src="hySpc-ggplot2_files/figure-html/qplotmixmap-02-1.png" alt="False-color map of `faux_cell` spectra with base line removed.  "><p class="caption">
 Figure 12: False-color map of <code>faux_cell</code> spectra with base line removed.
 </p>
@@ -328,7 +328,7 @@ Figure 12: False-color map of <code>faux_cell</code> spectra with base line remo
 <span class="op">)</span>
 <span class="co">#&gt; Warning: Removed 300 rows containing missing values (geom_point).</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:qplotmixmap-03"></span>
+<span style="display:block;" id="fig:qplotmixmap-03"></span>
 <img src="hySpc-ggplot2_files/figure-html/qplotmixmap-03-1.png" alt="False-color map of pre-processed `faux_cell` spectra.  "><p class="caption">
 Figure 13: False-color map of pre-processed <code>faux_cell</code> spectra.
 </p>
@@ -361,7 +361,7 @@ Cut axes can be implemented by faceting (Fig. <a href="#fig:ggplotspccut">14</a>
 <code class="sourceCode R"><span class="fu"><a href="../reference/qplotspc.html">qplotspc</a></span><span class="op">(</span><span class="va">paracetamol</span> <span class="op">/</span> <span class="fl">1e4</span>, wl.range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">min</span> <span class="op">~</span> <span class="fl">1800</span>, <span class="fl">2800</span> <span class="op">~</span> <span class="va">max</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://r-hyperspec.github.io/hyperSpec/reference/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span id="fig:ggplotspccut"></span>
+<span style="display:block;" id="fig:ggplotspccut"></span>
 <img src="hySpc-ggplot2_files/figure-html/ggplotspccut-1.png" alt="Plot separate regions of specra.  "><p class="caption">
 Figure 14: Plot separate regions of specra.
 </p>
@@ -372,81 +372,86 @@ Figure 14: Plot separate regions of specra.
 <h1 class="hasAnchor">
 <a href="#session-info" class="anchor"></a>Session Info</h1>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">sessioninfo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/sessioninfo/man/session_info.html">session_info</a></span><span class="op">(</span><span class="st">"hyperSpec"</span><span class="op">)</span>
-<span class="co">#&gt; ─ Session info ───────────────────────────────────────────────────────────────────────────────────</span>
-<span class="co">#&gt;  setting  value                       </span>
-<span class="co">#&gt;  version  R version 4.1.0 (2021-05-18)</span>
-<span class="co">#&gt;  os       macOS Catalina 10.15.7      </span>
-<span class="co">#&gt;  system   x86_64, darwin17.0          </span>
-<span class="co">#&gt;  ui       X11                         </span>
-<span class="co">#&gt;  language (EN)                        </span>
-<span class="co">#&gt;  collate  en_US.UTF-8                 </span>
-<span class="co">#&gt;  ctype    en_US.UTF-8                 </span>
-<span class="co">#&gt;  tz       UTC                         </span>
-<span class="co">#&gt;  date     2021-08-11                  </span>
+<code class="sourceCode R"><span class="fu">sessioninfo</span><span class="fu">::</span><span class="fu"><a href="https://r-lib.github.io/sessioninfo/reference/session_info.html">session_info</a></span><span class="op">(</span><span class="st">"hyperSpec"</span><span class="op">)</span>
+<span class="co">#&gt; ─ Session info  💯  👬  🕴🏽   ────────────────────────────────────────────────────────────────────</span>
+<span class="co">#&gt;  hash: hundred points, men holding hands, person in suit levitating: medium skin tone</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;  setting  value</span>
+<span class="co">#&gt;  version  R version 4.1.2 (2021-11-01)</span>
+<span class="co">#&gt;  os       macOS Catalina 10.15.7</span>
+<span class="co">#&gt;  system   x86_64, darwin17.0</span>
+<span class="co">#&gt;  ui       X11</span>
+<span class="co">#&gt;  language (EN)</span>
+<span class="co">#&gt;  collate  en_US.UTF-8</span>
+<span class="co">#&gt;  ctype    en_US.UTF-8</span>
+<span class="co">#&gt;  tz       UTC</span>
+<span class="co">#&gt;  date     2021-11-16</span>
+<span class="co">#&gt;  pandoc   2.7.3 @ /usr/local/bin/ (via rmarkdown)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; ─ Packages ───────────────────────────────────────────────────────────────────────────────────────</span>
-<span class="co">#&gt;  package        * version      date       lib source        </span>
+<span class="co">#&gt;  package        * version      date (UTC) lib source</span>
 <span class="co">#&gt;  brio             1.1.2        2021-04-23 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  callr            3.7.0        2021-04-20 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  cli              3.0.1        2021-07-17 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  cli              3.1.0        2021-10-27 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  colorspace       2.0-2        2021-06-24 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  crayon           1.4.1        2021-02-08 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  desc             1.3.0        2021-03-05 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  diffobj          0.3.4        2021-03-22 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  digest           0.6.27       2020-10-24 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  crayon           1.4.2        2021-10-29 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  desc             1.4.0        2021-09-28 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  diffobj          0.3.5        2021-10-05 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  digest           0.6.28       2021-09-23 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  dplyr            1.0.7        2021-06-18 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  ellipsis         0.3.2        2021-04-29 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  evaluate         0.14         2019-05-28 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  fansi            0.5.0        2021-05-25 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  farver           2.1.0        2021-02-28 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  generics         0.1.0        2020-10-31 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  generics         0.1.1        2021-10-25 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  ggplot2        * 3.3.5        2021-06-25 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  glue             1.4.2        2020-08-27 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  glue             1.5.0        2021-11-07 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  gtable           0.3.0        2019-03-25 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  hyperSpec      * 0.100.0.9001 2021-08-11 [1] local         </span>
-<span class="co">#&gt;  hySpc.testthat   0.2.1.9000   2021-08-11 [1] local         </span>
+<span class="co">#&gt;  hyperSpec      * 0.200.0.9000 2021-11-16 [1] local</span>
+<span class="co">#&gt;  hySpc.testthat   0.2.1.9000   2021-11-16 [1] local</span>
 <span class="co">#&gt;  isoband          0.2.5        2021-07-13 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  jpeg             0.1-9        2021-07-24 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  jsonlite         1.7.2        2020-12-09 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  labeling         0.4.2        2020-10-20 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  lattice        * 0.20-44      2021-05-02 [2] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  lattice        * 0.20-45      2021-09-22 [2] CRAN (R 4.1.2)</span>
 <span class="co">#&gt;  latticeExtra     0.6-29       2019-12-19 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  lazyeval         0.2.2        2019-03-15 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  lifecycle        1.0.0        2021-02-15 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  lifecycle        1.0.1        2021-09-24 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  magrittr         2.0.1        2020-11-17 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  MASS             7.3-54       2021-05-03 [2] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  Matrix           1.3-3        2021-05-04 [2] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  mgcv             1.8-35       2021-04-18 [2] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  MASS             7.3-54       2021-05-03 [2] CRAN (R 4.1.2)</span>
+<span class="co">#&gt;  Matrix           1.3-4        2021-06-01 [2] CRAN (R 4.1.2)</span>
+<span class="co">#&gt;  mgcv             1.8-38       2021-10-06 [2] CRAN (R 4.1.2)</span>
 <span class="co">#&gt;  munsell          0.5.0        2018-06-12 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  nlme             3.1-152      2021-02-04 [2] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  pillar           1.6.2        2021-07-29 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  nlme             3.1-153      2021-09-07 [2] CRAN (R 4.1.2)</span>
+<span class="co">#&gt;  pillar           1.6.4        2021-10-18 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  pkgconfig        2.0.3        2019-09-22 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  pkgload          1.2.1        2021-04-06 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  pkgload          1.2.3        2021-10-13 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  png              0.1-7        2013-12-03 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  praise           1.0.0        2015-08-11 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  processx         3.5.2        2021-04-30 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  ps               1.6.0        2021-02-28 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  purrr            0.3.4        2020-04-17 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  R6               2.5.0        2020-10-28 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  R6               2.5.1        2021-08-19 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  RColorBrewer     1.1-2        2014-12-07 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  rematch2         2.1.2        2020-05-01 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  rlang            0.4.11       2021-04-30 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  rlang            0.4.12       2021-10-18 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  rprojroot        2.0.2        2020-11-15 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  rstudioapi       0.13         2020-11-12 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  scales           1.1.1        2020-05-11 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  testthat         3.0.4        2021-07-01 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  tibble           3.1.3        2021-07-23 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  testthat         3.1.0        2021-10-04 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  tibble           3.1.6        2021-11-07 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  tidyselect       1.1.1        2021-04-30 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  utf8             1.2.2        2021-07-24 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  vctrs            0.3.8        2021-04-29 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  viridisLite      0.4.0        2021-04-13 [1] CRAN (R 4.1.0)</span>
-<span class="co">#&gt;  waldo            0.2.5        2021-03-08 [1] CRAN (R 4.1.0)</span>
+<span class="co">#&gt;  waldo            0.3.1        2021-09-14 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  withr            2.4.2        2021-04-18 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt;  xml2             1.3.2        2020-04-23 [1] CRAN (R 4.1.0)</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; [1] /Users/runner/work/_temp/Library</span>
-<span class="co">#&gt; [2] /Library/Frameworks/R.framework/Versions/4.1/Resources/library</span></code></pre></div>
+<span class="co">#&gt;  [1] /Users/runner/work/_temp/Library</span>
+<span class="co">#&gt;  [2] /Library/Frameworks/R.framework/Versions/4.1/Resources/library</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; ──────────────────────────────────────────────────────────────────────────────────────────────────</span></code></pre></div>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">

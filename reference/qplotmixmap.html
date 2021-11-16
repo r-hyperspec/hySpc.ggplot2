@@ -172,30 +172,36 @@ overlay by using <span class="pkg">ggplot2</span> functions.</p>
     <p>Claudia Beleites</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
-<span class='va'>faux_cell</span> <span class='op'>&lt;-</span> <span class='fu'>generate_faux_cell</span><span class='op'>(</span><span class='op'>)</span>
-
-<span class='co'># Original data at certan wavelengths</span>
-<span class='fu'>qplotmixmap</span><span class='op'>(</span><span class='va'>faux_cell</span><span class='op'>[</span>, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span><span class='op'>)</span><span class='op'>]</span>,
-  purecol <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>matrix <span class='op'>=</span> <span class='st'>"red"</span>, cell <span class='op'>=</span> <span class='st'>"green"</span>, nucleus <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span>
-<span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 300 rows containing missing values (geom_point).</span></div><div class='img'><img src='qplotmixmap-1.png' alt='' width='466' height='288' /></div><div class='input'>
-<span class='co'># With baseline removed</span>
-<span class='va'>faux_cell_2</span> <span class='op'>&lt;-</span> <span class='va'>faux_cell</span> <span class='op'>-</span> <span class='fu'>spc_fit_poly_below</span><span class='op'>(</span><span class='va'>faux_cell</span><span class='op'>)</span>
-
-<span class='fu'>qplotmixmap</span><span class='op'>(</span><span class='va'>faux_cell_2</span><span class='op'>[</span>, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span><span class='op'>)</span><span class='op'>]</span>,
-  purecol <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>matrix <span class='op'>=</span> <span class='st'>"red"</span>, cell <span class='op'>=</span> <span class='st'>"green"</span>, nucleus <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span>
-<span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 300 rows containing missing values (geom_point).</span></div><div class='img'><img src='qplotmixmap-2.png' alt='' width='466' height='288' /></div><div class='input'>
-<span class='co'># With further pre-processing</span>
-<span class='va'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='va'>faux_cell_2</span>
-<span class='va'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sweep.html'>sweep</a></span><span class='op'>(</span><span class='va'>faux_cell_3</span>, <span class='fl'>1</span>, <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>faux_cell_3</span>, <span class='fl'>1</span>, <span class='va'>mean</span><span class='op'>)</span>, <span class='st'>"/"</span><span class='op'>)</span>
-<span class='va'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sweep.html'>sweep</a></span><span class='op'>(</span><span class='va'>faux_cell_3</span>, <span class='fl'>2</span>, <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>faux_cell_3</span>, <span class='fl'>2</span>, <span class='va'>quantile</span>, <span class='fl'>0.05</span><span class='op'>)</span>, <span class='st'>"-"</span><span class='op'>)</span>
-
-<span class='fu'>qplotmixmap</span><span class='op'>(</span><span class='va'>faux_cell_3</span><span class='op'>[</span>, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span><span class='op'>)</span><span class='op'>]</span>,
-  purecol <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>matrix <span class='op'>=</span> <span class='st'>"red"</span>, cell <span class='op'>=</span> <span class='st'>"green"</span>, nucleus <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span>
-<span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 300 rows containing missing values (geom_point).</span></div><div class='img'><img src='qplotmixmap-3.png' alt='' width='466' height='288' /></div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>faux_cell</span> <span class='op'>&lt;-</span> <span class='fu'>generate_faux_cell</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># Original data at certan wavelengths</span></span>
+<span class='r-in'><span class='fu'>qplotmixmap</span><span class='op'>(</span><span class='va'>faux_cell</span><span class='op'>[</span>, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span><span class='op'>)</span><span class='op'>]</span>,</span>
+<span class='r-in'>  purecol <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>matrix <span class='op'>=</span> <span class='st'>"red"</span>, cell <span class='op'>=</span> <span class='st'>"green"</span>, nucleus <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>Removed 300 rows containing missing values (geom_point).</span>
+<span class='r-plt img'><img src='qplotmixmap-1.png' alt='' width='466' height='288' /></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># With baseline removed</span></span>
+<span class='r-in'><span class='va'>faux_cell_2</span> <span class='op'>&lt;-</span> <span class='va'>faux_cell</span> <span class='op'>-</span> <span class='fu'>spc_fit_poly_below</span><span class='op'>(</span><span class='va'>faux_cell</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>qplotmixmap</span><span class='op'>(</span><span class='va'>faux_cell_2</span><span class='op'>[</span>, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span><span class='op'>)</span><span class='op'>]</span>,</span>
+<span class='r-in'>  purecol <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>matrix <span class='op'>=</span> <span class='st'>"red"</span>, cell <span class='op'>=</span> <span class='st'>"green"</span>, nucleus <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>Removed 300 rows containing missing values (geom_point).</span>
+<span class='r-plt img'><img src='qplotmixmap-2.png' alt='' width='466' height='288' /></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># With further pre-processing</span></span>
+<span class='r-in'><span class='va'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='va'>faux_cell_2</span></span>
+<span class='r-in'><span class='va'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sweep.html'>sweep</a></span><span class='op'>(</span><span class='va'>faux_cell_3</span>, <span class='fl'>1</span>, <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>faux_cell_3</span>, <span class='fl'>1</span>, <span class='va'>mean</span><span class='op'>)</span>, <span class='st'>"/"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>faux_cell_3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sweep.html'>sweep</a></span><span class='op'>(</span><span class='va'>faux_cell_3</span>, <span class='fl'>2</span>, <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>faux_cell_3</span>, <span class='fl'>2</span>, <span class='va'>quantile</span>, <span class='fl'>0.05</span><span class='op'>)</span>, <span class='st'>"-"</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>qplotmixmap</span><span class='op'>(</span><span class='va'>faux_cell_3</span><span class='op'>[</span>, , <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>800</span>, <span class='fl'>1200</span>, <span class='fl'>1500</span><span class='op'>)</span><span class='op'>]</span>,</span>
+<span class='r-in'>  purecol <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>matrix <span class='op'>=</span> <span class='st'>"red"</span>, cell <span class='op'>=</span> <span class='st'>"green"</span>, nucleus <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>Removed 300 rows containing missing values (geom_point).</span>
+<span class='r-plt img'><img src='qplotmixmap-3.png' alt='' width='466' height='288' /></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
