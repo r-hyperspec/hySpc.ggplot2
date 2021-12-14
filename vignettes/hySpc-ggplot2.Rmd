@@ -117,7 +117,7 @@ set.seed(2020)
 
 
 Class `hyperSpec`{.r}[`r cite_pkg("hyperSpec")`] objects do not yet directly support plotting with package **ggplot2**[`r cite_pkg("ggplot2")`].
-Nevertheless, package **ggplot2** graphics can easily be obtained by using `qplot*()`{.r} equivalents to `hyperSpec::plotspc()`{.r}, `hyperSpec::plotc()`{.r}, and `hyperSpec::plotmap()`{.r}.
+Nevertheless, package **ggplot2** graphics can easily be obtained by using `qplot*()`{.r} equivalents to `hyperSpec::plot_spc()`{.r}, `hyperSpec::plotc()`{.r}, and `hyperSpec::plotmap()`{.r}.
 
 
 ## Function `qplotspc()`{.r} {#qplotspc}
