@@ -41,7 +41,7 @@
 qplotc <- function(object, mapping = aes_string(x = "c", y = "spc"), ...,
                    func = NULL, func.args = list(),
                    map.pointonly = FALSE) {
-  chk.hy(object)
+  assert_hyperSpec(object)
   validObject(object)
 
   if (!is.null(func)) {
@@ -106,7 +106,6 @@ qplotc <- function(object, mapping = aes_string(x = "c", y = "spc"), ...,
 # Unit tests -----------------------------------------------------------------
 #' @import hySpc.testthat
 hySpc.testthat::test(qplotc) <- function() {
-  context("qplotc")
   # To update reference data for visual unit tests, run:
   # vdiffr::manage_cases()
 
@@ -122,23 +121,23 @@ hySpc.testthat::test(qplotc) <- function() {
     expect_error(qplotc(), 'argument "object" is missing, with no default')
 
     expect_silent(gg <- qplotc(hy_profile))
-    expect_is(gg, "gg")
-    expect_is(gg, "ggplot")
+    expect_s3_class(gg, "gg")
+    expect_s3_class(gg, "ggplot")
 
     expect_silent(gg2 <- qplotc(hy_profile, map.pointonly = TRUE))
-    expect_is(gg2, "gg")
-    expect_is(gg2, "ggplot")
+    expect_s3_class(gg2, "gg")
+    expect_s3_class(gg2, "ggplot")
 
     expect_silent(gg3 <- qplotc(hy_spectra, func = mean))
-    expect_is(gg3, "gg")
-    expect_is(gg3, "ggplot")
+    expect_s3_class(gg3, "gg")
+    expect_s3_class(gg3, "ggplot")
 
     expect_warning(
       gg4 <- qplotc(hy_spectra),
       "Intensity at first wavelengh only is used"
     )
-    expect_is(gg4, "gg")
-    expect_is(gg4, "ggplot")
+    expect_s3_class(gg4, "gg")
+    expect_s3_class(gg4, "ggplot")
 
     # Visual tests
     # vdiffr::expect_doppelganger("qplotspc-01",       gg)

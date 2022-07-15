@@ -50,7 +50,7 @@ qplotmap <- function(object,
                      func = mean,
                      func.args = list(),
                      map.tileonly = FALSE) {
-  chk.hy(object)
+  assert_hyperSpec(object)
   validObject(object)
 
   if (nwl(object) > 1 & !is.null(func)) {
@@ -100,7 +100,6 @@ qplotmap <- function(object,
 # Unit tests -----------------------------------------------------------------
 #' @import hySpc.testthat
 hySpc.testthat::test(qplotmap) <- function() {
-  context("qplotmap")
   # To update reference data for visual unit tests, run:
   # vdiffr::manage_cases()
 
@@ -114,20 +113,20 @@ hySpc.testthat::test(qplotmap) <- function() {
     # Regular tests: errors ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     expect_error(qplotmap(), 'argument "object" is missing, with no default')
     expect_silent(gg <- qplotmap(hy_map))
-    expect_is(gg, "gg")
-    expect_is(gg, "ggplot")
+    expect_s3_class(gg, "gg")
+    expect_s3_class(gg, "ggplot")
 
     expect_silent(gg2 <- qplotmap(hy_map, map.tileonly = TRUE))
-    expect_is(gg2, "gg")
-    expect_is(gg2, "ggplot")
+    expect_s3_class(gg2, "gg")
+    expect_s3_class(gg2, "ggplot")
 
     # With no labels
     hy_map_2 <- hy_map
     labels(hy_map_2) <- lapply(labels(hy_map), function(x) NULL)
 
     expect_silent(gg3 <- qplotmap(hy_map_2, map.tileonly = TRUE))
-    expect_is(gg3, "gg")
-    expect_is(gg3, "ggplot")
+    expect_s3_class(gg3, "gg")
+    expect_s3_class(gg3, "ggplot")
 
     # Visual tests
     # vdiffr::expect_doppelganger("qplotspc-01",       gg)
