@@ -339,8 +339,12 @@ qplotspc(paracetamol / 1e4, wl.range = c(min ~ 1800, 2800 ~ max)) +
 
 # Session Info {-}
 
+<details><summary>Session info</summary>
+
 ```{r session-info-plotting, paged.print=FALSE}
 sessioninfo::session_info("hyperSpec")
 ```
+
+</details>
 
 # References {-}
