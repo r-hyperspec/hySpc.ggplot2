@@ -25,7 +25,7 @@
 #' @concept quick plots
 #'
 #' @seealso
-#' - [hyperSpec::plotspc()];
+#' - [hyperSpec::plot_spc()];
 #' - [ggplot2::ggplot()], [ggplot2::geom_line()].
 #'
 #' @author Claudia Beleites
