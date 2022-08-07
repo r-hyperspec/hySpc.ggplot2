@@ -24,7 +24,7 @@
 #' @concept quick plots
 #'
 #' @seealso
-#' - [hyperSpec::plotc()];
+#' - [hyperSpec::plot_c()];
 #' - [ggplot2::ggplot()], [ggplot2::geom_point()].
 #'
 #' @author Claudia Beleites
