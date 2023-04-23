@@ -142,27 +142,31 @@ Note: The function is still experimental and may change in the future."><!-- mat
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">qplotspc</span><span class="op">(</span><span class="va">paracetamol</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2800</span> <span class="op">~</span> <span class="va">max</span>, <span class="va">min</span> <span class="op">~</span> <span class="fl">1800</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span></span>
 <span class="r-in"><span>  <span class="fu">scale_x_reverse</span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3200</span>, <span class="fl">400</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y,     resolveHJust(x$just, x$hjust), resolveVJust(x$just, x$vjust),     x$rot, 0):</span> polygon edge not found</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Unable to calculate text width/height (using zero)</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Unable to calculate text width/height (using zero)</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Unable to calculate text width/height (using zero)</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Unable to calculate text width/height (using zero)</span>
+<span class="r-plt img"><img src="qplotspc-2.png" alt="" width="466" height="288"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">faux_cell</span> <span class="op">&lt;-</span> <span class="fu">generate_faux_cell</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">qplotspc</span><span class="op">(</span><span class="va">faux_cell</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="qplotspc-2.png" alt="" width="466" height="288"></span>
+<span class="r-plt img"><img src="qplotspc-3.png" alt="" width="466" height="288"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">qplotspc</span><span class="op">(</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/stats/aggregate.html" class="external-link">aggregate</a></span><span class="op">(</span><span class="va">faux_cell</span>, <span class="va">faux_cell</span><span class="op">$</span><span class="va">region</span>, <span class="va">mean</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">.wavelength</span>, y <span class="op">=</span> <span class="va">spc</span>, colour <span class="op">=</span> <span class="va">region</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span> <span class="op">+</span></span></span>
 <span class="r-in"><span>  <span class="fu">facet_grid</span><span class="op">(</span><span class="va">region</span> <span class="op">~</span> <span class="va">.</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="qplotspc-3.png" alt="" width="466" height="288"></span>
+<span class="r-plt img"><img src="qplotspc-4.png" alt="" width="466" height="288"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">qplotspc</span><span class="op">(</span></span></span>
 <span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/stats/aggregate.html" class="external-link">aggregate</a></span><span class="op">(</span><span class="va">faux_cell</span>, <span class="va">faux_cell</span><span class="op">$</span><span class="va">region</span>, <span class="va">mean_pm_sd</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span> mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">.wavelength</span>, y <span class="op">=</span> <span class="va">spc</span>, colour <span class="op">=</span> <span class="va">region</span>, group <span class="op">=</span> <span class="va">.rownames</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span> <span class="op">+</span></span></span>
 <span class="r-in"><span>  <span class="fu">facet_grid</span><span class="op">(</span><span class="va">region</span> <span class="op">~</span> <span class="va">.</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="qplotspc-4.png" alt="" width="466" height="288"></span>
+<span class="r-plt img"><img src="qplotspc-5.png" alt="" width="466" height="288"></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
@@ -178,7 +182,7 @@ Note: The function is still experimental and may change in the future."><!-- mat
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
