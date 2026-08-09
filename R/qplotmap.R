@@ -28,7 +28,7 @@
 #' @concept quick plots
 #'
 #' @seealso
-#' - [hyperSpec::plotmap()];
+#' - [hyperSpec::plot_map()];
 #' - [ggplot2::ggplot()], [ggplot2::geom_tile()].
 #'
 #' @author Claudia Beleites
